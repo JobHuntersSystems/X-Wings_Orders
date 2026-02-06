@@ -11,12 +11,6 @@
 *.gch
 *.pch
 
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
 # Compiled Dynamic libraries
 *.so
 *.dylib
@@ -37,5 +31,73 @@
 *.out
 *.app
 
-# debug information files
-*.dwo
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config files
+Desktop.ini
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Mono auto generated files
+mono_crash.*
+
+# .NET build results
+bin/
+obj/
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+*.nuget.props
+*.nuget.targets
+
+# Microsoft Visual Studio temporary files
+.vs/
+.vscode/
+.vscode/**
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Build results
+**/bin/
+**/obj/
+*.cache
+
+# Rider project files
+.idea/
+*.sln.iml
+*.sln.tmp
+
+# Config personalizada
+## Carpeta Help de documentacion de Sandcastle (NombreDeTuProyectoSandcastle\Help)
+### Ignorar todos los archivos en la raiz de "DocSecureCore\Help"
+SecureCoreSandCastle/Help/**
+SecureCoreSandCastle/Help/*
+
+## Carpeta de compilacion (App)
+### Ignorar todos los archivos en la raiz de "App"
+App/*
+### Asegurarse de que se suban las carpetas dentro de "App"
+!App/**/
+### Permitir archivos en subcarpetas de "App"
+!App/*/**
