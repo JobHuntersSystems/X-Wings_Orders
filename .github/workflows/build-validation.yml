@@ -1,0 +1,28 @@
+name: Validación de Compilación (CI)
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Compilar Proyecto
+    runs-on: windows-latest
+
+    steps:
+    - name: Obtener código
+      uses: actions/checkout@v4
+
+    - name: Configurar MSBuild
+      uses: microsoft/setup-msbuild@v1.1
+
+    - name: Configurar NuGet
+      uses: NuGet/setup-nuget@v1.2
+
+    - name: Restaurar dependencias
+      run: nuget restore X-Wings_Orders.sln
+
+    - name: Compilar Solución
+      run: msbuild X-Wings_Orders.sln /p:Configuration=Release /p:Platform="Any CPU"
