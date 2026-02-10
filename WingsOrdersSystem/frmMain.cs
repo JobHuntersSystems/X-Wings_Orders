@@ -16,10 +16,5 @@ namespace WingsOrdersSystem
         {
             InitializeComponent();
         }
-
-        private void xwLauchForm6_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

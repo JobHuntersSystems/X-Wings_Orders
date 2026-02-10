@@ -181,7 +181,6 @@ namespace WingsOrdersSystem
             this.xwLauchFrmCristalR.Size = new System.Drawing.Size(450, 225);
             this.xwLauchFrmCristalR.TabIndex = 5;
             this.xwLauchFrmCristalR.Title = "Crystal Report";
-            this.xwLauchFrmCristalR.Load += new System.EventHandler(this.xwLauchForm6_Load);
             // 
             // xwLauchFrmEDI
             // 
