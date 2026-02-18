@@ -16,7 +16,7 @@ namespace WingsOrdersSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmFTP());
+            Application.Run(new frmMain());
         }
     }
 }
