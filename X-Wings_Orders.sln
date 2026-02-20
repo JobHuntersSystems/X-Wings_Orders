@@ -8,6 +8,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XWUserControls", "XWUserControls\XWUserControls.csproj", "{20024C37-D0AD-4669-8D96-62F789CD6D79}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrystalReport", "CrystalReport\CrystalReport.csproj", "{AA9FB912-1040-4ED2-8784-EC118234B12F}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsDesigner", "FormsDesigner\FormsDesigner.csproj", "{A720E2B0-7044-49E1-BC2E-11E8394BC8DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factories", "Factories\Factories.csproj", "{FA6DDA1A-587B-4210-8CD0-3FD6CFB71005}"
