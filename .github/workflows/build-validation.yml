@@ -29,6 +29,5 @@ jobs:
 
     - name: Install Crystal Reports Runtime
       run: |
-        Start-BitsTransfer -Source "https://downloads.sap.com/CRforVS13SP33.exe" -Destination "."
-        .\CRforVS13SP33.exe /quiet /norestart
-      shell: powershell
+        Invoke-WebRequest -Uri "https://downloads.businessobjects.com/akdlm/crnetruntime/cr30sp25_redist_x64.msi" -OutFile "cr_runtime.msi"
+        Start-Process msiexec.exe -ArgumentList '/i', 'cr_runtime.msi', '/quiet', '/norestart' -Wait
