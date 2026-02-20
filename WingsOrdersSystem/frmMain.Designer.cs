@@ -256,6 +256,7 @@ namespace WingsOrdersSystem
             this.xwLauchFrmFactories.Size = new System.Drawing.Size(225, 225);
             this.xwLauchFrmFactories.TabIndex = 0;
             this.xwLauchFrmFactories.Title = "Factories";
+            this.xwLauchFrmFactories.ButtonClick += new System.EventHandler(this.xwLauchFrmFactories_ButtonClick);
             // 
             // frmMain
             // 
