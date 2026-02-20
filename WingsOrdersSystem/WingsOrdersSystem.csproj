@@ -92,6 +92,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Factories\Factories.csproj">
+      <Project>{fa6dda1a-587b-4210-8cd0-3fd6cfb71005}</Project>
+      <Name>Factories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FormsDesigner\FormsDesigner.csproj">
+      <Project>{a720e2b0-7044-49e1-bc2e-11e8394bc8dc}</Project>
+      <Name>FormsDesigner</Name>
+    </ProjectReference>
     <Content Include="FTP_XML.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

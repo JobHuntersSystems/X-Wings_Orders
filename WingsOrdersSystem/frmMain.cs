@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Factories;
 
 namespace WingsOrdersSystem
 {
@@ -15,6 +16,11 @@ namespace WingsOrdersSystem
         public frmMain()
         {
             InitializeComponent();
+        }
+        private void xwLauchFrmFactories_ButtonClick(object sender, EventArgs e)
+        {
+            frmFactories frm = new frmFactories("Factories");
+            frm.Show();
         }
     }
 }

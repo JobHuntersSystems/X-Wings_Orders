@@ -17,8 +17,12 @@ namespace XWUserControls
             InitializeComponent();
         }
         #region Properties
-        Color OriginalBackColor;
-        private string _Title= "Option";
+        Color initialBackColor;
+        Color initialFontColor;
+
+        [Browsable(true)]
+        [Category("UI")]
+        [Description("Set the title of the control")]
         public string Title
         {
             get { return _Title; }
@@ -28,8 +32,11 @@ namespace XWUserControls
                 this.lblOptionName.Text = value;
             }
         }
+        private string _Title = "Option";
 
-        private string _InitialImagePath;
+        [Browsable(true)]
+        [Category("UI")]
+        [Description("Set the intial image path")]
         public string InitialImagePath
         {
             get { return _InitialImagePath; }
@@ -40,7 +47,11 @@ namespace XWUserControls
                 pctOptionIcon.ImageLocation = AppDomain.CurrentDomain.BaseDirectory + _InitialImagePath;
             }
         }
-        private string _HoverImagePath;
+        private string _InitialImagePath;
+
+        [Browsable(true)]
+        [Category("UI")]
+        [Description("Set the image path that will be displayed when the cursor hovers over the control")]
         public string HoverImagePath
         {
             get { return _HoverImagePath; }
@@ -50,7 +61,11 @@ namespace XWUserControls
                 _HoverImagePath = path;
             }
         }
-        private int[] _HoverFontColor = new int[] { 0, 0, 0 };
+        private string _HoverImagePath;
+
+        [Browsable(true)]
+        [Category("UI")]
+        [Description("Set the font RGB color that will be displayed when the cursor hovers over the control")]
         public string HoverFontColor
         {
             get
@@ -71,7 +86,11 @@ namespace XWUserControls
                 }
             }
         }
-        private int[] _HoverBackColor = new int[] { 244, 244, 244 };
+        private int[] _HoverFontColor = new int[] { 0, 0, 0 };
+
+        [Browsable(true)]
+        [Category("UI")]
+        [Description("Set the RGB backcolor that will be displayed when the cursor hovers over the control")]
         public string HoverBackColor
         {
             get
@@ -92,20 +111,31 @@ namespace XWUserControls
                 }
             }
         }
+        private int[] _HoverBackColor = new int[] { 244, 244, 244 };
+
+        [Browsable(true)]
+        [Category("Action")]
+        [Description("Invoked when user clicks button")]
+        public event EventHandler ButtonClick;
         #endregion
 
         #region Events
         //Evento Load: del control suscribiremos nuestros controles a los eventos de "MouseEnter y "MouseLeave"
         private void XWLauchForm_Load(object sender, EventArgs e)
         {
-            OriginalBackColor = this.BackColor;
+            initialBackColor = this.BackColor;
+            initialFontColor = this.ForeColor;
             pnlMain.MouseEnter += new EventHandler(Control_MouseEnter);
             pnlMain.MouseLeave += new EventHandler(Control_MouseLeave);
+            pnlMain.Click += Control_Click;
             foreach (Control ctrl in pnlMain.Controls)
             {
                 ctrl.MouseEnter += new EventHandler(Control_MouseEnter);
                 ctrl.MouseLeave += new EventHandler(Control_MouseLeave);
+                ctrl.Click += Control_Click;
+
             }
+
         }
         //Evento Click: Cuando se haga click sobre cualquier parte del control, este abrira un frm mediante "Reflection"
         private void Control_MouseEnter(object sender, EventArgs e)
@@ -118,10 +148,16 @@ namespace XWUserControls
         {
             pctOptionIcon.ImageLocation = AppDomain.CurrentDomain.BaseDirectory + _InitialImagePath;
 
-            this.ForeColor = this.Parent.ForeColor;
-            this.BackColor = OriginalBackColor;
+            this.ForeColor = initialFontColor;
+            this.BackColor = initialBackColor;
 
         }
+        private void Control_Click(object sender, EventArgs e)
+        {
+            if (this.ButtonClick != null)
+                this.ButtonClick(this, e);
+        }
+
         #endregion
     }
 }
