@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsDesigner", "FormsDesig
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factories", "Factories\Factories.csproj", "{FA6DDA1A-587B-4210-8CD0-3FD6CFB71005}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperationalAreas", "OperationalAreas\OperationalAreas.csproj", "{F5A1BFFD-F5AF-4470-8890-B10EAEB86A30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FA6DDA1A-587B-4210-8CD0-3FD6CFB71005}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA6DDA1A-587B-4210-8CD0-3FD6CFB71005}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA6DDA1A-587B-4210-8CD0-3FD6CFB71005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A1BFFD-F5AF-4470-8890-B10EAEB86A30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A1BFFD-F5AF-4470-8890-B10EAEB86A30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A1BFFD-F5AF-4470-8890-B10EAEB86A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A1BFFD-F5AF-4470-8890-B10EAEB86A30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
