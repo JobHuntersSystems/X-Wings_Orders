@@ -8,6 +8,6 @@
 	<Folders>
 		<RemoteRoot>/</RemoteRoot>
 		<Processed>Tractats</Processed>
-		<Local>documents\edi</Local>
+		<Local>..\..\..\App\Documents\edi</Local>
 	</Folders>
 </FtpConfig>

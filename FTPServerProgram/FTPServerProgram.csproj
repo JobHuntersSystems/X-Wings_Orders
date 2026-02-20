@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A54F4077-A4D9-453E-8D2D-6423FDE076DE}</ProjectGuid>
+    <ProjectGuid>{3C2BC488-9181-4A31-94DE-944158F8540A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WingsOrdersSystem</RootNamespace>
-    <AssemblyName>WingsOrdersSystem</AssemblyName>
+    <RootNamespace>FTPServerProgram</RootNamespace>
+    <AssemblyName>FTPServerProgram</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\App\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -46,16 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmMain.cs">
+    <Compile Include="FrmFTP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <Compile Include="FrmFTP.Designer.cs">
+      <DependentUpon>FrmFTP.cs</DependentUpon>
     </Compile>
+    <Compile Include="FtpConfig.cs" />
+    <Compile Include="FtpConfigReader.cs" />
+    <Compile Include="FtpService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="FrmFTP.resx">
+      <DependentUpon>FrmFTP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -80,10 +83,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XWUserControls\XWUserControls.csproj">
-      <Project>{20024c37-d0ad-4669-8d96-62f789cd6d79}</Project>
-      <Name>XWUserControls</Name>
-    </ProjectReference>
+    <Content Include="FTP_XML.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
