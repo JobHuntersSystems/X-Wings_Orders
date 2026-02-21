@@ -1,7 +1,6 @@
-﻿
-namespace Factories
+﻿namespace OperationalAreas
 {
-    partial class frmFactories
+    partial class frmOperationalAreas
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -30,21 +29,21 @@ namespace Factories
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblCode = new System.Windows.Forms.Label();
-            this.txtCode = new System.Windows.Forms.TextBox();
-            this.txtDesc = new System.Windows.Forms.TextBox();
             this.lblDesc = new System.Windows.Forms.Label();
+            this.lblCode = new System.Windows.Forms.Label();
+            this.txtDesc = new System.Windows.Forms.TextBox();
+            this.txtCode = new System.Windows.Forms.TextBox();
             this.logsTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(1448, 301);
+            this.btnUpdate.Location = new System.Drawing.Point(1448, 370);
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(1312, 301);
+            this.btnCreate.Location = new System.Drawing.Point(1312, 370);
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // lblTitle
@@ -53,77 +52,80 @@ namespace Factories
             // 
             // lblLog
             // 
-            this.lblLog.Location = new System.Drawing.Point(527, 308);
-            // 
-            // lblCode
-            // 
-            this.lblCode.AutoSize = true;
-            this.lblCode.Location = new System.Drawing.Point(141, 189);
-            this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(60, 24);
-            this.lblCode.TabIndex = 3;
-            this.lblCode.Text = "Code";
-            // 
-            // txtCode
-            // 
-            this.txtCode.Location = new System.Drawing.Point(207, 189);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(232, 29);
-            this.txtCode.TabIndex = 4;
-            this.txtCode.Tag = "codeFactory";
-            // 
-            // txtDesc
-            // 
-            this.txtDesc.Location = new System.Drawing.Point(207, 256);
-            this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(436, 29);
-            this.txtDesc.TabIndex = 6;
-            this.txtDesc.Tag = "DescFactory";
+            this.lblLog.Location = new System.Drawing.Point(527, 377);
             // 
             // lblDesc
             // 
             this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(86, 256);
+            this.lblDesc.Location = new System.Drawing.Point(78, 235);
             this.lblDesc.Name = "lblDesc";
             this.lblDesc.Size = new System.Drawing.Size(115, 24);
-            this.lblDesc.TabIndex = 5;
+            this.lblDesc.TabIndex = 18;
             this.lblDesc.Text = "Description";
+            // 
+            // lblCode
+            // 
+            this.lblCode.AutoSize = true;
+            this.lblCode.Location = new System.Drawing.Point(135, 175);
+            this.lblCode.Name = "lblCode";
+            this.lblCode.Size = new System.Drawing.Size(60, 24);
+            this.lblCode.TabIndex = 16;
+            this.lblCode.Text = "Code";
+            // 
+            // txtDesc
+            // 
+            this.txtDesc.Location = new System.Drawing.Point(255, 232);
+            this.txtDesc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(436, 29);
+            this.txtDesc.TabIndex = 13;
+            this.txtDesc.Tag = "DescOperationalArea";
+            // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(255, 170);
+            this.txtCode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCode.MaxLength = 12;
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(233, 29);
+            this.txtCode.TabIndex = 12;
+            this.txtCode.Tag = "CodeOperationalArea";
             // 
             // logsTimer
             // 
             this.logsTimer.Interval = 2000;
             this.logsTimer.Tick += new System.EventHandler(this.logsTimer_Tick);
             // 
-            // frmFactories
+            // frmOperationalAreas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1650, 941);
-            this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.lblDesc);
-            this.Controls.Add(this.txtCode);
             this.Controls.Add(this.lblCode);
+            this.Controls.Add(this.txtCode);
+            this.Controls.Add(this.txtDesc);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "frmFactories";
-            this.Load += new System.EventHandler(this.frmFactories_Load);
-            this.Controls.SetChildIndex(this.lblTitle, 0);
-            this.Controls.SetChildIndex(this.lblLog, 0);
+            this.Name = "frmOperationalAreas";
+            this.Load += new System.EventHandler(this.frmOperationalAreas_Load);
+            this.Controls.SetChildIndex(this.txtDesc, 0);
+            this.Controls.SetChildIndex(this.txtCode, 0);
+            this.Controls.SetChildIndex(this.lblCode, 0);
+            this.Controls.SetChildIndex(this.lblDesc, 0);
             this.Controls.SetChildIndex(this.btnUpdate, 0);
             this.Controls.SetChildIndex(this.btnCreate, 0);
-            this.Controls.SetChildIndex(this.lblCode, 0);
-            this.Controls.SetChildIndex(this.txtCode, 0);
-            this.Controls.SetChildIndex(this.lblDesc, 0);
-            this.Controls.SetChildIndex(this.txtDesc, 0);
+            this.Controls.SetChildIndex(this.lblTitle, 0);
+            this.Controls.SetChildIndex(this.lblLog, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblCode;
-        private System.Windows.Forms.TextBox txtCode;
-        private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.Label lblDesc;
+        private System.Windows.Forms.Label lblCode;
+        private System.Windows.Forms.TextBox txtDesc;
+        private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Timer logsTimer;
     }
 }

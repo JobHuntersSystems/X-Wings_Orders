@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A54F4077-A4D9-453E-8D2D-6423FDE076DE}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>WingsOrdersSystem</RootNamespace>
-    <AssemblyName>WingsOrdersSystem</AssemblyName>
+    <ProjectGuid>{F5A1BFFD-F5AF-4470-8890-B10EAEB86A30}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>OperationalAreas</RootNamespace>
+    <AssemblyName>OperationalAreas</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,9 +32,21 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,16 +58,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmMain.cs">
+    <Compile Include="frmOperationalAreas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <Compile Include="frmOperationalAreas.Designer.cs">
+      <DependentUpon>frmOperationalAreas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="OperationalAreas.cs">
+      <DependentUpon>OperationalAreasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OperationalAreasModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OperationalAreasModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OperationalAreasModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OperationalAreasModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OperationalAreasModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OperationalAreasModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="frmOperationalAreas.resx">
+      <DependentUpon>frmOperationalAreas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +95,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="OperationalAreasModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OperationalAreasModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="OperationalAreasModel.edmx.diagram">
+      <DependentUpon>OperationalAreasModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -80,22 +117,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Factories\Factories.csproj">
-      <Project>{fa6dda1a-587b-4210-8cd0-3fd6cfb71005}</Project>
-      <Name>Factories</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FormsDesigner\FormsDesigner.csproj">
       <Project>{a720e2b0-7044-49e1-bc2e-11e8394bc8dc}</Project>
       <Name>FormsDesigner</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OperationalAreas\OperationalAreas.csproj">
-      <Project>{f5a1bffd-f5af-4470-8890-b10eaeb86a30}</Project>
-      <Name>OperationalAreas</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\XWUserControls\XWUserControls.csproj">
-      <Project>{20024c37-d0ad-4669-8d96-62f789cd6d79}</Project>
-      <Name>XWUserControls</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OperationalAreasModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>OperationalAreasModel.Context.cs</LastGenOutput>
+      <DependentUpon>OperationalAreasModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="OperationalAreasModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OperationalAreasModel.edmx</DependentUpon>
+      <LastGenOutput>OperationalAreasModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
