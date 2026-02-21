@@ -10,11 +10,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrystalReport", "CrystalReport\CrystalReport.csproj", "{AA9FB912-1040-4ED2-8784-EC118234B12F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FTPServerProgram", "FTPServerProgram\FTPServerProgram.csproj", "{3C2BC488-9181-4A31-94DE-944158F8540A}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsDesigner", "FormsDesigner\FormsDesigner.csproj", "{A720E2B0-7044-49E1-BC2E-11E8394BC8DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factories", "Factories\Factories.csproj", "{FA6DDA1A-587B-4210-8CD0-3FD6CFB71005}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperationalAreas", "OperationalAreas\OperationalAreas.csproj", "{F5A1BFFD-F5AF-4470-8890-B10EAEB86A30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Routes", "Routes\Routes.csproj", "{D97B3B89-886F-4235-B88A-E4157E4B6703}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +53,10 @@ Global
 		{F5A1BFFD-F5AF-4470-8890-B10EAEB86A30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5A1BFFD-F5AF-4470-8890-B10EAEB86A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5A1BFFD-F5AF-4470-8890-B10EAEB86A30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D97B3B89-886F-4235-B88A-E4157E4B6703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D97B3B89-886F-4235-B88A-E4157E4B6703}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D97B3B89-886F-4235-B88A-E4157E4B6703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D97B3B89-886F-4235-B88A-E4157E4B6703}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

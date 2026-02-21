@@ -98,8 +98,7 @@ namespace OperationalAreas
             {
                 db.Entry(ent).State = EntityState.Deleted;
             }
-            db.SaveChanges();
-            
+            db.SaveChanges();            
         }
           
         private void frmOperationalAreas_Load(object sender, EventArgs e)
