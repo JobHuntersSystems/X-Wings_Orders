@@ -1,5 +1,5 @@
 ﻿
-namespace WingsOrdersSystem
+namespace FTPServerProgram
 {
 	partial class FrmFTP
 	{
@@ -35,21 +35,21 @@ namespace WingsOrdersSystem
 			// 
 			// btnCheck
 			// 
-			this.btnCheck.Location = new System.Drawing.Point(316, 135);
+			this.btnCheck.Location = new System.Drawing.Point(326, 125);
 			this.btnCheck.Name = "btnCheck";
 			this.btnCheck.Size = new System.Drawing.Size(75, 23);
-			this.btnCheck.TabIndex = 0;
+			this.btnCheck.TabIndex = 1;
 			this.btnCheck.Text = "Check";
 			this.btnCheck.UseVisualStyleBackColor = true;
 			this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
 			// 
 			// txtLog
 			// 
-			this.txtLog.Location = new System.Drawing.Point(420, 135);
+			this.txtLog.Location = new System.Drawing.Point(443, 135);
 			this.txtLog.Multiline = true;
 			this.txtLog.Name = "txtLog";
 			this.txtLog.Size = new System.Drawing.Size(334, 303);
-			this.txtLog.TabIndex = 1;
+			this.txtLog.TabIndex = 2;
 			// 
 			// FrmFTP
 			// 
@@ -59,7 +59,7 @@ namespace WingsOrdersSystem
 			this.Controls.Add(this.txtLog);
 			this.Controls.Add(this.btnCheck);
 			this.Name = "FrmFTP";
-			this.Text = "FrmFTP";
+			this.Text = "Form1";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -71,3 +71,4 @@ namespace WingsOrdersSystem
 		private System.Windows.Forms.TextBox txtLog;
 	}
 }
+

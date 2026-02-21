@@ -9,9 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XWUserControls", "XWUserCon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrystalReport", "CrystalReport\CrystalReport.csproj", "{AA9FB912-1040-4ED2-8784-EC118234B12F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FTPServerProgram", "FTPServerProgram\FTPServerProgram.csproj", "{3C2BC488-9181-4A31-94DE-944158F8540A}"
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsDesigner", "FormsDesigner\FormsDesigner.csproj", "{A720E2B0-7044-49E1-BC2E-11E8394BC8DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factories", "Factories\Factories.csproj", "{FA6DDA1A-587B-4210-8CD0-3FD6CFB71005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperationalAreas", "OperationalAreas\OperationalAreas.csproj", "{F5A1BFFD-F5AF-4470-8890-B10EAEB86A30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +34,10 @@ Global
 		{AA9FB912-1040-4ED2-8784-EC118234B12F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA9FB912-1040-4ED2-8784-EC118234B12F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA9FB912-1040-4ED2-8784-EC118234B12F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C2BC488-9181-4A31-94DE-944158F8540A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C2BC488-9181-4A31-94DE-944158F8540A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C2BC488-9181-4A31-94DE-944158F8540A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C2BC488-9181-4A31-94DE-944158F8540A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A720E2B0-7044-49E1-BC2E-11E8394BC8DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A720E2B0-7044-49E1-BC2E-11E8394BC8DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A720E2B0-7044-49E1-BC2E-11E8394BC8DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +46,10 @@ Global
 		{FA6DDA1A-587B-4210-8CD0-3FD6CFB71005}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA6DDA1A-587B-4210-8CD0-3FD6CFB71005}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA6DDA1A-587B-4210-8CD0-3FD6CFB71005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A1BFFD-F5AF-4470-8890-B10EAEB86A30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A1BFFD-F5AF-4470-8890-B10EAEB86A30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A1BFFD-F5AF-4470-8890-B10EAEB86A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A1BFFD-F5AF-4470-8890-B10EAEB86A30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

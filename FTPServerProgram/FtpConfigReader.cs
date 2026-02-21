@@ -7,7 +7,7 @@ using System.Xml.Linq;
 using System.IO;
 using System.Windows.Forms;
 
-namespace WingsOrdersSystem
+namespace FTPServerProgram
 {
 	public static class FtpConfigReader
 	{
