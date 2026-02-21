@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
+using System.Data.SqlClient;
 
 namespace Routes
 {
@@ -31,8 +32,6 @@ namespace Routes
         #region Method
         private void GetData()
         {
-            db = new RoutesEntities();
-
             var query = from r in db.Routes
                         join p in db.Planets on r.idPlanetDest equals p.idPlanet
                         join p2 in db.Planets on r.idPlanetOr equals p2.idPlanet
@@ -172,6 +171,15 @@ namespace Routes
                 DgvConfiguration();
                 Bind();
             }
+            catch (SqlException sql_ex)
+            {
+                MessageBox.Show(
+                   $"SQL Server exception:\n{sql_ex.Message}",
+                   "Error de conexión",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Error
+               );
+            }
             catch ( Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -218,6 +226,15 @@ namespace Routes
                 lblLog.Visible = true;
                 lblLog.Text = "Registers updated successfully";
                 logsTimer.Start();
+            }
+            catch (SqlException sql_ex)
+            {
+                MessageBox.Show(
+                   $"SQL Server exception:\n{sql_ex.Message}",
+                   "Error de conexión",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Error
+               );
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException ex)
             {
