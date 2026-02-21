@@ -39,15 +39,21 @@ namespace Factories
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Location = new System.Drawing.Point(1448, 301);
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCreate
             // 
+            this.btnCreate.Location = new System.Drawing.Point(1312, 301);
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // lblTitle
             // 
             this.lblTitle.Text = "";
+            // 
+            // lblLog
+            // 
+            this.lblLog.Location = new System.Drawing.Point(527, 308);
             // 
             // lblCode
             // 
@@ -91,7 +97,7 @@ namespace Factories
             // frmFactories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
-            this.ClientSize = new System.Drawing.Size(1650, 1010);
+            this.ClientSize = new System.Drawing.Size(1650, 941);
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.txtCode);

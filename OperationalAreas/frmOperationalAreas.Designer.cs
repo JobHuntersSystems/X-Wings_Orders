@@ -38,13 +38,21 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Location = new System.Drawing.Point(1448, 370);
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCreate
             // 
+            this.btnCreate.Location = new System.Drawing.Point(1312, 370);
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-
+            // lblTitle
+            // 
+            this.lblTitle.Text = "";
+            // 
+            // lblLog
+            // 
+            this.lblLog.Location = new System.Drawing.Point(527, 377);
             // 
             // lblDesc
             // 
@@ -70,7 +78,7 @@
             this.txtDesc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(436, 29);
-            this.txtDesc.TabIndex = 12;
+            this.txtDesc.TabIndex = 13;
             this.txtDesc.Tag = "DescOperationalArea";
             // 
             // txtCode
@@ -80,7 +88,7 @@
             this.txtCode.MaxLength = 12;
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(233, 29);
-            this.txtCode.TabIndex = 13;
+            this.txtCode.TabIndex = 12;
             this.txtCode.Tag = "CodeOperationalArea";
             // 
             // logsTimer
@@ -92,11 +100,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
+            this.ClientSize = new System.Drawing.Size(1650, 941);
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.lblCode);
             this.Controls.Add(this.txtCode);
             this.Controls.Add(this.txtDesc);
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "frmOperationalAreas";
             this.Load += new System.EventHandler(this.frmOperationalAreas_Load);
             this.Controls.SetChildIndex(this.txtDesc, 0);

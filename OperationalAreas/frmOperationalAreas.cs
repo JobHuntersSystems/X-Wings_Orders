@@ -15,8 +15,6 @@ namespace OperationalAreas
     public partial class frmOperationalAreas : FormsDesigner.frmBase
     {
         OperationalAreasEntities db;
-        List<OperationalAreas> oa;
-
         BindingSource bs;
         public frmOperationalAreas(string tableName)
         {
@@ -29,16 +27,12 @@ namespace OperationalAreas
         bool isNew = false;
         Color originalForeColor;
 
+        #region Methods
         private void ReadData()
         {
-            oa = db.OperationalAreas.ToList();
-
-            bs.DataSource = oa;
-
+            bs.DataSource = db.OperationalAreas.ToList(); 
             dgvBase.DataSource = bs;
-            Bind();
         }
-
         private void dgvConfiguration()
         {
             dgvBase.Columns["idOperationalArea"].Visible = false;
@@ -50,7 +44,6 @@ namespace OperationalAreas
             foreach (TextBox txt in this.Controls.OfType<TextBox>())
             {
                 txt.DataBindings.Clear();
-                txt.Clear();
                 txt.DataBindings.Add("Text", bs, txt.Tag.ToString(), true, DataSourceUpdateMode.OnValidation);
             }
         }
@@ -62,35 +55,60 @@ namespace OperationalAreas
                 txt.DataBindings.Clear();
             }
         }
-
-        private void dgvOperationalArea_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        private void SetNormalMode()
         {
+            btnCreate.Text = "Create";
+            btnCreate.ForeColor = originalForeColor;
 
+            Bind();
+            isNew = false;
+        }
+        private void CreateRegister()
+        {
+            if (txtCode.Text.Trim().Length != 0)
+            {
+                OperationalAreas opar = new OperationalAreas()
+                {
+                    CodeOperationalArea = txtCode.Text,
+                    DescOperationalArea = txtDesc.Text
+                };
+                db.OperationalAreas.Add(opar);
+            }
+        }
+        private void UpdateData()
+        {
+            if (isNew)
+            {
+                CreateRegister();
+                SetNormalMode();
+            }
+            bs.EndEdit();
+            db.SaveChanges();
+            ReadData();
+        }
+        #endregion
+
+        #region events
+        protected override void dgv_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
             var ent = e.Row.DataBoundItem as OperationalAreas;
             if (ent == null) return;
 
-            DialogResult dr = MessageBox.Show("Are you sure?", "Confirmr", MessageBoxButtons.YesNo);
-
-            if (dr == DialogResult.Yes)
+            if (db.Entry(ent).State != EntityState.Added)
             {
-                if (db.Entry(ent).State != EntityState.Added)
-                {
-                    db.Entry(ent).State = EntityState.Deleted;
-                }
-                db.SaveChanges();
+                db.Entry(ent).State = EntityState.Deleted;
             }
-            else
-            {
-                e.Cancel = true;
-            }
+            db.SaveChanges();
+            
         }
-
+          
         private void frmOperationalAreas_Load(object sender, EventArgs e)
         {
             try
             {
                 ReadData();
                 dgvConfiguration();
+                Bind();
             }
             catch (Exception ex)
             {
@@ -102,28 +120,11 @@ namespace OperationalAreas
         {
             try
             {
-                bs.EndEdit();
-                if (isNew && txtCode.Text.Trim().Length != 0)
-                {
-                    OperationalAreas opar = new OperationalAreas()
-                    {
-                        CodeOperationalArea = txtCode.Text,
-                        DescOperationalArea = txtDesc.Text
-                    };
-                    db.OperationalAreas.Add(opar);
-                }
-                db.SaveChanges();
+                UpdateData();
 
                 lblLog.Visible = true;
                 lblLog.Text = "Registers updated successfully";
                 logsTimer.Start(); 
-
-                ReadData();
-                isNew = false;
-
-                btnCreate.Text = "Create";
-                btnCreate.ForeColor = originalForeColor;
-
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException ex)
             {
@@ -137,13 +138,20 @@ namespace OperationalAreas
         {
             try
             {
-                isNew = true;
-                NoBind();
-                txtCode.Focus();
+                if (!isNew) 
+                {
+                    isNew = true;
+                    NoBind();
+                    txtCode.Focus();
 
-                originalForeColor = btnCreate.ForeColor;
-                btnCreate.Text = "Cancel";
-                btnCreate.ForeColor = Color.Red;
+                    originalForeColor = btnCreate.ForeColor;
+                    btnCreate.Text = "Cancel";
+                    btnCreate.ForeColor = Color.Red;
+                }
+                else 
+                {
+                    SetNormalMode();
+                }
             }
             catch (Exception ex)
             {
@@ -156,7 +164,7 @@ namespace OperationalAreas
             logsTimer.Stop();
             lblLog.Text = "";
             lblLog.Visible = false;
-            logsTimer.Dispose();
         }
+        #endregion
     }
 }
