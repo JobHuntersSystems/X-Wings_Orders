@@ -101,3 +101,6 @@ App/*
 !App/**/
 ### Permitir archivos en subcarpetas de "App"
 !App/*/**
+
+# Permitir dependencias locales (Crystal Reports y otros)
+!lib/*.dll
