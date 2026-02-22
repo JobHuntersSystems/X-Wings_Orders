@@ -24,5 +24,17 @@ jobs:
     - name: Restaurar dependencias
       run: nuget restore X-Wings_Orders.sln
 
+    - name: Descargar instalador de Crystal Reports (EXE)
+      shell: powershell
+      run: |
+        Invoke-WebRequest -Uri "https://github.com/JobHuntersSystems/X-Wings_Orders/releases/download/dependencias-cr/CRforVS13SP28_0-10010309.EXE" -OutFile "CRInstaller.exe"
+
+    - name: Instalar Crystal Reports silenciosamente
+      shell: powershell
+      run: |
+        Start-Process -FilePath "CRInstaller.exe" -ArgumentList "/q" -Wait -NoNewWindow
+
     - name: Compilar Solución
       run: msbuild X-Wings_Orders.sln /p:Configuration=Release /p:Platform="Any CPU"
+
+    

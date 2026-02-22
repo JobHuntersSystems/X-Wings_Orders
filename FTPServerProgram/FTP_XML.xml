@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FtpConfig>
+	<ip>sqlserver.S2AM.sdslab.cat</ip>
+	<Credentials>
+		<UserName>g02</UserName>
+		<Password>12345aA</Password>
+	</Credentials>
+	<Folders>
+		<RemoteRoot>/</RemoteRoot>
+		<Processed>Tractats</Processed>
+		<Local>..\..\..\App\Documents\edi</Local>
+	</Folders>
+</FtpConfig>

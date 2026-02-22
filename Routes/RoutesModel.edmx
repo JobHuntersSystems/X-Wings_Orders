@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RoutesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PlanetRoutes">
+          <Key>
+            <PropertyRef Name="idPlanetRoute" />
+          </Key>
+          <Property Name="idPlanetRoute" Type="int" Nullable="false" />
+          <Property Name="idPlanet" Type="int" />
+          <Property Name="idRoute" Type="int" />
+        </EntityType>
+        <EntityType Name="Planets">
+          <Key>
+            <PropertyRef Name="idPlanet" />
+          </Key>
+          <Property Name="idPlanet" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodePlanet" Type="nvarchar" MaxLength="12" />
+          <Property Name="DescPlanet" Type="nvarchar" MaxLength="100" />
+          <Property Name="idSector" Type="int" />
+          <Property Name="long" Type="nvarchar" MaxLength="12" />
+          <Property Name="lat" Type="nvarchar" MaxLength="12" />
+          <Property Name="parsecs" Type="nvarchar" MaxLength="12" />
+          <Property Name="idNatives" Type="int" />
+          <Property Name="idFiliation" Type="int" />
+          <Property Name="PlanetPicture" Type="nvarchar" MaxLength="200" />
+          <Property Name="IPPlanet" Type="nvarchar" MaxLength="15" />
+          <Property Name="PortPlanet" Type="nvarchar" MaxLength="4" />
+          <Property Name="PortPlanet1" Type="nvarchar" MaxLength="4" />
+        </EntityType>
+        <EntityType Name="Routes">
+          <Key>
+            <PropertyRef Name="idRoute" />
+          </Key>
+          <Property Name="idRoute" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodeRoute" Type="nvarchar" MaxLength="12" />
+          <Property Name="DescRoute" Type="nvarchar" MaxLength="100" />
+          <Property Name="idPlanetOr" Type="int" />
+          <Property Name="idPlanetDest" Type="int" />
+          <Property Name="idRouteType" Type="int" />
+        </EntityType>
+        <EntityType Name="RouteTypes">
+          <Key>
+            <PropertyRef Name="idRouteType" />
+          </Key>
+          <Property Name="idRouteType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodeRouteType" Type="nvarchar" MaxLength="12" />
+          <Property Name="DescRouteType" Type="nvarchar" MaxLength="100" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <Association Name="FK_PlanetRoutes_Planets">
+          <End Role="Planets" Type="Self.Planets" Multiplicity="0..1" />
+          <End Role="PlanetRoutes" Type="Self.PlanetRoutes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Planets">
+              <PropertyRef Name="idPlanet" />
+            </Principal>
+            <Dependent Role="PlanetRoutes">
+              <PropertyRef Name="idPlanet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PlanetRoutes_Routes">
+          <End Role="Routes" Type="Self.Routes" Multiplicity="0..1" />
+          <End Role="PlanetRoutes" Type="Self.PlanetRoutes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Routes">
+              <PropertyRef Name="idRoute" />
+            </Principal>
+            <Dependent Role="PlanetRoutes">
+              <PropertyRef Name="idRoute" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Routes_RouteTypes">
+          <End Role="RouteTypes" Type="Self.RouteTypes" Multiplicity="0..1" />
+          <End Role="Routes" Type="Self.Routes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RouteTypes">
+              <PropertyRef Name="idRouteType" />
+            </Principal>
+            <Dependent Role="Routes">
+              <PropertyRef Name="idRouteType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RoutesModelStoreContainer">
+          <EntitySet Name="PlanetRoutes" EntityType="Self.PlanetRoutes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Planets" EntityType="Self.Planets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Routes" EntityType="Self.Routes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RouteTypes" EntityType="Self.RouteTypes" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_PlanetRoutes_Planets" Association="Self.FK_PlanetRoutes_Planets">
+            <End Role="Planets" EntitySet="Planets" />
+            <End Role="PlanetRoutes" EntitySet="PlanetRoutes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PlanetRoutes_Routes" Association="Self.FK_PlanetRoutes_Routes">
+            <End Role="Routes" EntitySet="Routes" />
+            <End Role="PlanetRoutes" EntitySet="PlanetRoutes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Routes_RouteTypes" Association="Self.FK_Routes_RouteTypes">
+            <End Role="RouteTypes" EntitySet="RouteTypes" />
+            <End Role="Routes" EntitySet="Routes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RoutesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PlanetRoutes">
+          <Key>
+            <PropertyRef Name="idPlanetRoute" />
+          </Key>
+          <Property Name="idPlanetRoute" Type="Int32" Nullable="false" />
+          <Property Name="idPlanet" Type="Int32" />
+          <Property Name="idRoute" Type="Int32" />
+          <NavigationProperty Name="Planets" Relationship="Self.FK_PlanetRoutes_Planets" FromRole="PlanetRoutes" ToRole="Planets" />
+          <NavigationProperty Name="Routes" Relationship="Self.FK_PlanetRoutes_Routes" FromRole="PlanetRoutes" ToRole="Routes" />
+        </EntityType>
+        <EntityType Name="Planets">
+          <Key>
+            <PropertyRef Name="idPlanet" />
+          </Key>
+          <Property Name="idPlanet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodePlanet" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="DescPlanet" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="idSector" Type="Int32" />
+          <Property Name="long" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="lat" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="parsecs" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="idNatives" Type="Int32" />
+          <Property Name="idFiliation" Type="Int32" />
+          <Property Name="PlanetPicture" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IPPlanet" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PortPlanet" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="PortPlanet1" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PlanetRoutes" Relationship="Self.FK_PlanetRoutes_Planets" FromRole="Planets" ToRole="PlanetRoutes" />
+        </EntityType>
+        <EntityType Name="Routes">
+          <Key>
+            <PropertyRef Name="idRoute" />
+          </Key>
+          <Property Name="idRoute" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodeRoute" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="DescRoute" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="idPlanetOr" Type="Int32" />
+          <Property Name="idPlanetDest" Type="Int32" />
+          <Property Name="idRouteType" Type="Int32" />
+          <NavigationProperty Name="PlanetRoutes" Relationship="Self.FK_PlanetRoutes_Routes" FromRole="Routes" ToRole="PlanetRoutes" />
+          <NavigationProperty Name="RouteTypes" Relationship="Self.FK_Routes_RouteTypes" FromRole="Routes" ToRole="RouteTypes" />
+        </EntityType>
+        <EntityType Name="RouteTypes">
+          <Key>
+            <PropertyRef Name="idRouteType" />
+          </Key>
+          <Property Name="idRouteType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodeRouteType" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="DescRouteType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Routes" Relationship="Self.FK_Routes_RouteTypes" FromRole="RouteTypes" ToRole="Routes" />
+        </EntityType>
+        <Association Name="FK_PlanetRoutes_Planets">
+          <End Role="Planets" Type="Self.Planets" Multiplicity="0..1" />
+          <End Role="PlanetRoutes" Type="Self.PlanetRoutes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Planets">
+              <PropertyRef Name="idPlanet" />
+            </Principal>
+            <Dependent Role="PlanetRoutes">
+              <PropertyRef Name="idPlanet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PlanetRoutes_Routes">
+          <End Role="Routes" Type="Self.Routes" Multiplicity="0..1" />
+          <End Role="PlanetRoutes" Type="Self.PlanetRoutes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Routes">
+              <PropertyRef Name="idRoute" />
+            </Principal>
+            <Dependent Role="PlanetRoutes">
+              <PropertyRef Name="idRoute" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Routes_RouteTypes">
+          <End Role="RouteTypes" Type="Self.RouteTypes" Multiplicity="0..1" />
+          <End Role="Routes" Type="Self.Routes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RouteTypes">
+              <PropertyRef Name="idRouteType" />
+            </Principal>
+            <Dependent Role="Routes">
+              <PropertyRef Name="idRouteType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RoutesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PlanetRoutes" EntityType="Self.PlanetRoutes" />
+          <EntitySet Name="Planets" EntityType="Self.Planets" />
+          <EntitySet Name="Routes" EntityType="Self.Routes" />
+          <EntitySet Name="RouteTypes" EntityType="Self.RouteTypes" />
+          <AssociationSet Name="FK_PlanetRoutes_Planets" Association="Self.FK_PlanetRoutes_Planets">
+            <End Role="Planets" EntitySet="Planets" />
+            <End Role="PlanetRoutes" EntitySet="PlanetRoutes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PlanetRoutes_Routes" Association="Self.FK_PlanetRoutes_Routes">
+            <End Role="Routes" EntitySet="Routes" />
+            <End Role="PlanetRoutes" EntitySet="PlanetRoutes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Routes_RouteTypes" Association="Self.FK_Routes_RouteTypes">
+            <End Role="RouteTypes" EntitySet="RouteTypes" />
+            <End Role="Routes" EntitySet="Routes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RoutesModelStoreContainer" CdmEntityContainer="RoutesEntities">
+          <EntitySetMapping Name="PlanetRoutes">
+            <EntityTypeMapping TypeName="RoutesModel.PlanetRoutes">
+              <MappingFragment StoreEntitySet="PlanetRoutes">
+                <ScalarProperty Name="idPlanetRoute" ColumnName="idPlanetRoute" />
+                <ScalarProperty Name="idPlanet" ColumnName="idPlanet" />
+                <ScalarProperty Name="idRoute" ColumnName="idRoute" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Planets">
+            <EntityTypeMapping TypeName="RoutesModel.Planets">
+              <MappingFragment StoreEntitySet="Planets">
+                <ScalarProperty Name="idPlanet" ColumnName="idPlanet" />
+                <ScalarProperty Name="CodePlanet" ColumnName="CodePlanet" />
+                <ScalarProperty Name="DescPlanet" ColumnName="DescPlanet" />
+                <ScalarProperty Name="idSector" ColumnName="idSector" />
+                <ScalarProperty Name="long" ColumnName="long" />
+                <ScalarProperty Name="lat" ColumnName="lat" />
+                <ScalarProperty Name="parsecs" ColumnName="parsecs" />
+                <ScalarProperty Name="idNatives" ColumnName="idNatives" />
+                <ScalarProperty Name="idFiliation" ColumnName="idFiliation" />
+                <ScalarProperty Name="PlanetPicture" ColumnName="PlanetPicture" />
+                <ScalarProperty Name="IPPlanet" ColumnName="IPPlanet" />
+                <ScalarProperty Name="PortPlanet" ColumnName="PortPlanet" />
+                <ScalarProperty Name="PortPlanet1" ColumnName="PortPlanet1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Routes">
+            <EntityTypeMapping TypeName="RoutesModel.Routes">
+              <MappingFragment StoreEntitySet="Routes">
+                <ScalarProperty Name="idRoute" ColumnName="idRoute" />
+                <ScalarProperty Name="CodeRoute" ColumnName="CodeRoute" />
+                <ScalarProperty Name="DescRoute" ColumnName="DescRoute" />
+                <ScalarProperty Name="idPlanetOr" ColumnName="idPlanetOr" />
+                <ScalarProperty Name="idPlanetDest" ColumnName="idPlanetDest" />
+                <ScalarProperty Name="idRouteType" ColumnName="idRouteType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RouteTypes">
+            <EntityTypeMapping TypeName="RoutesModel.RouteTypes">
+              <MappingFragment StoreEntitySet="RouteTypes">
+                <ScalarProperty Name="idRouteType" ColumnName="idRouteType" />
+                <ScalarProperty Name="CodeRouteType" ColumnName="CodeRouteType" />
+                <ScalarProperty Name="DescRouteType" ColumnName="DescRouteType" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
