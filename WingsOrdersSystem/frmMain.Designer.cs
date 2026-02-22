@@ -201,8 +201,6 @@ namespace WingsOrdersSystem
 			this.xwLauchFrmEDI.TabIndex = 4;
 			this.xwLauchFrmEDI.Title = "EDI Processor";
             this.xwLauchFrmEDI.ButtonClick += new System.EventHandler(this.xwLauchFrmEDI_ButtonClick);
-            this.xwLauchFrmEDI.Load += new System.EventHandler(this.xwLauchFrmEDI_Load);
-            this.xwLauchFrmEDI.Click += new System.EventHandler(this.xwLauchFrmEDI_Click);
 			// 
 			// xwLauchFrmRutas
 			// 
