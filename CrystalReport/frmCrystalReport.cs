@@ -12,6 +12,7 @@ namespace CrystalReport
     public partial class frmCrystalReport : Form
     {
         private List<int> _idOrder;
+        private ReportDocument cryRpt;
         public frmCrystalReport(List<int> idOrder)
         {
             InitializeComponent();
@@ -22,7 +23,7 @@ namespace CrystalReport
         {
             try
             {
-                ReportDocument cryRpt = new ReportDocument();
+                cryRpt= new ReportDocument();
                 string pathReport = System.IO.Path.Combine(Application.StartupPath, "JobHuntersReport.rpt");
                 cryRpt.Load(pathReport);
 
@@ -75,6 +76,15 @@ namespace CrystalReport
                 TableLogOnInfo tableLogOnInfo = table.LogOnInfo;
                 tableLogOnInfo.ConnectionInfo = connectionInfo;
                 table.ApplyLogOnInfo(tableLogOnInfo);
+            }
+        }
+
+        private void frmCrystalReport_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(cryRpt != null)
+            {
+                cryRpt.Close();
+                cryRpt.Dispose();
             }
         }
     }

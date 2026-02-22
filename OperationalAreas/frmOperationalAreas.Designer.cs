@@ -76,6 +76,7 @@
             // 
             this.txtDesc.Location = new System.Drawing.Point(255, 232);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDesc.MaxLength = 100;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(436, 29);
             this.txtDesc.TabIndex = 13;

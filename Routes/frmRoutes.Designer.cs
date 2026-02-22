@@ -168,6 +168,7 @@ namespace Routes
             // 
             this.txtDesc.Location = new System.Drawing.Point(257, 192);
             this.txtDesc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDesc.MaxLength = 100;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(430, 29);
             this.txtDesc.TabIndex = 37;

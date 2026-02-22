@@ -53,10 +53,11 @@ namespace CrystalReport
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 674);
             this.Controls.Add(this.crvJobHunters);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmCrystalReport";
             this.Text = "Crystal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCrystalReport_FormClosing);
             this.Load += new System.EventHandler(this.frmCrystalReport_Load);
             this.ResumeLayout(false);
 
