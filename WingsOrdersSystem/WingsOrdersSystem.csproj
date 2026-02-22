@@ -96,6 +96,10 @@
       <Project>{f5a1bffd-f5af-4470-8890-b10eaeb86a30}</Project>
       <Name>OperationalAreas</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Orders\Orders.csproj">
+      <Project>{8b7bfeb9-57b8-4189-b738-5e59ee9a9ab6}</Project>
+      <Name>Orders</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XWUserControls\XWUserControls.csproj">
       <Project>{20024c37-d0ad-4669-8d96-62f789cd6d79}</Project>
       <Name>XWUserControls</Name>

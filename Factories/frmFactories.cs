@@ -178,7 +178,6 @@ namespace Factories
             {
                 setNormalMode();
             }
-
         }
         #endregion
 

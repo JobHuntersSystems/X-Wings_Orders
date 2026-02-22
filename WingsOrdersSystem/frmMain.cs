@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Factories;
 using OperationalAreas;
+using Orders;
 
 namespace WingsOrdersSystem
 {
@@ -27,6 +28,12 @@ namespace WingsOrdersSystem
         private void xwLauchFrmOpeArea_ButtonClick(object sender, EventArgs e)
         {            
             frmOperationalAreas frm = new frmOperationalAreas("OperationalAreas");
+            frm.Show();
+        }
+
+        private void xwLauchFrmOrders_ButtonClick(object sender, EventArgs e)
+        {
+            frmOrders frm = new frmOrders("Orders");
             frm.Show();
         }
     }
