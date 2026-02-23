@@ -57,5 +57,11 @@
       <DependentUpon>frmBase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XWInheritedControls\XWInheritedControls.csproj">
+      <Project>{c6936942-dc1a-4f2c-bbd4-b27778ee5e93}</Project>
+      <Name>XWInheritedControls</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

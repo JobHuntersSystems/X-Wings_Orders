@@ -38,11 +38,11 @@
             // lblOptionName
             // 
             this.lblOptionName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lblOptionName.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOptionName.Location = new System.Drawing.Point(23, 192);
+            this.lblOptionName.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOptionName.Location = new System.Drawing.Point(0, 190);
             this.lblOptionName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOptionName.Name = "lblOptionName";
-            this.lblOptionName.Size = new System.Drawing.Size(177, 22);
+            this.lblOptionName.Size = new System.Drawing.Size(225, 33);
             this.lblOptionName.TabIndex = 0;
             this.lblOptionName.Text = "Options";
             this.lblOptionName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

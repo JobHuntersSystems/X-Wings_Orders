@@ -22,6 +22,10 @@ namespace WingsOrdersSystem
 		public frmMain()
 		{
 			InitializeComponent();
+
+			string timeFrame = DateTime.Now.ToString("HH:mm:ss");
+			lblTime.Text = timeFrame;
+			timerTime.Start();
 		}
 		private void xwLauchFrmFactories_ButtonClick(object sender, EventArgs e)
 		{
@@ -62,5 +66,15 @@ namespace WingsOrdersSystem
 				frm.Show();
 			}			
 		}
+		private void timerTime_Tick(object sender, EventArgs e)
+		{
+			string timeFrame = DateTime.Now.ToString("HH:mm:ss");
+			lblTime.Text = timeFrame;
+		}
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

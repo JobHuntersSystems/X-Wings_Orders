@@ -108,6 +108,10 @@
       <Project>{d97b3b89-886f-4235-b88a-e4157e4b6703}</Project>
       <Name>Routes</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XWInheritedControls\XWInheritedControls.csproj">
+      <Project>{C6936942-DC1A-4F2C-BBD4-B27778EE5E93}</Project>
+      <Name>XWInheritedControls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XWUserControls\XWUserControls.csproj">
       <Project>{20024c37-d0ad-4669-8d96-62f789cd6d79}</Project>
       <Name>XWUserControls</Name>
