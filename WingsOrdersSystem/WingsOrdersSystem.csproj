@@ -92,6 +92,10 @@
       <Project>{a720e2b0-7044-49e1-bc2e-11e8394bc8dc}</Project>
       <Name>FormsDesigner</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Formularios prueba\FormsEDI.csproj">
+      <Project>{ed8bc13f-42e7-4840-8f52-7e90b3babc51}</Project>
+      <Name>FormsEDI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OperationalAreas\OperationalAreas.csproj">
       <Project>{f5a1bffd-f5af-4470-8890-b10eaeb86a30}</Project>
       <Name>OperationalAreas</Name>
