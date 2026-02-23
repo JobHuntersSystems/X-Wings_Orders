@@ -277,7 +277,7 @@ namespace Routes
             this.Controls.Add(this.txtDesc);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "frmRoutes";
-            this.Text = "Form1";
+            this.Text = "";
             this.Load += new System.EventHandler(this.frmRoutes_Load);
             this.Controls.SetChildIndex(this.btnUpdate, 0);
             this.Controls.SetChildIndex(this.btnCreate, 0);

@@ -1,7 +1,7 @@
 ﻿
-namespace Factories
+namespace FormSpaceShipCategory
 {
-    partial class frmFactories
+    partial class frmSpaceShipCategory
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -30,86 +30,79 @@ namespace Factories
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblCode = new System.Windows.Forms.Label();
-            this.txtCode = new System.Windows.Forms.TextBox();
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.lblDesc = new System.Windows.Forms.Label();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.lblCode = new System.Windows.Forms.Label();
             this.logsTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(1338, 301);
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(1202, 301);
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // lblTitle
             // 
-            this.lblTitle.Size = new System.Drawing.Size(319, 33);
             this.lblTitle.Text = "";
-            // 
-            // lblLog
-            // 
-            this.lblLog.Location = new System.Drawing.Point(417, 308);
-            // 
-            // lblCode
-            // 
-            this.lblCode.AutoSize = true;
-            this.lblCode.Location = new System.Drawing.Point(141, 189);
-            this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(60, 24);
-            this.lblCode.TabIndex = 3;
-            this.lblCode.Text = "Code";
-            // 
-            // txtCode
-            // 
-            this.txtCode.Location = new System.Drawing.Point(207, 189);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(232, 29);
-            this.txtCode.TabIndex = 4;
-            this.txtCode.Tag = "codeFactory";
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(207, 256);
+            this.txtDesc.Location = new System.Drawing.Point(261, 226);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(436, 29);
-            this.txtDesc.TabIndex = 6;
-            this.txtDesc.Tag = "DescFactory";
+            this.txtDesc.TabIndex = 14;
+            this.txtDesc.Tag = "DescSpaceShipCategory";
             // 
             // lblDesc
             // 
             this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(86, 256);
+            this.lblDesc.Location = new System.Drawing.Point(140, 226);
             this.lblDesc.Name = "lblDesc";
             this.lblDesc.Size = new System.Drawing.Size(115, 24);
-            this.lblDesc.TabIndex = 5;
+            this.lblDesc.TabIndex = 13;
             this.lblDesc.Text = "Description";
+            // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(261, 159);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(232, 29);
+            this.txtCode.TabIndex = 12;
+            this.txtCode.Tag = "CodeSpaceShipCategory";
+            // 
+            // lblCode
+            // 
+            this.lblCode.AutoSize = true;
+            this.lblCode.Location = new System.Drawing.Point(195, 159);
+            this.lblCode.Name = "lblCode";
+            this.lblCode.Size = new System.Drawing.Size(60, 24);
+            this.lblCode.TabIndex = 11;
+            this.lblCode.Text = "Code";
             // 
             // logsTimer
             // 
             this.logsTimer.Interval = 2000;
             this.logsTimer.Tick += new System.EventHandler(this.logsTimer_Tick);
             // 
-            // frmFactories
+            // frmSpaceShipCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
-            this.ClientSize = new System.Drawing.Size(1540, 941);
+            this.ClientSize = new System.Drawing.Size(1650, 1010);
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.txtCode);
             this.Controls.Add(this.lblCode);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "frmFactories";
-            this.Load += new System.EventHandler(this.frmFactories_Load);
-            this.Controls.SetChildIndex(this.lblTitle, 0);
-            this.Controls.SetChildIndex(this.lblLog, 0);
+            this.Name = "frmSpaceShipCategory";
+            this.Load += new System.EventHandler(this.frmSpaceShipCategory_Load);
             this.Controls.SetChildIndex(this.btnUpdate, 0);
             this.Controls.SetChildIndex(this.btnCreate, 0);
+            this.Controls.SetChildIndex(this.lblTitle, 0);
+            this.Controls.SetChildIndex(this.lblLog, 0);
             this.Controls.SetChildIndex(this.lblCode, 0);
             this.Controls.SetChildIndex(this.txtCode, 0);
             this.Controls.SetChildIndex(this.lblDesc, 0);
@@ -121,10 +114,10 @@ namespace Factories
 
         #endregion
 
-        private System.Windows.Forms.Label lblCode;
-        private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.Label lblDesc;
+        private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.Label lblCode;
         private System.Windows.Forms.Timer logsTimer;
     }
 }

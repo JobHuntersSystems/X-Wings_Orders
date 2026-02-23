@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Routes", "Routes\Routes.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filliations", "Filliations\Filliations.csproj", "{7071662B-A2D2-4655-A3B8-8E866CE3B0F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormSpaceShipTypes", "FormSpaceShipTypes\FormSpaceShipTypes.csproj", "{4BFA0E7F-3A22-47C8-AC5C-47A805EF2699}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormSpaceShipCategory", "FormSpaceShipCategory\FormSpaceShipCategory.csproj", "{B139E2E9-D95E-4810-AB13-AFC706EC69FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{7071662B-A2D2-4655-A3B8-8E866CE3B0F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7071662B-A2D2-4655-A3B8-8E866CE3B0F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7071662B-A2D2-4655-A3B8-8E866CE3B0F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BFA0E7F-3A22-47C8-AC5C-47A805EF2699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BFA0E7F-3A22-47C8-AC5C-47A805EF2699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BFA0E7F-3A22-47C8-AC5C-47A805EF2699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BFA0E7F-3A22-47C8-AC5C-47A805EF2699}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B139E2E9-D95E-4810-AB13-AFC706EC69FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B139E2E9-D95E-4810-AB13-AFC706EC69FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B139E2E9-D95E-4810-AB13-AFC706EC69FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B139E2E9-D95E-4810-AB13-AFC706EC69FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
