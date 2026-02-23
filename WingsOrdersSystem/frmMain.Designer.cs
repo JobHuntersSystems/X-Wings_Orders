@@ -33,13 +33,13 @@ namespace WingsOrdersSystem
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pnlRectangleTop = new System.Windows.Forms.Panel();
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.lblTime = new System.Windows.Forms.Label();
+            this.pctSpace2 = new System.Windows.Forms.PictureBox();
             this.xwCloseButton = new XWInheritedControls.XWCloseButton();
-            this.pnlControls = new System.Windows.Forms.Panel();
-            this.timerTime = new System.Windows.Forms.Timer(this.components);
+            this.pctSpace3 = new System.Windows.Forms.PictureBox();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.pctSpace1 = new System.Windows.Forms.PictureBox();
             this.pctTime = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pnlControls = new System.Windows.Forms.Panel();
             this.xwLauchFrmSpaceships = new XWUserControls.XWLauchForm();
             this.xwLauchFrmFilliations = new XWUserControls.XWLauchForm();
             this.xwLauchFrmOpeArea = new XWUserControls.XWLauchForm();
@@ -48,15 +48,15 @@ namespace WingsOrdersSystem
             this.xwLauchFrmOrders = new XWUserControls.XWLauchForm();
             this.xwLauchFrmFTP = new XWUserControls.XWLauchForm();
             this.xwLauchFrmFactories = new XWUserControls.XWLauchForm();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.timerTime = new System.Windows.Forms.Timer(this.components);
             this.pnlMain.SuspendLayout();
             this.pnlTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctSpace2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xwCloseButton)).BeginInit();
-            this.pnlControls.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctSpace3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctSpace1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctTime)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.pnlControls.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -83,11 +83,11 @@ namespace WingsOrdersSystem
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.Black;
-            this.pnlTop.Controls.Add(this.pictureBox3);
+            this.pnlTop.Controls.Add(this.pctSpace2);
             this.pnlTop.Controls.Add(this.xwCloseButton);
-            this.pnlTop.Controls.Add(this.pictureBox2);
+            this.pnlTop.Controls.Add(this.pctSpace3);
             this.pnlTop.Controls.Add(this.lblTime);
-            this.pnlTop.Controls.Add(this.pictureBox1);
+            this.pnlTop.Controls.Add(this.pctSpace1);
             this.pnlTop.Controls.Add(this.pctTime);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
@@ -95,15 +95,17 @@ namespace WingsOrdersSystem
             this.pnlTop.Size = new System.Drawing.Size(1585, 52);
             this.pnlTop.TabIndex = 13;
             // 
-            // lblTime
+            // pctSpace2
             // 
-            this.lblTime.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblTime.Location = new System.Drawing.Point(91, 0);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(132, 49);
-            this.lblTime.TabIndex = 6;
-            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.pctSpace2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pctSpace2.ImageLocation = "resources\\jpg\\space.jpg";
+            this.pctSpace2.Location = new System.Drawing.Point(362, -84);
+            this.pctSpace2.Name = "pctSpace2";
+            this.pctSpace2.Size = new System.Drawing.Size(875, 231);
+            this.pctSpace2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctSpace2.TabIndex = 10;
+            this.pctSpace2.TabStop = false;
             // 
             // xwCloseButton
             // 
@@ -118,6 +120,47 @@ namespace WingsOrdersSystem
             this.xwCloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.xwCloseButton.TabIndex = 0;
             this.xwCloseButton.TabStop = false;
+            // 
+            // pctSpace3
+            // 
+            this.pctSpace3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pctSpace3.ImageLocation = "resources\\jpg\\space.jpg";
+            this.pctSpace3.Location = new System.Drawing.Point(896, -27);
+            this.pctSpace3.Name = "pctSpace3";
+            this.pctSpace3.Size = new System.Drawing.Size(690, 231);
+            this.pctSpace3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctSpace3.TabIndex = 9;
+            this.pctSpace3.TabStop = false;
+            // 
+            // lblTime
+            // 
+            this.lblTime.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblTime.Location = new System.Drawing.Point(91, 0);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(132, 49);
+            this.lblTime.TabIndex = 6;
+            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pctSpace1
+            // 
+            this.pctSpace1.ImageLocation = "resources\\jpg\\space.jpg";
+            this.pctSpace1.Location = new System.Drawing.Point(82, -27);
+            this.pctSpace1.Name = "pctSpace1";
+            this.pctSpace1.Size = new System.Drawing.Size(715, 229);
+            this.pctSpace1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctSpace1.TabIndex = 8;
+            this.pctSpace1.TabStop = false;
+            // 
+            // pctTime
+            // 
+            this.pctTime.ImageLocation = "resources\\gifs\\Robot.gif";
+            this.pctTime.Location = new System.Drawing.Point(0, -8);
+            this.pctTime.Name = "pctTime";
+            this.pctTime.Size = new System.Drawing.Size(76, 70);
+            this.pctTime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctTime.TabIndex = 7;
+            this.pctTime.TabStop = false;
             // 
             // pnlControls
             // 
@@ -134,42 +177,6 @@ namespace WingsOrdersSystem
             this.pnlControls.Name = "pnlControls";
             this.pnlControls.Size = new System.Drawing.Size(1248, 518);
             this.pnlControls.TabIndex = 12;
-            // 
-            // timerTime
-            // 
-            this.timerTime.Interval = 1000;
-            this.timerTime.Tick += new System.EventHandler(this.timerTime_Tick);
-            // 
-            // pctTime
-            // 
-            this.pctTime.ImageLocation = "resources\\gifs\\Robot.gif";
-            this.pctTime.Location = new System.Drawing.Point(0, -8);
-            this.pctTime.Name = "pctTime";
-            this.pctTime.Size = new System.Drawing.Size(76, 70);
-            this.pctTime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctTime.TabIndex = 7;
-            this.pctTime.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ImageLocation = "resources\\jpg\\space.jpg";
-            this.pictureBox1.Location = new System.Drawing.Point(82, -27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(715, 229);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.ImageLocation = "resources\\jpg\\space.jpg";
-            this.pictureBox2.Location = new System.Drawing.Point(896, -27);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(690, 231);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
             // 
             // xwLauchFrmSpaceships
             // 
@@ -303,18 +310,10 @@ namespace WingsOrdersSystem
             this.xwLauchFrmFactories.Title = "Factories";
             this.xwLauchFrmFactories.ButtonClick += new System.EventHandler(this.xwLauchFrmFactories_ButtonClick);
             // 
-            // pictureBox3
+            // timerTime
             // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.ImageLocation = "resources\\jpg\\space.jpg";
-            this.pictureBox3.Location = new System.Drawing.Point(362, -84);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(875, 231);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 10;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.timerTime.Interval = 1000;
+            this.timerTime.Tick += new System.EventHandler(this.timerTime_Tick);
             // 
             // frmMain
             // 
@@ -329,12 +328,12 @@ namespace WingsOrdersSystem
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlMain.ResumeLayout(false);
             this.pnlTop.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pctSpace2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xwCloseButton)).EndInit();
-            this.pnlControls.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pctSpace3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctSpace1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctTime)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.pnlControls.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -357,9 +356,9 @@ namespace WingsOrdersSystem
         private System.Windows.Forms.Timer timerTime;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.PictureBox pctTime;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pctSpace1;
+        private System.Windows.Forms.PictureBox pctSpace3;
+        private System.Windows.Forms.PictureBox pctSpace2;
     }
 }
 
