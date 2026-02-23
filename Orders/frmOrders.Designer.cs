@@ -32,7 +32,6 @@ namespace Orders
             this.components = new System.ComponentModel.Container();
             this.lblCodeOrder = new System.Windows.Forms.Label();
             this.txtCodeOrder = new System.Windows.Forms.TextBox();
-            this.txtDateOrder = new System.Windows.Forms.TextBox();
             this.lblDateOrder = new System.Windows.Forms.Label();
             this.txtFactory = new System.Windows.Forms.TextBox();
             this.lblFactory = new System.Windows.Forms.Label();
@@ -41,6 +40,7 @@ namespace Orders
             this.cmbPriority = new System.Windows.Forms.ComboBox();
             this.cmbFactory = new System.Windows.Forms.ComboBox();
             this.logsTimer = new System.Windows.Forms.Timer(this.components);
+            this.dtpDateOrder = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btnUpdate
@@ -67,18 +67,11 @@ namespace Orders
             // txtCodeOrder
             // 
             this.txtCodeOrder.Location = new System.Drawing.Point(199, 126);
+            this.txtCodeOrder.MaxLength = 12;
             this.txtCodeOrder.Name = "txtCodeOrder";
             this.txtCodeOrder.Size = new System.Drawing.Size(275, 29);
             this.txtCodeOrder.TabIndex = 6;
             this.txtCodeOrder.Tag = "codeOrder";
-            // 
-            // txtDateOrder
-            // 
-            this.txtDateOrder.Location = new System.Drawing.Point(199, 195);
-            this.txtDateOrder.Name = "txtDateOrder";
-            this.txtDateOrder.Size = new System.Drawing.Size(275, 29);
-            this.txtDateOrder.TabIndex = 8;
-            this.txtDateOrder.Tag = "dateOrder";
             // 
             // lblDateOrder
             // 
@@ -91,8 +84,10 @@ namespace Orders
             // 
             // txtFactory
             // 
+            this.txtFactory.Enabled = false;
             this.txtFactory.Location = new System.Drawing.Point(491, 332);
             this.txtFactory.Name = "txtFactory";
+            this.txtFactory.ReadOnly = true;
             this.txtFactory.Size = new System.Drawing.Size(378, 29);
             this.txtFactory.TabIndex = 12;
             this.txtFactory.Tag = "cmbFactory.idFactory";
@@ -108,8 +103,10 @@ namespace Orders
             // 
             // txtPriority
             // 
+            this.txtPriority.Enabled = false;
             this.txtPriority.Location = new System.Drawing.Point(367, 263);
             this.txtPriority.Name = "txtPriority";
+            this.txtPriority.ReadOnly = true;
             this.txtPriority.Size = new System.Drawing.Size(275, 29);
             this.txtPriority.TabIndex = 10;
             this.txtPriority.Tag = "cmbPriority.idPriority";
@@ -146,22 +143,36 @@ namespace Orders
             this.logsTimer.Interval = 2000;
             this.logsTimer.Tick += new System.EventHandler(this.logsTimer_Tick);
             // 
+            // dtpDateOrder
+            // 
+            this.dtpDateOrder.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDateOrder.CustomFormat = "dd/MM/yyyy H:mm:ss";
+            this.dtpDateOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDateOrder.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDateOrder.Location = new System.Drawing.Point(198, 194);
+            this.dtpDateOrder.Name = "dtpDateOrder";
+            this.dtpDateOrder.Size = new System.Drawing.Size(231, 29);
+            this.dtpDateOrder.TabIndex = 16;
+            this.dtpDateOrder.Tag = "dateOrder";
+            this.dtpDateOrder.Value = new System.DateTime(2026, 2, 23, 0, 0, 0, 0);
+            // 
             // frmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.ClientSize = new System.Drawing.Size(1650, 1010);
+            this.Controls.Add(this.dtpDateOrder);
             this.Controls.Add(this.cmbFactory);
             this.Controls.Add(this.cmbPriority);
             this.Controls.Add(this.txtFactory);
             this.Controls.Add(this.lblFactory);
             this.Controls.Add(this.txtPriority);
             this.Controls.Add(this.lblPriority);
-            this.Controls.Add(this.txtDateOrder);
             this.Controls.Add(this.lblDateOrder);
             this.Controls.Add(this.txtCodeOrder);
             this.Controls.Add(this.lblCodeOrder);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "frmOrders";
+            this.Text = "Orders";
             this.Load += new System.EventHandler(this.frmOrders_Load);
             this.Controls.SetChildIndex(this.btnUpdate, 0);
             this.Controls.SetChildIndex(this.btnCreate, 0);
@@ -170,13 +181,13 @@ namespace Orders
             this.Controls.SetChildIndex(this.lblCodeOrder, 0);
             this.Controls.SetChildIndex(this.txtCodeOrder, 0);
             this.Controls.SetChildIndex(this.lblDateOrder, 0);
-            this.Controls.SetChildIndex(this.txtDateOrder, 0);
             this.Controls.SetChildIndex(this.lblPriority, 0);
             this.Controls.SetChildIndex(this.txtPriority, 0);
             this.Controls.SetChildIndex(this.lblFactory, 0);
             this.Controls.SetChildIndex(this.txtFactory, 0);
             this.Controls.SetChildIndex(this.cmbPriority, 0);
             this.Controls.SetChildIndex(this.cmbFactory, 0);
+            this.Controls.SetChildIndex(this.dtpDateOrder, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,7 +197,6 @@ namespace Orders
 
         private System.Windows.Forms.Label lblCodeOrder;
         private System.Windows.Forms.TextBox txtCodeOrder;
-        private System.Windows.Forms.TextBox txtDateOrder;
         private System.Windows.Forms.Label lblDateOrder;
         private System.Windows.Forms.TextBox txtFactory;
         private System.Windows.Forms.Label lblFactory;
@@ -195,5 +205,6 @@ namespace Orders
         private System.Windows.Forms.ComboBox cmbPriority;
         private System.Windows.Forms.ComboBox cmbFactory;
         private System.Windows.Forms.Timer logsTimer;
+        private System.Windows.Forms.DateTimePicker dtpDateOrder;
     }
 }
