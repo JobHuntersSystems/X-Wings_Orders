@@ -14,13 +14,10 @@ namespace EdiProcessor
 {
     public class EdiParser
     {
-
-
         OrdersEntity ctx;
+        int OrdersIDs = new int();
 
-
-
-        public void ReadEDI(string filepath)
+        public int ReadEDI(string filepath)
         {
             ctx = new OrdersEntity();
             string[] EDILines = null;
@@ -30,6 +27,8 @@ namespace EdiProcessor
             }
 
             SaveEDI(EDILines);
+
+            return OrdersIDs; 
         }
 
         private void SaveEDI(string[] EDIList)
@@ -37,7 +36,6 @@ namespace EdiProcessor
             Order order = new Order();
             OrderInfo orderInfo = new OrderInfo();
             OrdersDetail ordersDetail = new OrdersDetail();
-
 
             if (EDIList[0].Equals("ORDERS_D_96A_UN_EAN008"))
             {
@@ -82,16 +80,13 @@ namespace EdiProcessor
                         }
                         ctx.Orders.Add(order);
                         ctx.SaveChanges();
+                        OrdersIDs = order.idOrder;
 
                         transaction.Commit();
-                        CurrentOrder.LastSavedOrderId = order.idOrder;
-
-
                     }
                     catch (Exception ex)
                     {
                         transaction.Rollback();
-
                         Console.WriteLine("Error, Rollback maded: " + ex.Message);
                     }
                 }

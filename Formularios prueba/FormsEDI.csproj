@@ -84,6 +84,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CrystalReport\CrystalReport.csproj">
+      <Project>{aa9fb912-1040-4ed2-8784-ec118234b12f}</Project>
+      <Name>CrystalReport</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EdiProcessor\EdiProcessor.csproj">
       <Project>{e58fcd1e-53f6-4e85-b5a1-88755172bac0}</Project>
       <Name>EdiProcessor</Name>

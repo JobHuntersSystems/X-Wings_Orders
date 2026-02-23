@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EdiProcessor;
 using EF_CRUD;
+using CrystalReport;
 
 
 namespace FormsEDI
@@ -17,6 +18,8 @@ namespace FormsEDI
     {
         EdiParser edi = new EdiParser();
         string path;
+
+        List<int> ordersIDs = new List<int>();
 
         public Form1()
         {
@@ -50,10 +53,10 @@ namespace FormsEDI
         {
             try
             {
-                
-                edi.ReadEDI(path);
+                int orderid = edi.ReadEDI(path);
+                ordersIDs.Add(orderid);
                 lbStatus.Items.Add("Status: File readed and database updated");
-                lbStatus.Items.Add($"Current Order ID: {CurrentOrder.LastSavedOrderId}");
+                lbStatus.Items.Add($"Status: Order {orderid}");
             }
             catch (Exception a)
             {
@@ -67,6 +70,13 @@ namespace FormsEDI
             {
                 textBox1.Text = lbStatus.SelectedItem.ToString();
             }
+        }
+
+        private void btnOpenCristal_Click(object sender, EventArgs e)
+        {
+            frmCrystalReport frm = new frmCrystalReport(ordersIDs);
+            frm.Show();
+
         }
     }
 }
