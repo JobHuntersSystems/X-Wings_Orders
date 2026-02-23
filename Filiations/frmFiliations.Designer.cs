@@ -29,38 +29,106 @@ namespace Filiations
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.lblCode = new System.Windows.Forms.Label();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.txtDesc = new System.Windows.Forms.TextBox();
+            this.lblDesc = new System.Windows.Forms.Label();
+            this.logsTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(1479, 485);
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(1355, 485);
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // lblTitle
             // 
-            this.lblTitle.Size = new System.Drawing.Size(646, 50);
+            this.lblTitle.Location = new System.Drawing.Point(943, 72);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblTitle.Size = new System.Drawing.Size(451, 50);
             this.lblTitle.Text = "";
             // 
-            // lblLog
+            // lblCode
             // 
-            this.lblLog.Location = new System.Drawing.Point(635, 491);
+            this.lblCode.AutoSize = true;
+            this.lblCode.Location = new System.Drawing.Point(199, 283);
+            this.lblCode.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblCode.Name = "lblCode";
+            this.lblCode.Size = new System.Drawing.Size(95, 36);
+            this.lblCode.TabIndex = 3;
+            this.lblCode.Text = "Code";
+            // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(323, 283);
+            this.txtCode.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtCode.MaxLength = 12;
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(327, 42);
+            this.txtCode.TabIndex = 4;
+            this.txtCode.Tag = "CodeFiliation";
+            // 
+            // txtDesc
+            // 
+            this.txtDesc.Location = new System.Drawing.Point(323, 383);
+            this.txtDesc.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtDesc.MaxLength = 50;
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(616, 42);
+            this.txtDesc.TabIndex = 6;
+            this.txtDesc.Tag = "DescFiliations";
+            // 
+            // lblDesc
+            // 
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.Location = new System.Drawing.Point(122, 383);
+            this.lblDesc.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(173, 36);
+            this.lblDesc.TabIndex = 5;
+            this.lblDesc.Text = "Description";
+            // 
+            // logsTimer
+            // 
+            this.logsTimer.Interval = 2000;
+            this.logsTimer.Tick += new System.EventHandler(this.logsTimer_Tick_1);
             // 
             // frmFiliations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 36F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1665, 1032);
+            this.ClientSize = new System.Drawing.Size(2338, 1466);
+            this.Controls.Add(this.txtDesc);
+            this.Controls.Add(this.lblDesc);
+            this.Controls.Add(this.txtCode);
+            this.Controls.Add(this.lblCode);
             this.Location = new System.Drawing.Point(0, 0);
+            this.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
             this.Name = "frmFiliations";
-            this.Text = "Form1";
+            this.Text = "Filiations";
+            this.Load += new System.EventHandler(this.frmFactories_Load);
+            this.Controls.SetChildIndex(this.lblTitle, 0);
+            this.Controls.SetChildIndex(this.lblLog, 0);
+            this.Controls.SetChildIndex(this.btnUpdate, 0);
+            this.Controls.SetChildIndex(this.btnCreate, 0);
+            this.Controls.SetChildIndex(this.lblCode, 0);
+            this.Controls.SetChildIndex(this.txtCode, 0);
+            this.Controls.SetChildIndex(this.lblDesc, 0);
+            this.Controls.SetChildIndex(this.txtDesc, 0);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
-
         #endregion
+
+        private System.Windows.Forms.TextBox txtDesc;
+        private System.Windows.Forms.Label lblDesc;
+        private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.Label lblCode;
+        private System.Windows.Forms.Timer logsTimer;
     }
 }
 

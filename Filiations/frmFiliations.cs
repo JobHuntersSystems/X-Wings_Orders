@@ -15,13 +15,13 @@ namespace Filiations
     public partial class frmFiliations : FormsDesigner.frmBase
     {
         FiliationsEntities ctx;
-        BindingSource bsFactories;
+        BindingSource bsFiliations;
         public frmFiliations(string tableName)
         {
             InitializeComponent();
             base._tableName = tableName;
             ctx = new FiliationsEntities();
-            bsFactories = new BindingSource();
+            bsFiliations = new BindingSource();
         }
 
 
@@ -31,8 +31,8 @@ namespace Filiations
         #region Methods
         private void loadData()
         {
-            bsFactories.DataSource = ctx.Filiations.ToList();
-            dgvBase.DataSource = bsFactories;
+            bsFiliations.DataSource = ctx.Filiations.ToList();
+            dgvBase.DataSource = bsFiliations;
         }
         private void bindControls()
         {
@@ -42,7 +42,7 @@ namespace Filiations
                 {
                     TextBox txt = ((TextBox)ctrl);
                     txt.DataBindings.Clear();
-                    txt.DataBindings.Add("Text", bsFactories, txt.Tag.ToString(), false, DataSourceUpdateMode.OnValidation);
+                    txt.DataBindings.Add("Text", bsFiliations, txt.Tag.ToString(), false, DataSourceUpdateMode.OnValidation);
                 }
             }
         }
@@ -60,7 +60,7 @@ namespace Filiations
         }
         private void configurateDataGridView()
         {
-            dgvBase.Columns["idFactory"].Visible = false;
+            dgvBase.Columns["idFiliation"].Visible = false;
         }
         private void setNormalMode()
         {
@@ -93,7 +93,7 @@ namespace Filiations
                 createRegister();
                 setNormalMode();
             }
-            bsFactories.EndEdit();
+            bsFiliations.EndEdit();
             ctx.SaveChanges();
             loadData();
         }
@@ -186,7 +186,8 @@ namespace Filiations
         }
         #endregion
 
-        private void logsTimer_Tick(object sender, EventArgs e)
+
+        private void logsTimer_Tick_1(object sender, EventArgs e)
         {
             logsTimer.Stop();
             lblLog.Text = "";

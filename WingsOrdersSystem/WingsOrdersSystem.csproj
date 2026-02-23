@@ -88,6 +88,10 @@
       <Project>{fa6dda1a-587b-4210-8cd0-3fd6cfb71005}</Project>
       <Name>Factories</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Filiations\Filiations.csproj">
+      <Project>{1690ae8d-3684-4391-9b3a-9ad195c29d8f}</Project>
+      <Name>Filiations</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FormsDesigner\FormsDesigner.csproj">
       <Project>{a720e2b0-7044-49e1-bc2e-11e8394bc8dc}</Project>
       <Name>FormsDesigner</Name>

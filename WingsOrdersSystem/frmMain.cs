@@ -15,6 +15,7 @@ using FormSpaceShipCategory;
 using FormsEDI;
 using FormSpaceShipTypes;
 using FTPServerProgram;
+using Filiations;
 
 namespace WingsOrdersSystem
 {
@@ -148,6 +149,21 @@ namespace WingsOrdersSystem
 			else
 			{
 				frmEDI frm = new frmEDI();
+				frm.Show();
+				frm.WindowState = FormWindowState.Maximized;
+			}
+		}
+
+        private void xwLauchFrmFilliations_ButtonClick(object sender, EventArgs e)
+        {
+			frmFiliations exist = Application.OpenForms.OfType<frmFiliations>().FirstOrDefault();
+			if (exist != null)
+			{
+				exist.BringToFront();
+			}
+			else
+			{
+				frmFiliations frm = new frmFiliations("Filiations");
 				frm.Show();
 				frm.WindowState = FormWindowState.Maximized;
 			}
