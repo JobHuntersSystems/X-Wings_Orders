@@ -39,10 +39,10 @@ namespace EdiProcessor
 
             if (EDIList[0].Equals("ORDERS_D_96A_UN_EAN008"))
             {
-                using (DbContextTransaction transaction = ctx.Database.BeginTransaction())
-                {
-                    try
-                    {
+                //using (DbContextTransaction transaction = ctx.Database.BeginTransaction())
+                //{
+                 //   try
+                   // {
                         foreach (string data in EDIList)
                         {
                             string[] splitedData = data.Split('|');
@@ -82,14 +82,14 @@ namespace EdiProcessor
                         ctx.SaveChanges();
                         OrdersIDs = order.idOrder;
 
-                        transaction.Commit();
-                    }
-                    catch (Exception ex)
-                    {
-                        transaction.Rollback();
-                        Console.WriteLine("Error, Rollback maded: " + ex.Message);
-                    }
-                }
+                        //transaction.Commit();
+                    //}
+                    //catch (Exception ex)
+                    //{
+                    //    transaction.Rollback();
+                    //    Console.WriteLine("Error, Rollback maded: " + ex.Message);
+                    //}
+                //}
             }
         }
 
@@ -202,20 +202,14 @@ namespace EdiProcessor
             string codigoPlaneta = data[1];
             string codigoReferencia = data[2];
 
-            int idPlanets = ctx.Planets
-                                   .Where(t => t.CodePlanet == codigoPlaneta)
-                                   .Select(t => t.idPlanet) // Proyectamos solo la columna ID
-                                   .FirstOrDefault();
+            var prueba = ctx.Planets.FirstOrDefault(p => p.CodePlanet == (data[3]  + codigoPlaneta));
+            int idplaneta = prueba.idPlanet;
+     
+            var prueba2 = ctx.References.FirstOrDefault(p => p.codeReference == codigoReferencia);
+            short idreference = prueba2.idReference;
 
-
-            short CodeNormalizado = ctx.References
-                                    .Where(t => t.codeReference == codigoReferencia)
-                                   .Select(t => t.idReference) // Proyectamos solo la columna ID
-                                   .FirstOrDefault();
-
-            orderDetail.idPlanet = idPlanets;
-            orderDetail.idReference = CodeNormalizado;
-
+            orderDetail.idPlanet = idplaneta;
+            orderDetail.idReference = idreference;
 
             return orderDetail;
         }
@@ -232,9 +226,7 @@ namespace EdiProcessor
             {
                 cantidad = int.Parse(data[2]) * (-1);
             }
-
             ordersDetail.Quantity = (short) cantidad;
-
             return ordersDetail;
         }
 

@@ -76,7 +76,6 @@ namespace FormsEDI
         {
             frmCrystalReport frm = new frmCrystalReport(ordersIDs);
             frm.Show();
-
         }
     }
 }
