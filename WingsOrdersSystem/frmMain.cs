@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Factories;
+using Filliations;
 using OperationalAreas;
 using Orders;
 using Routes;
@@ -66,6 +67,13 @@ namespace WingsOrdersSystem
 				frm.Show();
 			}			
 		}
+
+		private void xwLauchFrmFilliations_ButtonClick(object sender, EventArgs e)
+		{
+			frmFilliations frm = new frmFilliations("Filliations");
+			frm.Show();
+		}
+	}
 		private void timerTime_Tick(object sender, EventArgs e)
 		{
 			string timeFrame = DateTime.Now.ToString("HH:mm:ss");

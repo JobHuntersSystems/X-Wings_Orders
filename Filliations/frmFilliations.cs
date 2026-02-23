@@ -15,7 +15,7 @@ namespace Filliations
 	public partial class frmFilliations : FormsDesigner.frmBase
 	{
 
-		FilliationsEntity db;
+		SecureCoreG2Entities db;
 		BindingSource bs;
 
 		bool isNew = false;
@@ -26,7 +26,7 @@ namespace Filliations
 			InitializeComponent();
 			base._tableName = tableName;
 
-			db = new FilliationsEntity();
+			db = new SecureCoreG2Entities();
 			bs = new BindingSource();
 		}
 

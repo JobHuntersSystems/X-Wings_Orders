@@ -19,16 +19,15 @@ namespace FTPServerProgram
 
 			string relativeLocal = root.Element("Folders").Element("Local").Value;
 
-			string absoluteLocal = Path.Combine(Application.StartupPath, relativeLocal);
+			string absoluteLocal = Path.GetFullPath(Path.Combine(Application.StartupPath, relativeLocal));
 
 			return new FtpConfig
 			{
 				Host = root.Element("ip").Value,
 				User = root.Element("Credentials").Element("UserName").Value,
 				Pass = root.Element("Credentials").Element("Password").Value,
-				RemoteRoot = root.Element("Folders").Element("RemoteRoot").Value,
-				ProcessedFolder = root.Element("Folders").Element("Processed").Value,
-				LocalFolder = root.Element("Folders").Element("Local").Value
+				RemoteRoot = root.Element("Folders").Element("RemoteRoot").Value.TrimEnd('/'),
+				LocalFolder = absoluteLocal
 			};
 		}
 	}
