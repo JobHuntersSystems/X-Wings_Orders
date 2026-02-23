@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Factories
+namespace Orders
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FactoriesEntity : DbContext
+    public partial class OrdersEntity : DbContext
     {
-        public FactoriesEntity()
-            : base("name=FactoriesEntities")
+        public OrdersEntity()
+            : base("name=OrdersEntities")
         {
         }
     
@@ -26,5 +26,7 @@ namespace Factories
         }
     
         public virtual DbSet<Factory> Factories { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<Priority> Priorities { get; set; }
     }
 }
