@@ -52,12 +52,14 @@ namespace Routes
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(1448, 370);
+            this.btnUpdate.Location = new System.Drawing.Point(2172, 509);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(1312, 370);
+            this.btnCreate.Location = new System.Drawing.Point(1968, 509);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // lblTitle
@@ -66,47 +68,52 @@ namespace Routes
             // 
             // lblLog
             // 
-            this.lblLog.Location = new System.Drawing.Point(527, 377);
+            this.lblLog.Location = new System.Drawing.Point(790, 518);
+            this.lblLog.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             // 
             // cmbDestination
             // 
+            this.cmbDestination.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDestination.FormattingEnabled = true;
-            this.cmbDestination.Location = new System.Drawing.Point(257, 302);
+            this.cmbDestination.Location = new System.Drawing.Point(386, 415);
+            this.cmbDestination.Margin = new System.Windows.Forms.Padding(4);
             this.cmbDestination.Name = "cmbDestination";
-            this.cmbDestination.Size = new System.Drawing.Size(143, 32);
+            this.cmbDestination.Size = new System.Drawing.Size(212, 41);
             this.cmbDestination.TabIndex = 46;
             this.cmbDestination.Tag = "idPlanetDest";
             this.cmbDestination.SelectedIndexChanged += new System.EventHandler(this.cmbDestination_SelectedIndexChanged);
             // 
             // cmbOrigin
             // 
+            this.cmbOrigin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOrigin.FormattingEnabled = true;
-            this.cmbOrigin.Location = new System.Drawing.Point(257, 247);
+            this.cmbOrigin.Location = new System.Drawing.Point(386, 340);
+            this.cmbOrigin.Margin = new System.Windows.Forms.Padding(4);
             this.cmbOrigin.Name = "cmbOrigin";
-            this.cmbOrigin.Size = new System.Drawing.Size(143, 32);
+            this.cmbOrigin.Size = new System.Drawing.Size(212, 41);
             this.cmbOrigin.TabIndex = 45;
             this.cmbOrigin.Tag = "idPlanetOr";
             this.cmbOrigin.SelectedIndexChanged += new System.EventHandler(this.cmbOrigin_SelectedIndexChanged);
             // 
             // txtDestinationPlanet
             // 
-            this.txtDestinationPlanet.Location = new System.Drawing.Point(425, 305);
-            this.txtDestinationPlanet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDestinationPlanet.Location = new System.Drawing.Point(638, 419);
+            this.txtDestinationPlanet.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtDestinationPlanet.MaxLength = 12;
             this.txtDestinationPlanet.Name = "txtDestinationPlanet";
             this.txtDestinationPlanet.ReadOnly = true;
-            this.txtDestinationPlanet.Size = new System.Drawing.Size(305, 29);
+            this.txtDestinationPlanet.Size = new System.Drawing.Size(456, 40);
             this.txtDestinationPlanet.TabIndex = 44;
             this.txtDestinationPlanet.Tag = ".DescPlanet";
             // 
             // txtOriginPlanet
             // 
-            this.txtOriginPlanet.Location = new System.Drawing.Point(425, 250);
-            this.txtOriginPlanet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtOriginPlanet.Location = new System.Drawing.Point(638, 344);
+            this.txtOriginPlanet.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtOriginPlanet.MaxLength = 12;
             this.txtOriginPlanet.Name = "txtOriginPlanet";
             this.txtOriginPlanet.ReadOnly = true;
-            this.txtOriginPlanet.Size = new System.Drawing.Size(305, 29);
+            this.txtOriginPlanet.Size = new System.Drawing.Size(456, 40);
             this.txtOriginPlanet.TabIndex = 43;
             this.txtOriginPlanet.Tag = ".DescPlanet";
             // 
@@ -114,10 +121,10 @@ namespace Routes
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(113, 303);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Location = new System.Drawing.Point(170, 417);
+            this.label2.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 24);
+            this.label2.Size = new System.Drawing.Size(181, 33);
             this.label2.TabIndex = 42;
             this.label2.Text = "Destination ";
             // 
@@ -125,10 +132,10 @@ namespace Routes
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(161, 246);
-            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Location = new System.Drawing.Point(242, 338);
+            this.label4.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 24);
+            this.label4.Size = new System.Drawing.Size(109, 33);
             this.label4.TabIndex = 41;
             this.label4.Text = "Origin ";
             // 
@@ -136,10 +143,10 @@ namespace Routes
             // 
             this.lblDesc.AutoSize = true;
             this.lblDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblDesc.Location = new System.Drawing.Point(113, 195);
-            this.lblDesc.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblDesc.Location = new System.Drawing.Point(170, 268);
+            this.lblDesc.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(115, 24);
+            this.lblDesc.Size = new System.Drawing.Size(173, 33);
             this.lblDesc.TabIndex = 40;
             this.lblDesc.Text = "Description";
             // 
@@ -147,39 +154,41 @@ namespace Routes
             // 
             this.lblCode.AutoSize = true;
             this.lblCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblCode.Location = new System.Drawing.Point(169, 143);
-            this.lblCode.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblCode.Location = new System.Drawing.Point(254, 197);
+            this.lblCode.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(60, 24);
+            this.lblCode.Size = new System.Drawing.Size(88, 33);
             this.lblCode.TabIndex = 39;
             this.lblCode.Text = "Code";
             // 
             // txtCodeRuta
             // 
-            this.txtCodeRuta.Location = new System.Drawing.Point(257, 140);
-            this.txtCodeRuta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtCodeRuta.Location = new System.Drawing.Point(386, 192);
+            this.txtCodeRuta.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtCodeRuta.MaxLength = 12;
             this.txtCodeRuta.Name = "txtCodeRuta";
-            this.txtCodeRuta.Size = new System.Drawing.Size(183, 29);
-            this.txtCodeRuta.TabIndex = 38;
+            this.txtCodeRuta.Size = new System.Drawing.Size(272, 40);
+            this.txtCodeRuta.TabIndex = 37;
             this.txtCodeRuta.Tag = "Code";
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(257, 192);
-            this.txtDesc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDesc.Location = new System.Drawing.Point(386, 264);
+            this.txtDesc.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtDesc.MaxLength = 100;
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(430, 29);
-            this.txtDesc.TabIndex = 37;
+            this.txtDesc.Size = new System.Drawing.Size(643, 40);
+            this.txtDesc.TabIndex = 38;
             this.txtDesc.Tag = "Description";
             // 
             // cmbType
             // 
+            this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbType.FormattingEnabled = true;
-            this.cmbType.Location = new System.Drawing.Point(861, 135);
+            this.cmbType.Location = new System.Drawing.Point(1292, 186);
+            this.cmbType.Margin = new System.Windows.Forms.Padding(4);
             this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(121, 32);
+            this.cmbType.Size = new System.Drawing.Size(180, 41);
             this.cmbType.TabIndex = 53;
             this.cmbType.Tag = "idRouteType";
             this.cmbType.SelectedIndexChanged += new System.EventHandler(this.cmbType_SelectedIndexChanged);
@@ -188,20 +197,20 @@ namespace Routes
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(792, 305);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(1188, 419);
+            this.label1.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 24);
+            this.label1.Size = new System.Drawing.Size(72, 33);
             this.label1.TabIndex = 52;
             this.label1.Text = "Port";
             // 
             // txtDestinationPort
             // 
-            this.txtDestinationPort.Location = new System.Drawing.Point(857, 298);
-            this.txtDestinationPort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDestinationPort.Location = new System.Drawing.Point(1286, 410);
+            this.txtDestinationPort.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtDestinationPort.Name = "txtDestinationPort";
             this.txtDestinationPort.ReadOnly = true;
-            this.txtDestinationPort.Size = new System.Drawing.Size(128, 29);
+            this.txtDestinationPort.Size = new System.Drawing.Size(190, 40);
             this.txtDestinationPort.TabIndex = 51;
             this.txtDestinationPort.Tag = ".PortPlanet1";
             // 
@@ -209,20 +218,20 @@ namespace Routes
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(792, 245);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Location = new System.Drawing.Point(1188, 337);
+            this.label3.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 24);
+            this.label3.Size = new System.Drawing.Size(72, 33);
             this.label3.TabIndex = 50;
             this.label3.Text = "Port";
             // 
             // txtOriginPort
             // 
-            this.txtOriginPort.Location = new System.Drawing.Point(857, 245);
-            this.txtOriginPort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtOriginPort.Location = new System.Drawing.Point(1286, 337);
+            this.txtOriginPort.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtOriginPort.Name = "txtOriginPort";
             this.txtOriginPort.ReadOnly = true;
-            this.txtOriginPort.Size = new System.Drawing.Size(128, 29);
+            this.txtOriginPort.Size = new System.Drawing.Size(190, 40);
             this.txtOriginPort.TabIndex = 49;
             this.txtOriginPort.Tag = ".PortPlanet";
             // 
@@ -230,21 +239,21 @@ namespace Routes
             // 
             this.lblRemarks.AutoSize = true;
             this.lblRemarks.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lblRemarks.Location = new System.Drawing.Point(776, 138);
-            this.lblRemarks.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblRemarks.Location = new System.Drawing.Point(1164, 190);
+            this.lblRemarks.Margin = new System.Windows.Forms.Padding(9, 0, 9, 0);
             this.lblRemarks.Name = "lblRemarks";
-            this.lblRemarks.Size = new System.Drawing.Size(63, 24);
+            this.lblRemarks.Size = new System.Drawing.Size(93, 33);
             this.lblRemarks.TabIndex = 48;
             this.lblRemarks.Text = "Type ";
             // 
             // txtType
             // 
-            this.txtType.Location = new System.Drawing.Point(1002, 138);
-            this.txtType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtType.Location = new System.Drawing.Point(1503, 190);
+            this.txtType.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtType.MaxLength = 12;
             this.txtType.Name = "txtType";
             this.txtType.ReadOnly = true;
-            this.txtType.Size = new System.Drawing.Size(242, 29);
+            this.txtType.Size = new System.Drawing.Size(361, 40);
             this.txtType.TabIndex = 47;
             this.txtType.Tag = ".DescRouteType";
             // 
@@ -255,8 +264,8 @@ namespace Routes
             // 
             // frmRoutes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
-            this.ClientSize = new System.Drawing.Size(1650, 1010);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 33F);
+            this.ClientSize = new System.Drawing.Size(2475, 1389);
             this.Controls.Add(this.cmbType);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDestinationPort);
@@ -275,6 +284,7 @@ namespace Routes
             this.Controls.Add(this.txtCodeRuta);
             this.Controls.Add(this.txtDesc);
             this.Location = new System.Drawing.Point(0, 0);
+            this.Margin = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.Name = "frmRoutes";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frmRoutes_Load);

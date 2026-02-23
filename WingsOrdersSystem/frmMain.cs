@@ -27,9 +27,17 @@ namespace WingsOrdersSystem
 		}
 
         private void xwLauchFrmOpeArea_ButtonClick(object sender, EventArgs e)
-        {            
-            frmOperationalAreas frm = new frmOperationalAreas("OperationalAreas");
-            frm.Show();
+        {
+			frmOperationalAreas exist = Application.OpenForms.OfType<frmOperationalAreas>().FirstOrDefault();
+			if(exist != null)
+            {
+				exist.BringToFront();
+            }
+            else
+            {
+				frmOperationalAreas frm = new frmOperationalAreas("OperationalAreas");
+				frm.Show();
+			}			
         }
 
         private void xwLauchFrmOrders_ButtonClick(object sender, EventArgs e)
@@ -40,8 +48,16 @@ namespace WingsOrdersSystem
 		
 		private void xwLauchFrmRouts_ButtonClick(object sender, EventArgs e)
 		{
-			frmRoutes frm = new frmRoutes("Routes");
-			frm.Show();
+			frmRoutes exist = Application.OpenForms.OfType<frmRoutes>().FirstOrDefault();
+            if (exist != null)
+            {
+				exist.BringToFront();
+            }
+            else
+            {
+				frmRoutes frm = new frmRoutes("Routes");
+				frm.Show();
+			}			
 		}
     }
 }
