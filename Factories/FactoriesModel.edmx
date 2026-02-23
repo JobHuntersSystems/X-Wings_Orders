@@ -29,7 +29,7 @@
           <Property Name="codeFactory" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
           <Property Name="DescFactory" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="FactoriesEntity" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="FactoriesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Factories" EntityType="Self.Factory" />
         </EntityContainer>
       </Schema>
@@ -37,7 +37,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="FactoriesModelStoreContainer" CdmEntityContainer="FactoriesEntity">
+        <EntityContainerMapping StorageEntityContainer="FactoriesModelStoreContainer" CdmEntityContainer="FactoriesEntities">
           <EntitySetMapping Name="Factories">
             <EntityTypeMapping TypeName="FactoriesModel.Factory">
               <MappingFragment StoreEntitySet="Factories">

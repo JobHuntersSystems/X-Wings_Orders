@@ -97,7 +97,7 @@ namespace Factories
             // frmFactories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
-            this.ClientSize = new System.Drawing.Size(1650, 941);
+            this.ClientSize = new System.Drawing.Size(1650, 1010);
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.txtCode);

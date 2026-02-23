@@ -94,16 +94,15 @@ namespace Filliations
 			// 
 			// frmFilliations
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 29F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1711, 1055);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+			this.ClientSize = new System.Drawing.Size(1650, 1010);
 			this.Controls.Add(this.txtDesc);
 			this.Controls.Add(this.txtCode);
 			this.Controls.Add(this.lblDesc);
 			this.Controls.Add(this.lblCode);
 			this.Location = new System.Drawing.Point(0, 0);
 			this.Name = "frmFilliations";
-			this.Text = "Form1";
+			this.Text = "Filliations";
 			this.Load += new System.EventHandler(this.frmFilliations_Load);
 			this.Controls.SetChildIndex(this.btnUpdate, 0);
 			this.Controls.SetChildIndex(this.btnCreate, 0);
