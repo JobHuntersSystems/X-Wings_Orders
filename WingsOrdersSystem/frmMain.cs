@@ -152,20 +152,5 @@ namespace WingsOrdersSystem
 				frm.WindowState = FormWindowState.Maximized;
 			}
 		}
-
-        private void xwLauchFrmFTP_ButtonClick(object sender, EventArgs e)
-        {
-			FrmFTP exist = Application.OpenForms.OfType<FrmFTP>().FirstOrDefault();
-			if (exist != null)
-			{
-				exist.BringToFront();
-			}
-			else
-			{
-				FrmFTP frm = new FrmFTP();
-				frm.Show();
-				frm.WindowState = FormWindowState.Maximized;
-			}
-		}
     }
 }

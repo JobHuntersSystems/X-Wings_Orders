@@ -34,6 +34,7 @@ namespace WingsOrdersSystem
             this.pnlRectangleTop = new System.Windows.Forms.Panel();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pctSpace2 = new System.Windows.Forms.PictureBox();
+            this.xwCloseButton = new XWInheritedControls.XWCloseButton();
             this.pctSpace3 = new System.Windows.Forms.PictureBox();
             this.lblTime = new System.Windows.Forms.Label();
             this.pctSpace1 = new System.Windows.Forms.PictureBox();
@@ -52,11 +53,11 @@ namespace WingsOrdersSystem
             this.pnlMain.SuspendLayout();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSpace2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xwCloseButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSpace3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSpace1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctTime)).BeginInit();
             this.pnlControls.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.xwCloseButton)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -361,11 +362,11 @@ namespace WingsOrdersSystem
             this.pnlMain.ResumeLayout(false);
             this.pnlTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctSpace2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xwCloseButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSpace3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSpace1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctTime)).EndInit();
             this.pnlControls.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.xwCloseButton)).EndInit();
             this.ResumeLayout(false);
 
         }
