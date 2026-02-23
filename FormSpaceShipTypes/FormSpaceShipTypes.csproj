@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A54F4077-A4D9-453E-8D2D-6423FDE076DE}</ProjectGuid>
+    <ProjectGuid>{4BFA0E7F-3A22-47C8-AC5C-47A805EF2699}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WingsOrdersSystem</RootNamespace>
-    <AssemblyName>WingsOrdersSystem</AssemblyName>
+    <RootNamespace>FormSpaceShipTypes</RootNamespace>
+    <AssemblyName>FormSpaceShipTypes</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\App\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,16 +55,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmMain.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Filiation.cs">
+      <DependentUpon>SpaceShipModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <Compile Include="frmSpaceShipTypes.cs" />
+    <Compile Include="frmSpaceShipTypes.Designer.cs">
+      <DependentUpon>frmSpaceShipTypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <Compile Include="SpaceShipCategory.cs">
+      <DependentUpon>SpaceShipModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpaceShipModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpaceShipModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpaceShipModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpaceShipModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpaceShipModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpaceShipModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SpaceShipType.cs">
+      <DependentUpon>SpaceShipModel.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmSpaceShipTypes.resx">
+      <DependentUpon>frmSpaceShipTypes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +96,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,45 +106,36 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="SpaceShipModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SpaceShipModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SpaceShipModel.edmx.diagram">
+      <DependentUpon>SpaceShipModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CrystalReport\CrystalReport.csproj">
-      <Project>{aa9fb912-1040-4ed2-8784-ec118234b12f}</Project>
-      <Name>CrystalReport</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Factories\Factories.csproj">
-      <Project>{fa6dda1a-587b-4210-8cd0-3fd6cfb71005}</Project>
-      <Name>Factories</Name>
-    </ProjectReference>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SpaceShipModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SpaceShipModel.edmx</DependentUpon>
+      <LastGenOutput>SpaceShipModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SpaceShipModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SpaceShipModel.edmx</DependentUpon>
+      <LastGenOutput>SpaceShipModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\FormsDesigner\FormsDesigner.csproj">
-      <Project>{a720e2b0-7044-49e1-bc2e-11e8394bc8dc}</Project>
+      <Project>{A720E2B0-7044-49E1-BC2E-11E8394BC8DC}</Project>
       <Name>FormsDesigner</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FTPServerProgram\FTPServerProgram.csproj">
-      <Project>{3c2bc488-9181-4a31-94de-944158f8540a}</Project>
-      <Name>FTPServerProgram</Name>
-    <ProjectReference Include="..\Formularios prueba\FormsEDI.csproj">
-      <Project>{ed8bc13f-42e7-4840-8f52-7e90b3babc51}</Project>
-      <Name>FormsEDI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OperationalAreas\OperationalAreas.csproj">
-      <Project>{f5a1bffd-f5af-4470-8890-b10eaeb86a30}</Project>
-      <Name>OperationalAreas</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Orders\Orders.csproj">
-      <Project>{8b7bfeb9-57b8-4189-b738-5e59ee9a9ab6}</Project>
-      <Name>Orders</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Routes\Routes.csproj">
-      <Project>{d97b3b89-886f-4235-b88a-e4157e4b6703}</Project>
-      <Name>Routes</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\XWUserControls\XWUserControls.csproj">
-      <Project>{20024c37-d0ad-4669-8d96-62f789cd6d79}</Project>
-      <Name>XWUserControls</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
