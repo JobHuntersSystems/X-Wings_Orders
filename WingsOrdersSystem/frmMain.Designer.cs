@@ -40,6 +40,7 @@ namespace WingsOrdersSystem
             this.pctSpace1 = new System.Windows.Forms.PictureBox();
             this.pctTime = new System.Windows.Forms.PictureBox();
             this.pnlControls = new System.Windows.Forms.Panel();
+            this.xwLauchFrmSpaceshipsSpecies = new XWUserControls.XWLauchForm();
             this.xwLauchFrmSpaceshipsCategories = new XWUserControls.XWLauchForm();
             this.xwLauchFrmFilliations = new XWUserControls.XWLauchForm();
             this.xwLauchFrmOpeArea = new XWUserControls.XWLauchForm();
@@ -49,7 +50,6 @@ namespace WingsOrdersSystem
             this.xwLauchFrmFTP = new XWUserControls.XWLauchForm();
             this.xwLauchFrmFactories = new XWUserControls.XWLauchForm();
             this.timerTime = new System.Windows.Forms.Timer(this.components);
-            this.xwLauchFrmSpaceshipsSpecies = new XWUserControls.XWLauchForm();
             this.pnlMain.SuspendLayout();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSpace2)).BeginInit();
@@ -68,17 +68,19 @@ namespace WingsOrdersSystem
             this.pnlMain.Controls.Add(this.pnlControls);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1585, 995);
+            this.pnlMain.Size = new System.Drawing.Size(2378, 1466);
             this.pnlMain.TabIndex = 12;
             // 
             // pnlRectangleTop
             // 
             this.pnlRectangleTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
             this.pnlRectangleTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlRectangleTop.Location = new System.Drawing.Point(0, 52);
+            this.pnlRectangleTop.Location = new System.Drawing.Point(0, 80);
+            this.pnlRectangleTop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlRectangleTop.Name = "pnlRectangleTop";
-            this.pnlRectangleTop.Size = new System.Drawing.Size(1585, 13);
+            this.pnlRectangleTop.Size = new System.Drawing.Size(2378, 20);
             this.pnlRectangleTop.TabIndex = 14;
             // 
             // pnlTop
@@ -92,8 +94,9 @@ namespace WingsOrdersSystem
             this.pnlTop.Controls.Add(this.pctTime);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1585, 52);
+            this.pnlTop.Size = new System.Drawing.Size(2378, 80);
             this.pnlTop.TabIndex = 13;
             // 
             // pctSpace2
@@ -101,9 +104,10 @@ namespace WingsOrdersSystem
             this.pctSpace2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pctSpace2.ImageLocation = "resources\\jpg\\space.jpg";
-            this.pctSpace2.Location = new System.Drawing.Point(362, -84);
+            this.pctSpace2.Location = new System.Drawing.Point(543, -129);
+            this.pctSpace2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pctSpace2.Name = "pctSpace2";
-            this.pctSpace2.Size = new System.Drawing.Size(875, 231);
+            this.pctSpace2.Size = new System.Drawing.Size(1312, 355);
             this.pctSpace2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctSpace2.TabIndex = 10;
             this.pctSpace2.TabStop = false;
@@ -114,10 +118,11 @@ namespace WingsOrdersSystem
             this.xwCloseButton.HoverIconPath = "resources/png/CloseButtonShiny.png";
             this.xwCloseButton.ImageLocation = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\resourc" +
     "es/png/CloseButton.png";
-            this.xwCloseButton.Location = new System.Drawing.Point(1534, 5);
+            this.xwCloseButton.Location = new System.Drawing.Point(2301, 8);
             this.xwCloseButton.MainIconPath = "resources/png/CloseButton.png";
+            this.xwCloseButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.xwCloseButton.Name = "xwCloseButton";
-            this.xwCloseButton.Size = new System.Drawing.Size(46, 41);
+            this.xwCloseButton.Size = new System.Drawing.Size(69, 63);
             this.xwCloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.xwCloseButton.TabIndex = 0;
             this.xwCloseButton.TabStop = false;
@@ -126,9 +131,10 @@ namespace WingsOrdersSystem
             // 
             this.pctSpace3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pctSpace3.ImageLocation = "resources\\jpg\\space.jpg";
-            this.pctSpace3.Location = new System.Drawing.Point(896, -27);
+            this.pctSpace3.Location = new System.Drawing.Point(1344, -42);
+            this.pctSpace3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pctSpace3.Name = "pctSpace3";
-            this.pctSpace3.Size = new System.Drawing.Size(690, 231);
+            this.pctSpace3.Size = new System.Drawing.Size(1035, 355);
             this.pctSpace3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctSpace3.TabIndex = 9;
             this.pctSpace3.TabStop = false;
@@ -137,18 +143,20 @@ namespace WingsOrdersSystem
             // 
             this.lblTime.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblTime.Location = new System.Drawing.Point(91, 0);
+            this.lblTime.Location = new System.Drawing.Point(136, 0);
+            this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(132, 49);
+            this.lblTime.Size = new System.Drawing.Size(198, 75);
             this.lblTime.TabIndex = 6;
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pctSpace1
             // 
             this.pctSpace1.ImageLocation = "resources\\jpg\\space.jpg";
-            this.pctSpace1.Location = new System.Drawing.Point(82, -27);
+            this.pctSpace1.Location = new System.Drawing.Point(123, -42);
+            this.pctSpace1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pctSpace1.Name = "pctSpace1";
-            this.pctSpace1.Size = new System.Drawing.Size(715, 229);
+            this.pctSpace1.Size = new System.Drawing.Size(1072, 352);
             this.pctSpace1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctSpace1.TabIndex = 8;
             this.pctSpace1.TabStop = false;
@@ -156,9 +164,10 @@ namespace WingsOrdersSystem
             // pctTime
             // 
             this.pctTime.ImageLocation = "resources\\gifs\\Robot.gif";
-            this.pctTime.Location = new System.Drawing.Point(0, -8);
+            this.pctTime.Location = new System.Drawing.Point(0, -12);
+            this.pctTime.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pctTime.Name = "pctTime";
-            this.pctTime.Size = new System.Drawing.Size(76, 70);
+            this.pctTime.Size = new System.Drawing.Size(114, 108);
             this.pctTime.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctTime.TabIndex = 7;
             this.pctTime.TabStop = false;
@@ -175,10 +184,28 @@ namespace WingsOrdersSystem
             this.pnlControls.Controls.Add(this.xwLauchFrmOrders);
             this.pnlControls.Controls.Add(this.xwLauchFrmFTP);
             this.pnlControls.Controls.Add(this.xwLauchFrmFactories);
-            this.pnlControls.Location = new System.Drawing.Point(168, 153);
+            this.pnlControls.Location = new System.Drawing.Point(252, 235);
+            this.pnlControls.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlControls.Name = "pnlControls";
-            this.pnlControls.Size = new System.Drawing.Size(1248, 746);
+            this.pnlControls.Size = new System.Drawing.Size(1872, 1083);
             this.pnlControls.TabIndex = 12;
+            // 
+            // xwLauchFrmSpaceshipsSpecies
+            // 
+            this.xwLauchFrmSpaceshipsSpecies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.xwLauchFrmSpaceshipsSpecies.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xwLauchFrmSpaceshipsSpecies.ForeColor = System.Drawing.Color.White;
+            this.xwLauchFrmSpaceshipsSpecies.HoverBackColor = "23;23;23";
+            this.xwLauchFrmSpaceshipsSpecies.HoverFontColor = "233;233;233";
+            this.xwLauchFrmSpaceshipsSpecies.HoverImagePath = "resources\\png\\sith.png";
+            this.xwLauchFrmSpaceshipsSpecies.InitialImagePath = "resources\\png\\sith.png";
+            this.xwLauchFrmSpaceshipsSpecies.Location = new System.Drawing.Point(762, 795);
+            this.xwLauchFrmSpaceshipsSpecies.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.xwLauchFrmSpaceshipsSpecies.Name = "xwLauchFrmSpaceshipsSpecies";
+            this.xwLauchFrmSpaceshipsSpecies.Size = new System.Drawing.Size(338, 346);
+            this.xwLauchFrmSpaceshipsSpecies.TabIndex = 11;
+            this.xwLauchFrmSpaceshipsSpecies.Title = "Spaceships Species";
+            this.xwLauchFrmSpaceshipsSpecies.ButtonClick += new System.EventHandler(this.xwLauchFrmSpaceshipsSpecies_ButtonClick);
             // 
             // xwLauchFrmSpaceshipsCategories
             // 
@@ -189,10 +216,10 @@ namespace WingsOrdersSystem
             this.xwLauchFrmSpaceshipsCategories.HoverFontColor = "233;233;233";
             this.xwLauchFrmSpaceshipsCategories.HoverImagePath = "resources\\png\\rocket_launch.png";
             this.xwLauchFrmSpaceshipsCategories.InitialImagePath = "resources\\png\\rocket.png";
-            this.xwLauchFrmSpaceshipsCategories.Location = new System.Drawing.Point(1014, 17);
-            this.xwLauchFrmSpaceshipsCategories.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.xwLauchFrmSpaceshipsCategories.Location = new System.Drawing.Point(1521, 26);
+            this.xwLauchFrmSpaceshipsCategories.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.xwLauchFrmSpaceshipsCategories.Name = "xwLauchFrmSpaceshipsCategories";
-            this.xwLauchFrmSpaceshipsCategories.Size = new System.Drawing.Size(230, 225);
+            this.xwLauchFrmSpaceshipsCategories.Size = new System.Drawing.Size(345, 346);
             this.xwLauchFrmSpaceshipsCategories.TabIndex = 10;
             this.xwLauchFrmSpaceshipsCategories.Title = "Spaceships Categories";
             this.xwLauchFrmSpaceshipsCategories.ButtonClick += new System.EventHandler(this.xwLauchFrmSpaceshipsCategories_ButtonClick);
@@ -206,10 +233,10 @@ namespace WingsOrdersSystem
             this.xwLauchFrmFilliations.HoverFontColor = "233;233;233";
             this.xwLauchFrmFilliations.HoverImagePath = "resources\\png\\darth_vader_hover.png";
             this.xwLauchFrmFilliations.InitialImagePath = "resources\\png\\darth_vader.png";
-            this.xwLauchFrmFilliations.Location = new System.Drawing.Point(765, 17);
-            this.xwLauchFrmFilliations.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.xwLauchFrmFilliations.Location = new System.Drawing.Point(1148, 26);
+            this.xwLauchFrmFilliations.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.xwLauchFrmFilliations.Name = "xwLauchFrmFilliations";
-            this.xwLauchFrmFilliations.Size = new System.Drawing.Size(225, 225);
+            this.xwLauchFrmFilliations.Size = new System.Drawing.Size(338, 346);
             this.xwLauchFrmFilliations.TabIndex = 9;
             this.xwLauchFrmFilliations.Title = "Filliations";
             // 
@@ -222,10 +249,10 @@ namespace WingsOrdersSystem
             this.xwLauchFrmOpeArea.HoverFontColor = "233;233;233";
             this.xwLauchFrmOpeArea.HoverImagePath = "resources\\png\\Settings.png";
             this.xwLauchFrmOpeArea.InitialImagePath = "resources\\png\\Settings.png";
-            this.xwLauchFrmOpeArea.Location = new System.Drawing.Point(253, 17);
-            this.xwLauchFrmOpeArea.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.xwLauchFrmOpeArea.Location = new System.Drawing.Point(380, 26);
+            this.xwLauchFrmOpeArea.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.xwLauchFrmOpeArea.Name = "xwLauchFrmOpeArea";
-            this.xwLauchFrmOpeArea.Size = new System.Drawing.Size(225, 225);
+            this.xwLauchFrmOpeArea.Size = new System.Drawing.Size(338, 346);
             this.xwLauchFrmOpeArea.TabIndex = 6;
             this.xwLauchFrmOpeArea.Title = "Operational Area";
             this.xwLauchFrmOpeArea.ButtonClick += new System.EventHandler(this.xwLauchFrmOpeArea_ButtonClick);
@@ -239,12 +266,13 @@ namespace WingsOrdersSystem
             this.xwLauchFrmEDI.HoverFontColor = "233;233;233";
             this.xwLauchFrmEDI.HoverImagePath = "resources\\png\\shield_police.png";
             this.xwLauchFrmEDI.InitialImagePath = "resources\\png\\shield_alert.png";
-            this.xwLauchFrmEDI.Location = new System.Drawing.Point(764, 266);
-            this.xwLauchFrmEDI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.xwLauchFrmEDI.Location = new System.Drawing.Point(1146, 409);
+            this.xwLauchFrmEDI.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.xwLauchFrmEDI.Name = "xwLauchFrmEDI";
-            this.xwLauchFrmEDI.Size = new System.Drawing.Size(479, 225);
+            this.xwLauchFrmEDI.Size = new System.Drawing.Size(718, 346);
             this.xwLauchFrmEDI.TabIndex = 4;
             this.xwLauchFrmEDI.Title = "EDI Processor";
+            this.xwLauchFrmEDI.ButtonClick += new System.EventHandler(this.xwLauchFrmEDI_ButtonClick);
             // 
             // xwLauchFrmRouts
             // 
@@ -255,10 +283,10 @@ namespace WingsOrdersSystem
             this.xwLauchFrmRouts.HoverFontColor = "233;233;233";
             this.xwLauchFrmRouts.HoverImagePath = "resources\\png\\star.png";
             this.xwLauchFrmRouts.InitialImagePath = "resources\\png\\star_shine.png";
-            this.xwLauchFrmRouts.Location = new System.Drawing.Point(509, 17);
-            this.xwLauchFrmRouts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.xwLauchFrmRouts.Location = new System.Drawing.Point(764, 26);
+            this.xwLauchFrmRouts.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.xwLauchFrmRouts.Name = "xwLauchFrmRouts";
-            this.xwLauchFrmRouts.Size = new System.Drawing.Size(225, 225);
+            this.xwLauchFrmRouts.Size = new System.Drawing.Size(338, 346);
             this.xwLauchFrmRouts.TabIndex = 3;
             this.xwLauchFrmRouts.Title = "Rutas";
             this.xwLauchFrmRouts.ButtonClick += new System.EventHandler(this.xwLauchFrmRouts_ButtonClick);
@@ -272,10 +300,10 @@ namespace WingsOrdersSystem
             this.xwLauchFrmOrders.HoverFontColor = "233;233;233";
             this.xwLauchFrmOrders.HoverImagePath = "resources\\png\\death_star.png";
             this.xwLauchFrmOrders.InitialImagePath = "resources\\png\\death_star_hover.png";
-            this.xwLauchFrmOrders.Location = new System.Drawing.Point(508, 266);
-            this.xwLauchFrmOrders.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.xwLauchFrmOrders.Location = new System.Drawing.Point(762, 409);
+            this.xwLauchFrmOrders.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.xwLauchFrmOrders.Name = "xwLauchFrmOrders";
-            this.xwLauchFrmOrders.Size = new System.Drawing.Size(225, 225);
+            this.xwLauchFrmOrders.Size = new System.Drawing.Size(338, 346);
             this.xwLauchFrmOrders.TabIndex = 2;
             this.xwLauchFrmOrders.Title = "Orders";
             this.xwLauchFrmOrders.ButtonClick += new System.EventHandler(this.xwLauchFrmOrders_ButtonClick);
@@ -289,12 +317,13 @@ namespace WingsOrdersSystem
             this.xwLauchFrmFTP.HoverFontColor = "233;233;233";
             this.xwLauchFrmFTP.HoverImagePath = "resources\\png\\planet_earth.png";
             this.xwLauchFrmFTP.InitialImagePath = "resources\\png\\planet_search.png";
-            this.xwLauchFrmFTP.Location = new System.Drawing.Point(3, 266);
-            this.xwLauchFrmFTP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.xwLauchFrmFTP.Location = new System.Drawing.Point(4, 409);
+            this.xwLauchFrmFTP.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.xwLauchFrmFTP.Name = "xwLauchFrmFTP";
-            this.xwLauchFrmFTP.Size = new System.Drawing.Size(474, 225);
+            this.xwLauchFrmFTP.Size = new System.Drawing.Size(711, 346);
             this.xwLauchFrmFTP.TabIndex = 1;
             this.xwLauchFrmFTP.Title = "FTP Server";
+            this.xwLauchFrmFTP.ButtonClick += new System.EventHandler(this.xwLauchFrmFTP_ButtonClick);
             // 
             // xwLauchFrmFactories
             // 
@@ -305,10 +334,10 @@ namespace WingsOrdersSystem
             this.xwLauchFrmFactories.HoverFontColor = "233;233;233";
             this.xwLauchFrmFactories.HoverImagePath = "resources\\png\\charger.png";
             this.xwLauchFrmFactories.InitialImagePath = "resources\\png\\charger_electric.png";
-            this.xwLauchFrmFactories.Location = new System.Drawing.Point(4, 17);
-            this.xwLauchFrmFactories.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.xwLauchFrmFactories.Location = new System.Drawing.Point(6, 26);
+            this.xwLauchFrmFactories.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.xwLauchFrmFactories.Name = "xwLauchFrmFactories";
-            this.xwLauchFrmFactories.Size = new System.Drawing.Size(225, 225);
+            this.xwLauchFrmFactories.Size = new System.Drawing.Size(338, 346);
             this.xwLauchFrmFactories.TabIndex = 0;
             this.xwLauchFrmFactories.Title = "Factories";
             this.xwLauchFrmFactories.ButtonClick += new System.EventHandler(this.xwLauchFrmFactories_ButtonClick);
@@ -318,30 +347,14 @@ namespace WingsOrdersSystem
             this.timerTime.Interval = 1000;
             this.timerTime.Tick += new System.EventHandler(this.timerTime_Tick);
             // 
-            // xwLauchFrmSpaceshipsSpecies
-            // 
-            this.xwLauchFrmSpaceshipsSpecies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.xwLauchFrmSpaceshipsSpecies.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xwLauchFrmSpaceshipsSpecies.ForeColor = System.Drawing.Color.White;
-            this.xwLauchFrmSpaceshipsSpecies.HoverBackColor = "23;23;23";
-            this.xwLauchFrmSpaceshipsSpecies.HoverFontColor = "233;233;233";
-            this.xwLauchFrmSpaceshipsSpecies.HoverImagePath = "resources\\png\\sith.png";
-            this.xwLauchFrmSpaceshipsSpecies.InitialImagePath = "resources\\png\\sith.png";
-            this.xwLauchFrmSpaceshipsSpecies.Location = new System.Drawing.Point(508, 517);
-            this.xwLauchFrmSpaceshipsSpecies.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.xwLauchFrmSpaceshipsSpecies.Name = "xwLauchFrmSpaceshipsSpecies";
-            this.xwLauchFrmSpaceshipsSpecies.Size = new System.Drawing.Size(225, 225);
-            this.xwLauchFrmSpaceshipsSpecies.TabIndex = 11;
-            this.xwLauchFrmSpaceshipsSpecies.Title = "Spaceships Species";
-            this.xwLauchFrmSpaceshipsSpecies.ButtonClick += new System.EventHandler(this.xwLauchFrmSpaceshipsSpecies_ButtonClick);
-            // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1585, 995);
+            this.ClientSize = new System.Drawing.Size(2378, 1466);
             this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
