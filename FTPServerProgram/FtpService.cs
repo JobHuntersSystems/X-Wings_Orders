@@ -21,48 +21,63 @@ namespace FTPServerProgram
 		// 🔹 Listar archivos del FTP
 		public string[] ListFiles()
 		{
-			var request = (FtpWebRequest)
+			FtpWebRequest request = (FtpWebRequest)
 				WebRequest.Create($"ftp://{Config.Host}{Config.RemoteRoot}");
 
 			request.Method = WebRequestMethods.Ftp.ListDirectory;
 			request.Credentials = new NetworkCredential(Config.User, Config.Pass);
 
-			using (var response = (FtpWebResponse)request.GetResponse())
-			using (var reader = new StreamReader(response.GetResponseStream()))
-			{
-				string data = reader.ReadToEnd();
-				return data.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-			}
+			FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+
+			Stream responseStream = response.GetResponseStream();
+			StreamReader reader = new StreamReader(responseStream);
+
+			string data = reader.ReadToEnd();
+
+			reader.Close();
+			response.Close();
+
+			return data.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 		}
 
 		public void DownloadFile(string fileName)
 		{
 			string ftpUrl = $"ftp://{Config.Host}{Config.RemoteRoot}/{fileName}";
 
-			var request = (FtpWebRequest)WebRequest.Create(ftpUrl);
+			FtpWebRequest request = (FtpWebRequest)WebRequest.Create(ftpUrl);
+
 			request.Method = WebRequestMethods.Ftp.DownloadFile;
 			request.Credentials = new NetworkCredential(Config.User, Config.Pass);
 
-			using (var response = (FtpWebResponse)request.GetResponse())
-			using (var responseStream = response.GetResponseStream())
+			FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+			Stream responseStream = response.GetResponseStream();
+
+			if (!Directory.Exists(Config.LocalFolder))
+				Directory.CreateDirectory(Config.LocalFolder);
+
+			string localPath = Path.Combine(Config.LocalFolder, fileName);
+
+			using (FileStream fs = new FileStream(localPath, FileMode.Create))
 			{
-				// Crear carpeta FTP si no existe
-				if (!Directory.Exists(Config.LocalFolder))
-					Directory.CreateDirectory(Config.LocalFolder);
-
-				// Crear carpeta Tractats dentro de FTP
-				string tractatsPath = Path.Combine(Config.LocalFolder, "Tractats");
-
-				if (!Directory.Exists(tractatsPath))
-					Directory.CreateDirectory(tractatsPath);
-
-				string localPath = Path.Combine(Config.LocalFolder, fileName);
-
-				using (var fs = new FileStream(localPath, FileMode.Create))
-				{
-					responseStream.CopyTo(fs);
-				}
+				responseStream.CopyTo(fs);
 			}
+
+			response.Close();
+		}
+
+		public void MoveToProcessed(string fileName)
+		{
+			string ftpUrl = $"ftp://{Config.Host}{Config.RemoteRoot}/{fileName}";
+
+			FtpWebRequest request = (FtpWebRequest)WebRequest.Create(ftpUrl);
+
+			request.Method = WebRequestMethods.Ftp.Rename;
+			request.Credentials = new NetworkCredential(Config.User, Config.Pass);
+
+			request.RenameTo = $"{Config.ProcessedFolder}/{fileName}";
+
+			FtpWebResponse response = (FtpWebResponse)request.GetResponse();
+			response.Close();
 		}
 
 	}

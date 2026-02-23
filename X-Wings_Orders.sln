@@ -25,14 +25,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperationalAreas", "Operati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders", "Orders\Orders.csproj", "{8B7BFEB9-57B8-4189-B738-5E59EE9A9AB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filliations", "Filliations\Filliations.csproj", "{7071662B-A2D2-4655-A3B8-8E866CE3B0F2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Routes", "Routes\Routes.csproj", "{D97B3B89-886F-4235-B88A-E4157E4B6703}"
 EndProject
+<<<<<<< featur/Forumulario-simple-Minhang-Lin
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormSpaceShipTypes", "FormSpaceShipTypes\FormSpaceShipTypes.csproj", "{4BFA0E7F-3A22-47C8-AC5C-47A805EF2699}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormSpaceShipCategory", "FormSpaceShipCategory\FormSpaceShipCategory.csproj", "{B139E2E9-D95E-4810-AB13-AFC706EC69FF}"
+=======
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XWInheritedControls", "XWInheritedControls\XWInheritedControls.csproj", "{C6936942-DC1A-4F2C-BBD4-B27778EE5E93}"
+>>>>>>> main
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,6 +89,7 @@ Global
 		{D97B3B89-886F-4235-B88A-E4157E4B6703}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D97B3B89-886F-4235-B88A-E4157E4B6703}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D97B3B89-886F-4235-B88A-E4157E4B6703}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< featur/Forumulario-simple-Minhang-Lin
 		{7071662B-A2D2-4655-A3B8-8E866CE3B0F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7071662B-A2D2-4655-A3B8-8E866CE3B0F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7071662B-A2D2-4655-A3B8-8E866CE3B0F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -100,14 +102,12 @@ Global
 		{B139E2E9-D95E-4810-AB13-AFC706EC69FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B139E2E9-D95E-4810-AB13-AFC706EC69FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B139E2E9-D95E-4810-AB13-AFC706EC69FF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7071662B-A2D2-4655-A3B8-8E866CE3B0F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7071662B-A2D2-4655-A3B8-8E866CE3B0F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7071662B-A2D2-4655-A3B8-8E866CE3B0F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7071662B-A2D2-4655-A3B8-8E866CE3B0F2}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
 		{C6936942-DC1A-4F2C-BBD4-B27778EE5E93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C6936942-DC1A-4F2C-BBD4-B27778EE5E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6936942-DC1A-4F2C-BBD4-B27778EE5E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6936942-DC1A-4F2C-BBD4-B27778EE5E93}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> main
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

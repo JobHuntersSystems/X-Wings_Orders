@@ -20,33 +20,37 @@ namespace FTPServerProgram
 
 		private void btnCheck_Click(object sender, EventArgs e)
 		{
-            try
-            {
-                var config = FtpConfigReader.Load("FTP_XML.xml");
-                var ftpService = new FtpService(config);
+			try
+			{
+				var config = FtpConfigReader.Load("FTP_XML.xml");
+				var ftpService = new FtpService(config);
 
-                string[] remoteFiles = ftpService.ListFiles();
+				string[] remoteFiles = ftpService.ListFiles();
 
-                foreach (var file in remoteFiles)
-                {
-                    if (!file.EndsWith(".edi", StringComparison.OrdinalIgnoreCase))
-                        continue;
+				foreach (var file in remoteFiles)
+				{
+					// Solo procesamos EDI
+					if (!file.EndsWith(".edi", StringComparison.OrdinalIgnoreCase))
+						continue;
 
-                    string localPath = Path.Combine(config.LocalFolder, file);
+					string localPath = Path.Combine(config.LocalFolder, file);
 
-                    if (!File.Exists(localPath))
-                    {
-                        ftpService.DownloadFile(file);
-                        txtLog.AppendText($"Descargado: {file}\r\n");
-                    }
-                }
+					// Si no existe localmente → es nuevo
+					if (!File.Exists(localPath))
+					{
+						ftpService.DownloadFile(file);
+						ftpService.MoveToProcessed(file);
 
-                txtLog.AppendText("Proceso finalizado.\r\n");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-        }
+						txtLog.AppendText($"Procesado: {file}\r\n");
+					}
+				}
+
+				txtLog.AppendText("Proceso finalizado.\r\n");
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Error: " + ex.Message);
+			}
+		}
 	}
 }
