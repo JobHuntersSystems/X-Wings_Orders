@@ -34,12 +34,14 @@ namespace WingsOrdersSystem
             this.pnlRectangleTop = new System.Windows.Forms.Panel();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pctSpace2 = new System.Windows.Forms.PictureBox();
-            this.xwCloseButton = new XWInheritedControls.XWCloseButton();
             this.pctSpace3 = new System.Windows.Forms.PictureBox();
             this.lblTime = new System.Windows.Forms.Label();
             this.pctSpace1 = new System.Windows.Forms.PictureBox();
             this.pctTime = new System.Windows.Forms.PictureBox();
             this.pnlControls = new System.Windows.Forms.Panel();
+            this.timerTime = new System.Windows.Forms.Timer(this.components);
+            this.xwCloseButton = new XWInheritedControls.XWCloseButton();
+            this.xwLauchFrmSpaceshipsSpecies = new XWUserControls.XWLauchForm();
             this.xwLauchFrmSpaceshipsCategories = new XWUserControls.XWLauchForm();
             this.xwLauchFrmFilliations = new XWUserControls.XWLauchForm();
             this.xwLauchFrmOpeArea = new XWUserControls.XWLauchForm();
@@ -48,16 +50,14 @@ namespace WingsOrdersSystem
             this.xwLauchFrmOrders = new XWUserControls.XWLauchForm();
             this.xwLauchFrmFTP = new XWUserControls.XWLauchForm();
             this.xwLauchFrmFactories = new XWUserControls.XWLauchForm();
-            this.timerTime = new System.Windows.Forms.Timer(this.components);
-            this.xwLauchFrmSpaceshipsSpecies = new XWUserControls.XWLauchForm();
             this.pnlMain.SuspendLayout();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSpace2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xwCloseButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSpace3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSpace1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctTime)).BeginInit();
             this.pnlControls.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xwCloseButton)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -107,20 +107,6 @@ namespace WingsOrdersSystem
             this.pctSpace2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctSpace2.TabIndex = 10;
             this.pctSpace2.TabStop = false;
-            // 
-            // xwCloseButton
-            // 
-            this.xwCloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.xwCloseButton.HoverIconPath = "resources/png/CloseButtonShiny.png";
-            this.xwCloseButton.ImageLocation = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\resourc" +
-    "es/png/CloseButton.png";
-            this.xwCloseButton.Location = new System.Drawing.Point(1534, 5);
-            this.xwCloseButton.MainIconPath = "resources/png/CloseButton.png";
-            this.xwCloseButton.Name = "xwCloseButton";
-            this.xwCloseButton.Size = new System.Drawing.Size(46, 41);
-            this.xwCloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.xwCloseButton.TabIndex = 0;
-            this.xwCloseButton.TabStop = false;
             // 
             // pctSpace3
             // 
@@ -179,6 +165,42 @@ namespace WingsOrdersSystem
             this.pnlControls.Name = "pnlControls";
             this.pnlControls.Size = new System.Drawing.Size(1248, 746);
             this.pnlControls.TabIndex = 12;
+            // 
+            // timerTime
+            // 
+            this.timerTime.Interval = 1000;
+            this.timerTime.Tick += new System.EventHandler(this.timerTime_Tick);
+            // 
+            // xwCloseButton
+            // 
+            this.xwCloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.xwCloseButton.HoverIconPath = "resources/png/CloseButtonShiny.png";
+            this.xwCloseButton.ImageLocation = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\resourc" +
+    "es/png/CloseButton.png";
+            this.xwCloseButton.Location = new System.Drawing.Point(1534, 5);
+            this.xwCloseButton.MainIconPath = "resources/png/CloseButton.png";
+            this.xwCloseButton.Name = "xwCloseButton";
+            this.xwCloseButton.Size = new System.Drawing.Size(46, 41);
+            this.xwCloseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.xwCloseButton.TabIndex = 0;
+            this.xwCloseButton.TabStop = false;
+            // 
+            // xwLauchFrmSpaceshipsSpecies
+            // 
+            this.xwLauchFrmSpaceshipsSpecies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.xwLauchFrmSpaceshipsSpecies.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xwLauchFrmSpaceshipsSpecies.ForeColor = System.Drawing.Color.White;
+            this.xwLauchFrmSpaceshipsSpecies.HoverBackColor = "23;23;23";
+            this.xwLauchFrmSpaceshipsSpecies.HoverFontColor = "233;233;233";
+            this.xwLauchFrmSpaceshipsSpecies.HoverImagePath = "resources\\png\\sith.png";
+            this.xwLauchFrmSpaceshipsSpecies.InitialImagePath = "resources\\png\\sith.png";
+            this.xwLauchFrmSpaceshipsSpecies.Location = new System.Drawing.Point(508, 517);
+            this.xwLauchFrmSpaceshipsSpecies.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.xwLauchFrmSpaceshipsSpecies.Name = "xwLauchFrmSpaceshipsSpecies";
+            this.xwLauchFrmSpaceshipsSpecies.Size = new System.Drawing.Size(225, 225);
+            this.xwLauchFrmSpaceshipsSpecies.TabIndex = 11;
+            this.xwLauchFrmSpaceshipsSpecies.Title = "Spaceships Species";
+            this.xwLauchFrmSpaceshipsSpecies.ButtonClick += new System.EventHandler(this.xwLauchFrmSpaceshipsSpecies_ButtonClick);
             // 
             // xwLauchFrmSpaceshipsCategories
             // 
@@ -295,6 +317,7 @@ namespace WingsOrdersSystem
             this.xwLauchFrmFTP.Size = new System.Drawing.Size(474, 225);
             this.xwLauchFrmFTP.TabIndex = 1;
             this.xwLauchFrmFTP.Title = "FTP Server";
+            this.xwLauchFrmFTP.ButtonClick += new System.EventHandler(this.xwLauchFrmFTP_ButtonClick);
             // 
             // xwLauchFrmFactories
             // 
@@ -313,28 +336,6 @@ namespace WingsOrdersSystem
             this.xwLauchFrmFactories.Title = "Factories";
             this.xwLauchFrmFactories.ButtonClick += new System.EventHandler(this.xwLauchFrmFactories_ButtonClick);
             // 
-            // timerTime
-            // 
-            this.timerTime.Interval = 1000;
-            this.timerTime.Tick += new System.EventHandler(this.timerTime_Tick);
-            // 
-            // xwLauchFrmSpaceshipsSpecies
-            // 
-            this.xwLauchFrmSpaceshipsSpecies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.xwLauchFrmSpaceshipsSpecies.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xwLauchFrmSpaceshipsSpecies.ForeColor = System.Drawing.Color.White;
-            this.xwLauchFrmSpaceshipsSpecies.HoverBackColor = "23;23;23";
-            this.xwLauchFrmSpaceshipsSpecies.HoverFontColor = "233;233;233";
-            this.xwLauchFrmSpaceshipsSpecies.HoverImagePath = "resources\\png\\sith.png";
-            this.xwLauchFrmSpaceshipsSpecies.InitialImagePath = "resources\\png\\sith.png";
-            this.xwLauchFrmSpaceshipsSpecies.Location = new System.Drawing.Point(508, 517);
-            this.xwLauchFrmSpaceshipsSpecies.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.xwLauchFrmSpaceshipsSpecies.Name = "xwLauchFrmSpaceshipsSpecies";
-            this.xwLauchFrmSpaceshipsSpecies.Size = new System.Drawing.Size(225, 225);
-            this.xwLauchFrmSpaceshipsSpecies.TabIndex = 11;
-            this.xwLauchFrmSpaceshipsSpecies.Title = "Spaceships Species";
-            this.xwLauchFrmSpaceshipsSpecies.ButtonClick += new System.EventHandler(this.xwLauchFrmSpaceshipsSpecies_ButtonClick);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,11 +350,11 @@ namespace WingsOrdersSystem
             this.pnlMain.ResumeLayout(false);
             this.pnlTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctSpace2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xwCloseButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSpace3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSpace1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctTime)).EndInit();
             this.pnlControls.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xwCloseButton)).EndInit();
             this.ResumeLayout(false);
 
         }
