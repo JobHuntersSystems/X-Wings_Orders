@@ -13,10 +13,10 @@ namespace Filliations
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SecureCoreG2Entities : DbContext
+    public partial class FilliationsEntity : DbContext
     {
-        public SecureCoreG2Entities()
-            : base("name=SecureCoreG2Entities")
+        public FilliationsEntity()
+            : base("name=FilliationsEntity")
         {
         }
     

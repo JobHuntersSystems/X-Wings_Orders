@@ -148,15 +148,22 @@ namespace Routes
         }
         private void CreateRegister()
         {
-            Routes r = new Routes
+            if(txtCodeRuta.Text.Trim().Length != 0)
             {
-                CodeRoute = txtCodeRuta.Text,
-                DescRoute = txtDesc.Text,
-                idPlanetOr = (int)cmbOrigin.SelectedValue,
-                idPlanetDest = (int)cmbDestination.SelectedValue,
-                idRouteType = (int)cmbType.SelectedValue
-            };
-            db.Routes.Add(r);
+                Routes r = new Routes
+                {
+                    CodeRoute = txtCodeRuta.Text,
+                    DescRoute = txtDesc.Text,
+                    idPlanetOr = (int)cmbOrigin.SelectedValue,
+                    idPlanetDest = (int)cmbDestination.SelectedValue,
+                    idRouteType = (int)cmbType.SelectedValue
+                };
+                db.Routes.Add(r);
+            }            
+            else
+            {
+                throw new Exception("The code can't be null");
+            }
         }
 
         #endregion
@@ -240,6 +247,12 @@ namespace Routes
             {
                 lblLog.Visible = true;
                 lblLog.Text = "Error:" + ex.Message;
+                logsTimer.Start();
+            }
+            catch (Exception ex)
+            {
+                lblLog.Visible = true;
+                lblLog.Text = "the fields cannot be empty";
                 logsTimer.Start();
             }
         }        

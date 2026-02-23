@@ -74,6 +74,11 @@ namespace Factories
         {
             string code = txtCode.Text;
             string desc = txtDesc.Text;
+
+            if (string.IsNullOrWhiteSpace(code))
+            {
+                throw new Exception("The code can't be null");
+            }
             Factory f = new Factory
             {
                 codeFactory = code,
@@ -178,7 +183,6 @@ namespace Factories
             {
                 setNormalMode();
             }
-
         }
         #endregion
 

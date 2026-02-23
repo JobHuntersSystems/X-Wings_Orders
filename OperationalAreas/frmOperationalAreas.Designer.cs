@@ -100,8 +100,7 @@
             // frmOperationalAreas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1650, 941);
+            this.ClientSize = new System.Drawing.Size(1650, 1010);
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.lblCode);
             this.Controls.Add(this.txtCode);

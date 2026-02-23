@@ -39,22 +39,16 @@ namespace Factories
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(1338, 301);
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(1202, 301);
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // lblTitle
             // 
             this.lblTitle.Size = new System.Drawing.Size(319, 33);
             this.lblTitle.Text = "";
-            // 
-            // lblLog
-            // 
-            this.lblLog.Location = new System.Drawing.Point(417, 308);
             // 
             // lblCode
             // 
@@ -68,6 +62,7 @@ namespace Factories
             // txtCode
             // 
             this.txtCode.Location = new System.Drawing.Point(207, 189);
+            this.txtCode.MaxLength = 12;
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(232, 29);
             this.txtCode.TabIndex = 4;
@@ -76,6 +71,7 @@ namespace Factories
             // txtDesc
             // 
             this.txtDesc.Location = new System.Drawing.Point(207, 256);
+            this.txtDesc.MaxLength = 50;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(436, 29);
             this.txtDesc.TabIndex = 6;
@@ -98,13 +94,14 @@ namespace Factories
             // frmFactories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
-            this.ClientSize = new System.Drawing.Size(1540, 941);
+            this.ClientSize = new System.Drawing.Size(1650, 1010);
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.txtCode);
             this.Controls.Add(this.lblCode);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "frmFactories";
+            this.Text = "Factories";
             this.Load += new System.EventHandler(this.frmFactories_Load);
             this.Controls.SetChildIndex(this.lblTitle, 0);
             this.Controls.SetChildIndex(this.lblLog, 0);
