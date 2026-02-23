@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A54F4077-A4D9-453E-8D2D-6423FDE076DE}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>WingsOrdersSystem</RootNamespace>
-    <AssemblyName>WingsOrdersSystem</AssemblyName>
+    <ProjectGuid>{ED8BC13F-42E7-4840-8F52-7E90B3BABC51}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FormsEDI</RootNamespace>
+    <AssemblyName>FormsEDI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\App\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -31,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,16 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmMain.cs">
+    <Compile Include="frmEDI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>frmEDI.cs</DependentUpon>
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="frmEDI.resx">
+      <DependentUpon>frmEDI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -65,6 +68,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -84,33 +88,13 @@
       <Project>{aa9fb912-1040-4ed2-8784-ec118234b12f}</Project>
       <Name>CrystalReport</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Factories\Factories.csproj">
-      <Project>{fa6dda1a-587b-4210-8cd0-3fd6cfb71005}</Project>
-      <Name>Factories</Name>
+    <ProjectReference Include="..\EdiProcessor\EdiProcessor.csproj">
+      <Project>{e58fcd1e-53f6-4e85-b5a1-88755172bac0}</Project>
+      <Name>EdiProcessor</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FormsDesigner\FormsDesigner.csproj">
-      <Project>{a720e2b0-7044-49e1-bc2e-11e8394bc8dc}</Project>
-      <Name>FormsDesigner</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Formularios prueba\FormsEDI.csproj">
-      <Project>{ed8bc13f-42e7-4840-8f52-7e90b3babc51}</Project>
-      <Name>FormsEDI</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OperationalAreas\OperationalAreas.csproj">
-      <Project>{f5a1bffd-f5af-4470-8890-b10eaeb86a30}</Project>
-      <Name>OperationalAreas</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Orders\Orders.csproj">
-      <Project>{8b7bfeb9-57b8-4189-b738-5e59ee9a9ab6}</Project>
-      <Name>Orders</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Routes\Routes.csproj">
-      <Project>{d97b3b89-886f-4235-b88a-e4157e4b6703}</Project>
-      <Name>Routes</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\XWUserControls\XWUserControls.csproj">
-      <Project>{20024c37-d0ad-4669-8d96-62f789cd6d79}</Project>
-      <Name>XWUserControls</Name>
+    <ProjectReference Include="..\EF_CRUD\EFOrders.csproj">
+      <Project>{d498fda9-bbd0-403e-af4e-8142a65781ba}</Project>
+      <Name>EFOrders</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
