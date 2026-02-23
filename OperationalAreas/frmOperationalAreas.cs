@@ -65,7 +65,7 @@ namespace OperationalAreas
         }
         private void CreateRegister()
         {
-            if (txtCode.Text.Trim().Length != 0)
+            if (txtCode.Text.Trim().Length != 0 && txtDesc.Text.Trim().Length != 0)
             {
                 OperationalAreas opar = new OperationalAreas()
                 {
@@ -73,6 +73,10 @@ namespace OperationalAreas
                     DescOperationalArea = txtDesc.Text
                 };
                 db.OperationalAreas.Add(opar);
+            }
+            else
+            {
+                throw new Exception("The code can't be null");
             }
         }
         private void UpdateData()
@@ -129,6 +133,12 @@ namespace OperationalAreas
             {
                 lblLog.Visible = true;
                 lblLog.Text = "Error:" + ex.Message;
+                logsTimer.Start();
+            }
+            catch(Exception ex)
+            {
+                lblLog.Visible = true;
+                lblLog.Text = "the fields cannot be empty";
                 logsTimer.Start();
             }
         }
