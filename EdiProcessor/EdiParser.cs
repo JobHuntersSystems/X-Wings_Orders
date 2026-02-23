@@ -14,12 +14,12 @@ namespace EdiProcessor
 {
     public class EdiParser
     {
-        OrdersEntity ctx;
+        EFOrdersEntity ctx;
         int OrdersIDs = new int();
 
         public int ReadEDI(string filepath)
         {
-            ctx = new OrdersEntity();
+            ctx = new EFOrdersEntity();
             string[] EDILines = null;
             if (File.Exists(filepath))
             {

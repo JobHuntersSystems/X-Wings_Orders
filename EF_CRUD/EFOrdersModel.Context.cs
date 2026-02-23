@@ -13,10 +13,10 @@ namespace EF_CRUD
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class OrdersEntity : DbContext
+    public partial class EFOrdersEntity : DbContext
     {
-        public OrdersEntity()
-            : base("name=OrdersEntity")
+        public EFOrdersEntity()
+            : base("name=EFOrdersEntity")
         {
         }
     

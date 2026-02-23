@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="OrdersModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="EFOrdersModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Agencies">
           <Key>
             <PropertyRef Name="idAgency" />
@@ -191,7 +191,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="OrdersModelStoreContainer">
+        <EntityContainer Name="EFOrdersModelStoreContainer">
           <EntitySet Name="Agencies" EntityType="Self.Agencies" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Factories" EntityType="Self.Factories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OperationalAreas" EntityType="Self.OperationalAreas" Schema="dbo" store:Type="Tables" />
@@ -238,7 +238,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="OrdersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="EFOrdersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Agency">
           <Key>
             <PropertyRef Name="idAgency" />
@@ -441,7 +441,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="OrdersEntity" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="EFOrdersEntity" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Agencies" EntityType="Self.Agency" />
           <EntitySet Name="Factories" EntityType="Self.Factory" />
           <EntitySet Name="OperationalAreas" EntityType="Self.OperationalArea" />
@@ -489,9 +489,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="OrdersModelStoreContainer" CdmEntityContainer="OrdersEntity">
+        <EntityContainerMapping StorageEntityContainer="EFOrdersModelStoreContainer" CdmEntityContainer="EFOrdersEntity">
           <EntitySetMapping Name="Agencies">
-            <EntityTypeMapping TypeName="OrdersModel.Agency">
+            <EntityTypeMapping TypeName="EFOrdersModel.Agency">
               <MappingFragment StoreEntitySet="Agencies">
                 <ScalarProperty Name="idAgency" ColumnName="idAgency" />
                 <ScalarProperty Name="CodeAgency" ColumnName="CodeAgency" />
@@ -500,7 +500,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Factories">
-            <EntityTypeMapping TypeName="OrdersModel.Factory">
+            <EntityTypeMapping TypeName="EFOrdersModel.Factory">
               <MappingFragment StoreEntitySet="Factories">
                 <ScalarProperty Name="idFactory" ColumnName="idFactory" />
                 <ScalarProperty Name="codeFactory" ColumnName="codeFactory" />
@@ -509,7 +509,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OperationalAreas">
-            <EntityTypeMapping TypeName="OrdersModel.OperationalArea">
+            <EntityTypeMapping TypeName="EFOrdersModel.OperationalArea">
               <MappingFragment StoreEntitySet="OperationalAreas">
                 <ScalarProperty Name="idOperationalArea" ColumnName="idOperationalArea" />
                 <ScalarProperty Name="CodeOperationalArea" ColumnName="CodeOperationalArea" />
@@ -518,7 +518,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrderInfoes">
-            <EntityTypeMapping TypeName="OrdersModel.OrderInfo">
+            <EntityTypeMapping TypeName="EFOrdersModel.OrderInfo">
               <MappingFragment StoreEntitySet="OrderInfo">
                 <ScalarProperty Name="idOrderInfo" ColumnName="idOrderInfo" />
                 <ScalarProperty Name="idOrder" ColumnName="idOrder" />
@@ -528,7 +528,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Orders">
-            <EntityTypeMapping TypeName="OrdersModel.Order">
+            <EntityTypeMapping TypeName="EFOrdersModel.Order">
               <MappingFragment StoreEntitySet="Orders">
                 <ScalarProperty Name="idOrder" ColumnName="idOrder" />
                 <ScalarProperty Name="codeOrder" ColumnName="codeOrder" />
@@ -539,7 +539,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrdersDetails">
-            <EntityTypeMapping TypeName="OrdersModel.OrdersDetail">
+            <EntityTypeMapping TypeName="EFOrdersModel.OrdersDetail">
               <MappingFragment StoreEntitySet="OrdersDetail">
                 <ScalarProperty Name="idOrderDetail" ColumnName="idOrderDetail" />
                 <ScalarProperty Name="idOrder" ColumnName="idOrder" />
@@ -551,7 +551,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Planets">
-            <EntityTypeMapping TypeName="OrdersModel.Planet">
+            <EntityTypeMapping TypeName="EFOrdersModel.Planet">
               <MappingFragment StoreEntitySet="Planets">
                 <ScalarProperty Name="idPlanet" ColumnName="idPlanet" />
                 <ScalarProperty Name="CodePlanet" ColumnName="CodePlanet" />
@@ -570,7 +570,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Priorities">
-            <EntityTypeMapping TypeName="OrdersModel.Priority">
+            <EntityTypeMapping TypeName="EFOrdersModel.Priority">
               <MappingFragment StoreEntitySet="Priority">
                 <ScalarProperty Name="idPriority" ColumnName="idPriority" />
                 <ScalarProperty Name="CodePriority" ColumnName="CodePriority" />
@@ -579,7 +579,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="References">
-            <EntityTypeMapping TypeName="OrdersModel.Reference">
+            <EntityTypeMapping TypeName="EFOrdersModel.Reference">
               <MappingFragment StoreEntitySet="References">
                 <ScalarProperty Name="idReference" ColumnName="idReference" />
                 <ScalarProperty Name="codeReference" ColumnName="codeReference" />

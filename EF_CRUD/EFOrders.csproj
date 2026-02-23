@@ -51,57 +51,57 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agency.cs">
-      <DependentUpon>OrdersModel.tt</DependentUpon>
+      <DependentUpon>EFOrdersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFOrdersModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFOrdersModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFOrdersModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFOrdersModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFOrdersModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFOrdersModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Factory.cs">
-      <DependentUpon>OrdersModel.tt</DependentUpon>
+      <DependentUpon>EFOrdersModel.tt</DependentUpon>
     </Compile>
     <Compile Include="OperationalArea.cs">
-      <DependentUpon>OrdersModel.tt</DependentUpon>
+      <DependentUpon>EFOrdersModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">
-      <DependentUpon>OrdersModel.tt</DependentUpon>
+      <DependentUpon>EFOrdersModel.tt</DependentUpon>
     </Compile>
     <Compile Include="OrderInfo.cs">
-      <DependentUpon>OrdersModel.tt</DependentUpon>
+      <DependentUpon>EFOrdersModel.tt</DependentUpon>
     </Compile>
     <Compile Include="OrdersDetail.cs">
-      <DependentUpon>OrdersModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OrdersModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OrdersModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OrdersModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OrdersModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="OrdersModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OrdersModel.edmx</DependentUpon>
+      <DependentUpon>EFOrdersModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Planet.cs">
-      <DependentUpon>OrdersModel.tt</DependentUpon>
+      <DependentUpon>EFOrdersModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Priority.cs">
-      <DependentUpon>OrdersModel.tt</DependentUpon>
+      <DependentUpon>EFOrdersModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reference.cs">
-      <DependentUpon>OrdersModel.tt</DependentUpon>
+      <DependentUpon>EFOrdersModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="OrdersModel.edmx">
+    <EntityDeploy Include="EFOrdersModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>OrdersModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>EFOrdersModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="OrdersModel.edmx.diagram">
-      <DependentUpon>OrdersModel.edmx</DependentUpon>
+    <None Include="EFOrdersModel.edmx.diagram">
+      <DependentUpon>EFOrdersModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -109,15 +109,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="OrdersModel.Context.tt">
+    <Content Include="EFOrdersModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OrdersModel.edmx</DependentUpon>
-      <LastGenOutput>OrdersModel.Context.cs</LastGenOutput>
+      <DependentUpon>EFOrdersModel.edmx</DependentUpon>
+      <LastGenOutput>EFOrdersModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="OrdersModel.tt">
+    <Content Include="EFOrdersModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OrdersModel.edmx</DependentUpon>
-      <LastGenOutput>OrdersModel.cs</LastGenOutput>
+      <DependentUpon>EFOrdersModel.edmx</DependentUpon>
+      <LastGenOutput>EFOrdersModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
