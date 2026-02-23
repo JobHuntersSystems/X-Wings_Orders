@@ -14,6 +14,7 @@ using Routes;
 using FormSpaceShipCategory;
 using FormsEDI;
 using FormSpaceShipTypes;
+using FTPServerProgram;
 
 namespace WingsOrdersSystem
 {
@@ -101,7 +102,7 @@ namespace WingsOrdersSystem
 			}
 			else
 			{
-				frmSpaceShipCategory frm = new frmSpaceShipCategory("Routes");
+				frmSpaceShipCategory frm = new frmSpaceShipCategory("SpaceShipCategories");
 				frm.Show();
 				frm.WindowState = FormWindowState.Maximized;
 			}
@@ -116,7 +117,37 @@ namespace WingsOrdersSystem
 			}
 			else
 			{
-				frmSpaceShipTypes frm = new frmSpaceShipTypes("Routes");
+				frmSpaceShipTypes frm = new frmSpaceShipTypes("SpaceShipTypes");
+				frm.Show();
+				frm.WindowState = FormWindowState.Maximized;
+			}
+		}
+
+        private void xwLauchFrmFTP_ButtonClick(object sender, EventArgs e)
+        {
+			FrmFTP exist = Application.OpenForms.OfType<FrmFTP>().FirstOrDefault();
+			if (exist != null)
+			{
+				exist.BringToFront();
+			}
+			else
+			{
+				FrmFTP frm = new FrmFTP();
+				frm.Show();
+				frm.WindowState = FormWindowState.Maximized;
+			}
+		}
+
+        private void xwLauchFrmEDI_ButtonClick(object sender, EventArgs e)
+        {
+			frmEDI exist = Application.OpenForms.OfType<frmEDI>().FirstOrDefault();
+			if (exist != null)
+			{
+				exist.BringToFront();
+			}
+			else
+			{
+				frmEDI frm = new frmEDI();
 				frm.Show();
 				frm.WindowState = FormWindowState.Maximized;
 			}

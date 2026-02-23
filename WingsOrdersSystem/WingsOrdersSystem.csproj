@@ -104,6 +104,10 @@
       <Project>{ed8bc13f-42e7-4840-8f52-7e90b3babc51}</Project>
       <Name>FormsEDI</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FTPServerProgram\FTPServerProgram.csproj">
+      <Project>{3c2bc488-9181-4a31-94de-944158f8540a}</Project>
+      <Name>FTPServerProgram</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OperationalAreas\OperationalAreas.csproj">
       <Project>{f5a1bffd-f5af-4470-8890-b10eaeb86a30}</Project>
       <Name>OperationalAreas</Name>

@@ -22,6 +22,8 @@ namespace FTPServerProgram
 		{
 			try
 			{
+				txtLog.AppendText("> Starting connection with the FTP server...\r\n");
+
 				var config = FtpConfigReader.Load("FTP_XML.xml");
 				var ftpService = new FtpService(config);
 
@@ -38,14 +40,18 @@ namespace FTPServerProgram
 					// Si no existe localmente → es nuevo
 					if (!File.Exists(localPath))
 					{
+						txtLog.AppendText($"> Downloading new file: {file}...\r\n");
 						ftpService.DownloadFile(file);
+
+						txtLog.AppendText($">Moving {file} to Tractats folder...\r\n");
 						ftpService.MoveToProcessed(file);
 
-						txtLog.AppendText($"Procesado: {file}\r\n");
+						txtLog.AppendText($"Processed: {file}\r\n");
+						txtLog.AppendText("--------------------------------------------------\r\n");
 					}
 				}
 
-				txtLog.AppendText("Proceso finalizado.\r\n");
+				txtLog.AppendText("Process completed.\r\n");
 			}
 			catch (Exception ex)
 			{
