@@ -119,8 +119,6 @@ namespace FormsDesigner
             this.xwCloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.xwCloseButton.HoverIconPath = "resources\\png\\CloseButtonShinyYellow.png";
-            this.xwCloseButton.ImageLocation = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\resourc" +
-    "es\\png\\CloseButtonYellow.png";
             this.xwCloseButton.Location = new System.Drawing.Point(1470, 0);
             this.xwCloseButton.MainIconPath = "resources\\png\\CloseButtonYellow.png";
             this.xwCloseButton.Name = "xwCloseButton";
