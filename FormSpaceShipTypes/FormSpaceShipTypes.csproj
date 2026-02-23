@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4BFA0E7F-3A22-47C8-AC5C-47A805EF2699}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>FormSpaceShipTypes</RootNamespace>
     <AssemblyName>FormSpaceShipTypes</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -31,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -58,7 +61,9 @@
     <Compile Include="Filiation.cs">
       <DependentUpon>SpaceShipModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="frmSpaceShipTypes.cs" />
+    <Compile Include="frmSpaceShipTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmSpaceShipTypes.Designer.cs">
       <DependentUpon>frmSpaceShipTypes.cs</DependentUpon>
     </Compile>

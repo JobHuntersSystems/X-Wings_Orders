@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SpaceShipModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Filiations">
+          <Key>
+            <PropertyRef Name="idFiliation" />
+          </Key>
+          <Property Name="idFiliation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodeFiliation" Type="nvarchar" MaxLength="12" />
+          <Property Name="DescFiliations" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SpaceShipCategories">
+          <Key>
+            <PropertyRef Name="idSpaceShipCategory" />
+          </Key>
+          <Property Name="idSpaceShipCategory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodeSpaceShipCategory" Type="nvarchar" MaxLength="12" />
+          <Property Name="DescSpaceShipCategory" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SpaceShipTypes">
+          <Key>
+            <PropertyRef Name="idSpaceShipType" />
+          </Key>
+          <Property Name="idSpaceShipType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodeSpaceShipType" Type="nvarchar" MaxLength="12" />
+          <Property Name="DescSpaceShipType" Type="nvarchar" MaxLength="200" />
+          <Property Name="idFiliation" Type="int" />
+          <Property Name="idSpaceShipCategory" Type="int" />
+        </EntityType>
+        <Association Name="FK_SpaceShipTypes_Filiations">
+          <End Role="Filiations" Type="Self.Filiations" Multiplicity="0..1" />
+          <End Role="SpaceShipTypes" Type="Self.SpaceShipTypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Filiations">
+              <PropertyRef Name="idFiliation" />
+            </Principal>
+            <Dependent Role="SpaceShipTypes">
+              <PropertyRef Name="idFiliation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SpaceShipTypes_SpaceShipCategories">
+          <End Role="SpaceShipCategories" Type="Self.SpaceShipCategories" Multiplicity="0..1" />
+          <End Role="SpaceShipTypes" Type="Self.SpaceShipTypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SpaceShipCategories">
+              <PropertyRef Name="idSpaceShipCategory" />
+            </Principal>
+            <Dependent Role="SpaceShipTypes">
+              <PropertyRef Name="idSpaceShipCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SpaceShipModelStoreContainer">
+          <EntitySet Name="Filiations" EntityType="Self.Filiations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SpaceShipCategories" EntityType="Self.SpaceShipCategories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SpaceShipTypes" EntityType="Self.SpaceShipTypes" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_SpaceShipTypes_Filiations" Association="Self.FK_SpaceShipTypes_Filiations">
+            <End Role="Filiations" EntitySet="Filiations" />
+            <End Role="SpaceShipTypes" EntitySet="SpaceShipTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SpaceShipTypes_SpaceShipCategories" Association="Self.FK_SpaceShipTypes_SpaceShipCategories">
+            <End Role="SpaceShipCategories" EntitySet="SpaceShipCategories" />
+            <End Role="SpaceShipTypes" EntitySet="SpaceShipTypes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SpaceShipModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Filiation">
+          <Key>
+            <PropertyRef Name="idFiliation" />
+          </Key>
+          <Property Name="idFiliation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodeFiliation" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="DescFiliations" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SpaceShipTypes" Relationship="Self.FK_SpaceShipTypes_Filiations" FromRole="Filiations" ToRole="SpaceShipTypes" />
+        </EntityType>
+        <EntityType Name="SpaceShipCategory">
+          <Key>
+            <PropertyRef Name="idSpaceShipCategory" />
+          </Key>
+          <Property Name="idSpaceShipCategory" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodeSpaceShipCategory" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="DescSpaceShipCategory" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SpaceShipTypes" Relationship="Self.FK_SpaceShipTypes_SpaceShipCategories" FromRole="SpaceShipCategories" ToRole="SpaceShipTypes" />
+        </EntityType>
+        <EntityType Name="SpaceShipType">
+          <Key>
+            <PropertyRef Name="idSpaceShipType" />
+          </Key>
+          <Property Name="idSpaceShipType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodeSpaceShipType" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="DescSpaceShipType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="idFiliation" Type="Int32" />
+          <Property Name="idSpaceShipCategory" Type="Int32" />
+          <NavigationProperty Name="Filiation" Relationship="Self.FK_SpaceShipTypes_Filiations" FromRole="SpaceShipTypes" ToRole="Filiations" />
+          <NavigationProperty Name="SpaceShipCategory" Relationship="Self.FK_SpaceShipTypes_SpaceShipCategories" FromRole="SpaceShipTypes" ToRole="SpaceShipCategories" />
+        </EntityType>
+        <Association Name="FK_SpaceShipTypes_Filiations">
+          <End Role="Filiations" Type="Self.Filiation" Multiplicity="0..1" />
+          <End Role="SpaceShipTypes" Type="Self.SpaceShipType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Filiations">
+              <PropertyRef Name="idFiliation" />
+            </Principal>
+            <Dependent Role="SpaceShipTypes">
+              <PropertyRef Name="idFiliation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SpaceShipTypes_SpaceShipCategories">
+          <End Role="SpaceShipCategories" Type="Self.SpaceShipCategory" Multiplicity="0..1" />
+          <End Role="SpaceShipTypes" Type="Self.SpaceShipType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SpaceShipCategories">
+              <PropertyRef Name="idSpaceShipCategory" />
+            </Principal>
+            <Dependent Role="SpaceShipTypes">
+              <PropertyRef Name="idSpaceShipCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SpaceShipEntitie" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Filiations" EntityType="Self.Filiation" />
+          <EntitySet Name="SpaceShipCategories" EntityType="Self.SpaceShipCategory" />
+          <EntitySet Name="SpaceShipTypes" EntityType="Self.SpaceShipType" />
+          <AssociationSet Name="FK_SpaceShipTypes_Filiations" Association="Self.FK_SpaceShipTypes_Filiations">
+            <End Role="Filiations" EntitySet="Filiations" />
+            <End Role="SpaceShipTypes" EntitySet="SpaceShipTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SpaceShipTypes_SpaceShipCategories" Association="Self.FK_SpaceShipTypes_SpaceShipCategories">
+            <End Role="SpaceShipCategories" EntitySet="SpaceShipCategories" />
+            <End Role="SpaceShipTypes" EntitySet="SpaceShipTypes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SpaceShipModelStoreContainer" CdmEntityContainer="SpaceShipEntitie">
+          <EntitySetMapping Name="Filiations">
+            <EntityTypeMapping TypeName="SpaceShipModel.Filiation">
+              <MappingFragment StoreEntitySet="Filiations">
+                <ScalarProperty Name="idFiliation" ColumnName="idFiliation" />
+                <ScalarProperty Name="CodeFiliation" ColumnName="CodeFiliation" />
+                <ScalarProperty Name="DescFiliations" ColumnName="DescFiliations" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpaceShipCategories">
+            <EntityTypeMapping TypeName="SpaceShipModel.SpaceShipCategory">
+              <MappingFragment StoreEntitySet="SpaceShipCategories">
+                <ScalarProperty Name="idSpaceShipCategory" ColumnName="idSpaceShipCategory" />
+                <ScalarProperty Name="CodeSpaceShipCategory" ColumnName="CodeSpaceShipCategory" />
+                <ScalarProperty Name="DescSpaceShipCategory" ColumnName="DescSpaceShipCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpaceShipTypes">
+            <EntityTypeMapping TypeName="SpaceShipModel.SpaceShipType">
+              <MappingFragment StoreEntitySet="SpaceShipTypes">
+                <ScalarProperty Name="idSpaceShipType" ColumnName="idSpaceShipType" />
+                <ScalarProperty Name="CodeSpaceShipType" ColumnName="CodeSpaceShipType" />
+                <ScalarProperty Name="DescSpaceShipType" ColumnName="DescSpaceShipType" />
+                <ScalarProperty Name="idFiliation" ColumnName="idFiliation" />
+                <ScalarProperty Name="idSpaceShipCategory" ColumnName="idSpaceShipCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
