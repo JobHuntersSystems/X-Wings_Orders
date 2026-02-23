@@ -52,45 +52,46 @@ namespace FormSpaceShipTypes
             // cbSpaceShipCategory
             // 
             this.cbSpaceShipCategory.FormattingEnabled = true;
-            this.cbSpaceShipCategory.Location = new System.Drawing.Point(225, 327);
+            this.cbSpaceShipCategory.Location = new System.Drawing.Point(206, 313);
             this.cbSpaceShipCategory.Name = "cbSpaceShipCategory";
-            this.cbSpaceShipCategory.Size = new System.Drawing.Size(446, 32);
+            this.cbSpaceShipCategory.Size = new System.Drawing.Size(409, 31);
             this.cbSpaceShipCategory.TabIndex = 9;
             this.cbSpaceShipCategory.Tag = "idSpaceShipCategory";
             // 
             // cbFilliations
             // 
             this.cbFilliations.FormattingEnabled = true;
-            this.cbFilliations.Location = new System.Drawing.Point(225, 275);
+            this.cbFilliations.Location = new System.Drawing.Point(206, 264);
             this.cbFilliations.Name = "cbFilliations";
-            this.cbFilliations.Size = new System.Drawing.Size(446, 32);
+            this.cbFilliations.Size = new System.Drawing.Size(409, 31);
             this.cbFilliations.TabIndex = 8;
             this.cbFilliations.Tag = "idFiliation";
             // 
             // txtcodeSpaceShipType
             // 
-            this.txtcodeSpaceShipType.Location = new System.Drawing.Point(225, 181);
+            this.txtcodeSpaceShipType.Location = new System.Drawing.Point(206, 173);
             this.txtcodeSpaceShipType.Name = "txtcodeSpaceShipType";
-            this.txtcodeSpaceShipType.Size = new System.Drawing.Size(446, 29);
+            this.txtcodeSpaceShipType.Size = new System.Drawing.Size(409, 31);
             this.txtcodeSpaceShipType.TabIndex = 6;
             this.txtcodeSpaceShipType.Tag = "CodeSpaceShipType";
             // 
             // txtDescSpaceShipType
             // 
-            this.txtDescSpaceShipType.Location = new System.Drawing.Point(225, 227);
+            this.txtDescSpaceShipType.Location = new System.Drawing.Point(206, 218);
             this.txtDescSpaceShipType.Name = "txtDescSpaceShipType";
-            this.txtDescSpaceShipType.Size = new System.Drawing.Size(446, 29);
+            this.txtDescSpaceShipType.Size = new System.Drawing.Size(409, 31);
             this.txtDescSpaceShipType.TabIndex = 7;
             this.txtDescSpaceShipType.Tag = "DescSpaceShipType";
             // 
             // logsTimer
             // 
+            this.logsTimer.Interval = 2000;
             this.logsTimer.Tick += new System.EventHandler(this.logsTimer_Tick);
             // 
             // frmSpaceShipTypes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
-            this.ClientSize = new System.Drawing.Size(1650, 1010);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.ClientSize = new System.Drawing.Size(1513, 968);
             this.Controls.Add(this.cbSpaceShipCategory);
             this.Controls.Add(this.cbFilliations);
             this.Controls.Add(this.txtcodeSpaceShipType);

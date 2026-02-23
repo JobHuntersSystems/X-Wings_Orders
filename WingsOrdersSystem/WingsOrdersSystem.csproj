@@ -92,6 +92,14 @@
       <Project>{a720e2b0-7044-49e1-bc2e-11e8394bc8dc}</Project>
       <Name>FormsDesigner</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FormSpaceShipCategory\FormSpaceShipCategory.csproj">
+      <Project>{b139e2e9-d95e-4810-ab13-afc706ec69ff}</Project>
+      <Name>FormSpaceShipCategory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FormSpaceShipTypes\FormSpaceShipTypes.csproj">
+      <Project>{4bfa0e7f-3a22-47c8-ac5c-47a805ef2699}</Project>
+      <Name>FormSpaceShipTypes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Formularios prueba\FormsEDI.csproj">
       <Project>{ed8bc13f-42e7-4840-8f52-7e90b3babc51}</Project>
       <Name>FormsEDI</Name>

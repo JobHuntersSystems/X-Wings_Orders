@@ -11,9 +11,9 @@ using Factories;
 using OperationalAreas;
 using Orders;
 using Routes;
+using FormSpaceShipCategory;
 using FormsEDI;
-
-
+using FormSpaceShipTypes;
 
 namespace WingsOrdersSystem
 {
@@ -29,8 +29,17 @@ namespace WingsOrdersSystem
 		}
 		private void xwLauchFrmFactories_ButtonClick(object sender, EventArgs e)
 		{
-			frmFactories frm = new frmFactories("Factories");
-			frm.Show();
+			frmFactories exist = Application.OpenForms.OfType<frmFactories>().FirstOrDefault();
+			if (exist != null)
+			{
+				exist.BringToFront();
+			}
+			else
+			{
+				frmFactories frm = new frmFactories("OperationalAreas");
+				frm.Show();
+				frm.WindowState = FormWindowState.Maximized;
+			}
 		}
 
         private void xwLauchFrmOpeArea_ButtonClick(object sender, EventArgs e)
@@ -44,14 +53,24 @@ namespace WingsOrdersSystem
             {
 				frmOperationalAreas frm = new frmOperationalAreas("OperationalAreas");
 				frm.Show();
+				frm.WindowState = FormWindowState.Maximized;
 			}			
         }
 
         private void xwLauchFrmOrders_ButtonClick(object sender, EventArgs e)
         {
-            frmOrders frm = new frmOrders("Orders");
-            frm.Show();
-        }
+			frmOrders exist = Application.OpenForms.OfType<frmOrders>().FirstOrDefault();
+			if (exist != null)
+			{
+				exist.BringToFront();
+			}
+			else
+			{
+				frmOrders frm = new frmOrders("OperationalAreas");
+				frm.Show();
+				frm.WindowState = FormWindowState.Maximized;
+			}
+		}
 		
 		private void xwLauchFrmRouts_ButtonClick(object sender, EventArgs e)
 		{
@@ -64,12 +83,43 @@ namespace WingsOrdersSystem
             {
 				frmRoutes frm = new frmRoutes("Routes");
 				frm.Show();
+				frm.WindowState = FormWindowState.Maximized;
 			}			
 		}
 		private void timerTime_Tick(object sender, EventArgs e)
 		{
 			string timeFrame = DateTime.Now.ToString("HH:mm:ss");
 			lblTime.Text = timeFrame;
+		}
+
+        private void xwLauchFrmSpaceshipsCategories_ButtonClick(object sender, EventArgs e)
+        {
+			frmSpaceShipCategory exist = Application.OpenForms.OfType<frmSpaceShipCategory>().FirstOrDefault();
+			if (exist != null)
+			{
+				exist.BringToFront();
+			}
+			else
+			{
+				frmSpaceShipCategory frm = new frmSpaceShipCategory("Routes");
+				frm.Show();
+				frm.WindowState = FormWindowState.Maximized;
+			}
+		}
+
+        private void xwLauchFrmSpaceshipsSpecies_ButtonClick(object sender, EventArgs e)
+        {
+			frmSpaceShipTypes exist = Application.OpenForms.OfType<frmSpaceShipTypes>().FirstOrDefault();
+			if (exist != null)
+			{
+				exist.BringToFront();
+			}
+			else
+			{
+				frmSpaceShipTypes frm = new frmSpaceShipTypes("Routes");
+				frm.Show();
+				frm.WindowState = FormWindowState.Maximized;
+			}
 		}
     }
 }

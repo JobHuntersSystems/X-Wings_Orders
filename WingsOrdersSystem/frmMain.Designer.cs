@@ -40,7 +40,7 @@ namespace WingsOrdersSystem
             this.pctSpace1 = new System.Windows.Forms.PictureBox();
             this.pctTime = new System.Windows.Forms.PictureBox();
             this.pnlControls = new System.Windows.Forms.Panel();
-            this.xwLauchFrmSpaceships = new XWUserControls.XWLauchForm();
+            this.xwLauchFrmSpaceshipsCategories = new XWUserControls.XWLauchForm();
             this.xwLauchFrmFilliations = new XWUserControls.XWLauchForm();
             this.xwLauchFrmOpeArea = new XWUserControls.XWLauchForm();
             this.xwLauchFrmEDI = new XWUserControls.XWLauchForm();
@@ -49,6 +49,7 @@ namespace WingsOrdersSystem
             this.xwLauchFrmFTP = new XWUserControls.XWLauchForm();
             this.xwLauchFrmFactories = new XWUserControls.XWLauchForm();
             this.timerTime = new System.Windows.Forms.Timer(this.components);
+            this.xwLauchFrmSpaceshipsSpecies = new XWUserControls.XWLauchForm();
             this.pnlMain.SuspendLayout();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctSpace2)).BeginInit();
@@ -165,7 +166,8 @@ namespace WingsOrdersSystem
             // pnlControls
             // 
             this.pnlControls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pnlControls.Controls.Add(this.xwLauchFrmSpaceships);
+            this.pnlControls.Controls.Add(this.xwLauchFrmSpaceshipsSpecies);
+            this.pnlControls.Controls.Add(this.xwLauchFrmSpaceshipsCategories);
             this.pnlControls.Controls.Add(this.xwLauchFrmFilliations);
             this.pnlControls.Controls.Add(this.xwLauchFrmOpeArea);
             this.pnlControls.Controls.Add(this.xwLauchFrmEDI);
@@ -173,26 +175,27 @@ namespace WingsOrdersSystem
             this.pnlControls.Controls.Add(this.xwLauchFrmOrders);
             this.pnlControls.Controls.Add(this.xwLauchFrmFTP);
             this.pnlControls.Controls.Add(this.xwLauchFrmFactories);
-            this.pnlControls.Location = new System.Drawing.Point(168, 271);
+            this.pnlControls.Location = new System.Drawing.Point(168, 153);
             this.pnlControls.Name = "pnlControls";
-            this.pnlControls.Size = new System.Drawing.Size(1248, 518);
+            this.pnlControls.Size = new System.Drawing.Size(1248, 746);
             this.pnlControls.TabIndex = 12;
             // 
-            // xwLauchFrmSpaceships
+            // xwLauchFrmSpaceshipsCategories
             // 
-            this.xwLauchFrmSpaceships.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.xwLauchFrmSpaceships.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xwLauchFrmSpaceships.ForeColor = System.Drawing.Color.White;
-            this.xwLauchFrmSpaceships.HoverBackColor = "23;23;23";
-            this.xwLauchFrmSpaceships.HoverFontColor = "233;233;233";
-            this.xwLauchFrmSpaceships.HoverImagePath = "resources\\png\\rocket_launch.png";
-            this.xwLauchFrmSpaceships.InitialImagePath = "resources\\png\\rocket.png";
-            this.xwLauchFrmSpaceships.Location = new System.Drawing.Point(1014, 17);
-            this.xwLauchFrmSpaceships.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.xwLauchFrmSpaceships.Name = "xwLauchFrmSpaceships";
-            this.xwLauchFrmSpaceships.Size = new System.Drawing.Size(230, 225);
-            this.xwLauchFrmSpaceships.TabIndex = 10;
-            this.xwLauchFrmSpaceships.Title = "Spaceships Categories";
+            this.xwLauchFrmSpaceshipsCategories.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.xwLauchFrmSpaceshipsCategories.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xwLauchFrmSpaceshipsCategories.ForeColor = System.Drawing.Color.White;
+            this.xwLauchFrmSpaceshipsCategories.HoverBackColor = "23;23;23";
+            this.xwLauchFrmSpaceshipsCategories.HoverFontColor = "233;233;233";
+            this.xwLauchFrmSpaceshipsCategories.HoverImagePath = "resources\\png\\rocket_launch.png";
+            this.xwLauchFrmSpaceshipsCategories.InitialImagePath = "resources\\png\\rocket.png";
+            this.xwLauchFrmSpaceshipsCategories.Location = new System.Drawing.Point(1014, 17);
+            this.xwLauchFrmSpaceshipsCategories.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.xwLauchFrmSpaceshipsCategories.Name = "xwLauchFrmSpaceshipsCategories";
+            this.xwLauchFrmSpaceshipsCategories.Size = new System.Drawing.Size(230, 225);
+            this.xwLauchFrmSpaceshipsCategories.TabIndex = 10;
+            this.xwLauchFrmSpaceshipsCategories.Title = "Spaceships Categories";
+            this.xwLauchFrmSpaceshipsCategories.ButtonClick += new System.EventHandler(this.xwLauchFrmSpaceshipsCategories_ButtonClick);
             // 
             // xwLauchFrmFilliations
             // 
@@ -315,6 +318,23 @@ namespace WingsOrdersSystem
             this.timerTime.Interval = 1000;
             this.timerTime.Tick += new System.EventHandler(this.timerTime_Tick);
             // 
+            // xwLauchFrmSpaceshipsSpecies
+            // 
+            this.xwLauchFrmSpaceshipsSpecies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.xwLauchFrmSpaceshipsSpecies.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xwLauchFrmSpaceshipsSpecies.ForeColor = System.Drawing.Color.White;
+            this.xwLauchFrmSpaceshipsSpecies.HoverBackColor = "23;23;23";
+            this.xwLauchFrmSpaceshipsSpecies.HoverFontColor = "233;233;233";
+            this.xwLauchFrmSpaceshipsSpecies.HoverImagePath = "resources\\png\\sith.png";
+            this.xwLauchFrmSpaceshipsSpecies.InitialImagePath = "resources\\png\\sith.png";
+            this.xwLauchFrmSpaceshipsSpecies.Location = new System.Drawing.Point(508, 517);
+            this.xwLauchFrmSpaceshipsSpecies.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.xwLauchFrmSpaceshipsSpecies.Name = "xwLauchFrmSpaceshipsSpecies";
+            this.xwLauchFrmSpaceshipsSpecies.Size = new System.Drawing.Size(225, 225);
+            this.xwLauchFrmSpaceshipsSpecies.TabIndex = 11;
+            this.xwLauchFrmSpaceshipsSpecies.Title = "Spaceships Species";
+            this.xwLauchFrmSpaceshipsSpecies.ButtonClick += new System.EventHandler(this.xwLauchFrmSpaceshipsSpecies_ButtonClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,7 +367,7 @@ namespace WingsOrdersSystem
         private XWUserControls.XWLauchForm xwLauchFrmEDI;
         private XWUserControls.XWLauchForm xwLauchFrmOpeArea;
         private XWUserControls.XWLauchForm xwLauchFrmFilliations;
-        private XWUserControls.XWLauchForm xwLauchFrmSpaceships;
+        private XWUserControls.XWLauchForm xwLauchFrmSpaceshipsCategories;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Panel pnlControls;
         private System.Windows.Forms.Panel pnlTop;
@@ -359,6 +379,7 @@ namespace WingsOrdersSystem
         private System.Windows.Forms.PictureBox pctSpace1;
         private System.Windows.Forms.PictureBox pctSpace3;
         private System.Windows.Forms.PictureBox pctSpace2;
+        private XWUserControls.XWLauchForm xwLauchFrmSpaceshipsSpecies;
     }
 }
 
