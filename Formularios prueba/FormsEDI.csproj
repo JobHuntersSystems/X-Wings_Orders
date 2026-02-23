@@ -49,12 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmEDI.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmEDI.cs" />
     <Compile Include=".Designer.cs">
       <DependentUpon>frmEDI.cs</DependentUpon>
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmEDI.resx">

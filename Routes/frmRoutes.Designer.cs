@@ -286,7 +286,7 @@ namespace Routes
             this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.Name = "frmRoutes";
-            this.Text = "Form1";
+            this.Text = "";
             this.Load += new System.EventHandler(this.frmRoutes_Load);
             this.Controls.SetChildIndex(this.btnUpdate, 0);
             this.Controls.SetChildIndex(this.btnCreate, 0);
