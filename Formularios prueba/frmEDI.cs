@@ -9,19 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EdiProcessor;
 using EF_CRUD;
+using System.IO;
 using CrystalReport;
 
 
 namespace FormsEDI
 {
-    public partial class Form1 : Form
+    public partial class frmEDI : Form
     {
         EdiParser edi = new EdiParser();
         string path;
 
         List<int> ordersIDs = new List<int>();
 
-        public Form1()
+        public frmEDI()
         {
             InitializeComponent();
             btnOpenCristal.Enabled = false;
@@ -29,7 +30,9 @@ namespace FormsEDI
 
         private void btnSelectPath_Click(object sender, EventArgs e)
         {
+            string ftpPath = Path.Combine(Application.StartupPath, "FTP");
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = ftpPath;
             openFileDialog.Filter = "Archivos edi (*.edi)|*.edi|Todos los archivos (*.*)|*.*";
             openFileDialog.Title = "Seleccionar archivo";
 

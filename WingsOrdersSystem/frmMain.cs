@@ -49,7 +49,7 @@ namespace WingsOrdersSystem
 
 		private void xwLauchFrmEDI_ButtonClick(object sender, EventArgs e)
         {
-            FormsEDI.Form1 form1 = new FormsEDI.Form1();
+            FormsEDI.frmEDI form1 = new FormsEDI.frmEDI();
             form1.Show();
         }
 	}

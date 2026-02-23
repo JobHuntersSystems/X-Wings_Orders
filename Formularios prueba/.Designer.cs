@@ -1,7 +1,7 @@
 ﻿
 namespace FormsEDI
 {
-    partial class Form1
+    partial class frmEDI
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -163,7 +163,7 @@ namespace FormsEDI
             this.panel4.Size = new System.Drawing.Size(1840, 524);
             this.panel4.TabIndex = 9;
             // 
-            // Form1
+            // frmEDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -172,8 +172,8 @@ namespace FormsEDI
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmEDI";
+            this.Text = "frmEDI";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

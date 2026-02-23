@@ -27,8 +27,11 @@ namespace EdiProcessor
             }
 
             SaveEDI(EDILines);
+            string fileName = Path.GetFileName(filepath);
+            string destPath = Path.Combine(@"FTP\Tractats", fileName);
+            File.Move(filepath, destPath);
 
-            return OrdersIDs; 
+            return OrdersIDs;
         }
 
         private void SaveEDI(string[] EDIList)
@@ -39,57 +42,44 @@ namespace EdiProcessor
 
             if (EDIList[0].Equals("ORDERS_D_96A_UN_EAN008"))
             {
-                //using (DbContextTransaction transaction = ctx.Database.BeginTransaction())
-                //{
-                 //   try
-                   // {
-                        foreach (string data in EDIList)
-                        {
-                            string[] splitedData = data.Split('|');
+                foreach (string data in EDIList)
+                {
+                    string[] splitedData = data.Split('|');
 
-                            switch (splitedData[0])
-                            {
-                                case "ORD": //Datos generales 
-                                    order = new Order();
-                                    order = ProcessORD(order, splitedData);
-                                    break;
-                                case "DTM": //Fechas 
-                                    order = ProcessDTM(order, splitedData);
-                                    break;
-                                case "NADMS": //Emisor del mensaje
-                                    orderInfo = new OrderInfo();
-                                    order.OrderInfoes.Add(ProcessNADMS(orderInfo, splitedData));
-                                    break;
-                                case "NADMR": //Receptor del mensaje
-                                    order = ProcessNADMR(order, splitedData);
-                                    break;
-                                case "LIN":
-                                    ordersDetail = new OrdersDetail();
-                                    ordersDetail = ProcessLIN(ordersDetail, splitedData);
-                                    break;
-                                case "QTYLIN":
-                                    ordersDetail = ProcessQTYLIN(ordersDetail, splitedData);
-                                    break;
-                                case "DTMLIN":
-                                    ordersDetail = ProcessDTMLIN(ordersDetail, splitedData);
-                                    order.OrdersDetails.Add(ordersDetail);
-                                    break;
-                                default:
-                                    break;
-                            }
-                        }
-                        ctx.Orders.Add(order);
-                        ctx.SaveChanges();
-                        OrdersIDs = order.idOrder;
-
-                        //transaction.Commit();
-                    //}
-                    //catch (Exception ex)
-                    //{
-                    //    transaction.Rollback();
-                    //    Console.WriteLine("Error, Rollback maded: " + ex.Message);
-                    //}
-                //}
+                    switch (splitedData[0])
+                    {
+                        case "ORD": 
+                            order = new Order();
+                            order = ProcessORD(order, splitedData);
+                            break;
+                        case "DTM": 
+                            order = ProcessDTM(order, splitedData);
+                            break;
+                        case "NADMS": 
+                            orderInfo = new OrderInfo();
+                            order.OrderInfoes.Add(ProcessNADMS(orderInfo, splitedData));
+                            break;
+                        case "NADMR": 
+                            order = ProcessNADMR(order, splitedData);
+                            break;
+                        case "LIN":
+                            ordersDetail = new OrdersDetail();
+                            ordersDetail = ProcessLIN(ordersDetail, splitedData);
+                            break;
+                        case "QTYLIN":
+                            ordersDetail = ProcessQTYLIN(ordersDetail, splitedData);
+                            break;
+                        case "DTMLIN":
+                            ordersDetail = ProcessDTMLIN(ordersDetail, splitedData);
+                            order.OrdersDetails.Add(ordersDetail);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                ctx.Orders.Add(order);
+                ctx.SaveChanges();
+                OrdersIDs = order.idOrder;
             }
         }
 
@@ -202,7 +192,7 @@ namespace EdiProcessor
             string codigoPlaneta = data[1];
             string codigoReferencia = data[2];
 
-            var prueba = ctx.Planets.FirstOrDefault(p => p.CodePlanet == (data[3]  + codigoPlaneta));
+            var prueba = ctx.Planets.FirstOrDefault(p => p.CodePlanet == (codigoPlaneta));
             int idplaneta = prueba.idPlanet;
      
             var prueba2 = ctx.References.FirstOrDefault(p => p.codeReference == codigoReferencia);
