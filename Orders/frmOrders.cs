@@ -23,6 +23,9 @@ namespace Orders
 
             ctx = new OrdersEntity();
             bsOrders = new BindingSource();
+
+            cmbFactory.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbPriority.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         bool isNew;
         Color originalForeColor;
@@ -75,12 +78,19 @@ namespace Orders
 
                     cmb.DataBindings.Clear();
 
+                    LoadComboBox(cmb, fkTableName);
                     cmb.DataBindings.Add("SelectedValue", bsOrders, dataMember, false, DataSourceUpdateMode.OnValidation);
 
                     cmb.SelectedValueChanged -= new EventHandler(ComboBox_SetValue);
                     cmb.SelectedValueChanged += new EventHandler(ComboBox_SetValue);
 
-                    LoadComboBox(cmb, fkTableName);
+                    ComboBox_SetValue(cmb, EventArgs.Empty);
+                }
+                if (ctrl is DateTimePicker)
+                {
+                    DateTimePicker dtp = ((DateTimePicker)ctrl);
+                    dtp.DataBindings.Clear();
+                    dtp.DataBindings.Add("Text", bsOrders, dtp.Tag.ToString(), true, DataSourceUpdateMode.OnValidation);
                 }
             }
         }
@@ -99,6 +109,12 @@ namespace Orders
                     ComboBox cmb = ((ComboBox)ctrl);
                     cmb.DataBindings.Clear();
                     cmb.SelectedIndex = -1;
+                }
+                if (ctrl is DateTimePicker)
+                {
+                    DateTimePicker dtp = ((DateTimePicker)ctrl);
+                    dtp.DataBindings.Clear();
+                    dtp.Value = DateTime.Now;
                 }
             }
         }
@@ -164,10 +180,19 @@ namespace Orders
         private void createRegister()
         {
             string codeOrder = txtCodeOrder.Text;
-            DateTime dateOrder = Convert.ToDateTime(txtDateOrder.Text);
+            DateTime dateOrder = dtpDateOrder.Value;
             short idPriority = Convert.ToInt16(cmbPriority.SelectedValue);
             short idFactory = Convert.ToInt16(cmbFactory.SelectedValue);
 
+            if(idPriority <= 0)
+            {
+                throw new Exception("Priority can't be null");
+            }
+            else if (idFactory <= 0)
+            {
+                throw new Exception("Factory can't be null");
+
+            }
             Order o = new Order
             {
                 codeOrder = codeOrder,
@@ -309,7 +334,7 @@ namespace Orders
             catch (SqlException sql_ex)
             {
                 MessageBox.Show(
-                   $"SQL Server exception:\n{sql_ex.Message}",
+                   $"SQL Server exception: \n{sql_ex.Message}",
                    "Error de conexión",
                    MessageBoxButtons.OK,
                    MessageBoxIcon.Error
@@ -319,7 +344,7 @@ namespace Orders
             catch (Exception ex)
             {
                 lblLog.Visible = true;
-                lblLog.Text = "Error:" + ex.Message;
+                lblLog.Text = "Error: " + ex.Message;
                 logsTimer.Start();
             }
         }
