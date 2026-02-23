@@ -10,23 +10,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-namespace Filliations
+namespace Filiations
 {
-	public partial class frmFilliations : FormsDesigner.frmBase
+	public partial class FrmFiliations : FormsDesigner.frmBase
 	{
 
-		SecureCoreG2Entities db;
+		FiliationsEntities db;
 		BindingSource bs;
 
 		bool isNew = false;
 		Color originalForeColor;
 
-		public frmFilliations(string tableName)
+		public FrmFiliations(string tableName)
 		{
 			InitializeComponent();
 			base._tableName = tableName;
 
-			db = new SecureCoreG2Entities();
+			db = new FiliationsEntities();
 			bs = new BindingSource();
 		}
 
@@ -104,13 +104,17 @@ namespace Filliations
 
 		#region EVENTS
 
-		private void frmFilliations_Load(object sender, EventArgs e)
+		private void FrmFiliations_Load(object sender, EventArgs e)
 		{
 			try
 			{
+				//MessageBox.Show("Formulario cargando...");
+
 				ReadData();
 				dgvConfiguration();
 				Bind();
+
+				//MessageBox.Show("Formulario cargado correctamente.");
 			}
 			catch (Exception ex)
 			{
@@ -158,38 +162,37 @@ namespace Filliations
 		{
 			try
 			{
-				var current = bs.Current as Filiation;
+				/*var current = bs.Current as Filiation;
 
 				if (current == null && !isNew)
 				{
 					MessageBox.Show("No record selected.");
 					return;
-				}
+				}*/
 
 				UpdateData();
 
 				lblLog.Visible = true;
 				lblLog.Text = "Registers updated successfully";
-				logsTimer.Start();
+				LogsTimer.Start();
 			}
 			catch (Exception ex)
 			{
 				lblLog.Visible = true;
 				lblLog.Text = "Error: " + ex.Message;
-				logsTimer.Start();
+				LogsTimer.Start();
 			}
 		}
 
-		private void logsTimer_Tick(object sender, EventArgs e)
+		private void LogsTimer_Tick(object sender, EventArgs e)
 		{
-			logsTimer.Stop();
+			LogsTimer.Stop();
 			lblLog.Text = "";
 			lblLog.Visible = false;
 		}
 
-
 		#endregion
 
-		
+
 	}
 }

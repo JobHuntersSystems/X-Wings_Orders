@@ -33,7 +33,7 @@ namespace WingsOrdersSystem
 			this.pnlControls = new System.Windows.Forms.Panel();
 			this.xwLauchFrmPriority = new XWUserControls.XWLauchForm();
 			this.xwLauchFrmSpaceships = new XWUserControls.XWLauchForm();
-			this.xwLauchFrmFilliations = new XWUserControls.XWLauchForm();
+			this.xwLauchFrmFiliations = new XWUserControls.XWLauchForm();
 			this.xwLauchFrmPlanets = new XWUserControls.XWLauchForm();
 			this.xwLauchFrmAI = new XWUserControls.XWLauchForm();
 			this.xwLauchFrmOpeArea = new XWUserControls.XWLauchForm();
@@ -63,7 +63,7 @@ namespace WingsOrdersSystem
 			this.pnlControls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
 			this.pnlControls.Controls.Add(this.xwLauchFrmPriority);
 			this.pnlControls.Controls.Add(this.xwLauchFrmSpaceships);
-			this.pnlControls.Controls.Add(this.xwLauchFrmFilliations);
+			this.pnlControls.Controls.Add(this.xwLauchFrmFiliations);
 			this.pnlControls.Controls.Add(this.xwLauchFrmPlanets);
 			this.pnlControls.Controls.Add(this.xwLauchFrmAI);
 			this.pnlControls.Controls.Add(this.xwLauchFrmOpeArea);
@@ -109,21 +109,21 @@ namespace WingsOrdersSystem
 			this.xwLauchFrmSpaceships.TabIndex = 10;
 			this.xwLauchFrmSpaceships.Title = "Spaceships";
 			// 
-			// xwLauchFrmFilliations
+			// xwLauchFrmFiliations
 			// 
-			this.xwLauchFrmFilliations.BackColor = System.Drawing.SystemColors.ActiveCaption;
-			this.xwLauchFrmFilliations.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.xwLauchFrmFilliations.HoverBackColor = "23;23;23";
-			this.xwLauchFrmFilliations.HoverFontColor = "233;233;233";
-			this.xwLauchFrmFilliations.HoverImagePath = "resources\\png\\darth_vader_hover.png";
-			this.xwLauchFrmFilliations.InitialImagePath = "resources\\png\\darth_vader.png";
-			this.xwLauchFrmFilliations.Location = new System.Drawing.Point(1291, 5);
-			this.xwLauchFrmFilliations.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-			this.xwLauchFrmFilliations.Name = "xwLauchFrmFilliations";
-			this.xwLauchFrmFilliations.Size = new System.Drawing.Size(300, 277);
-			this.xwLauchFrmFilliations.TabIndex = 9;
-			this.xwLauchFrmFilliations.Title = "Filliations";
-			this.xwLauchFrmFilliations.ButtonClick += new System.EventHandler(this.xwLauchFrmFilliations_ButtonClick);
+			this.xwLauchFrmFiliations.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.xwLauchFrmFiliations.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.xwLauchFrmFiliations.HoverBackColor = "23;23;23";
+			this.xwLauchFrmFiliations.HoverFontColor = "233;233;233";
+			this.xwLauchFrmFiliations.HoverImagePath = "resources\\png\\darth_vader_hover.png";
+			this.xwLauchFrmFiliations.InitialImagePath = "resources\\png\\darth_vader.png";
+			this.xwLauchFrmFiliations.Location = new System.Drawing.Point(1291, 5);
+			this.xwLauchFrmFiliations.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+			this.xwLauchFrmFiliations.Name = "xwLauchFrmFiliations";
+			this.xwLauchFrmFiliations.Size = new System.Drawing.Size(300, 277);
+			this.xwLauchFrmFiliations.TabIndex = 9;
+			this.xwLauchFrmFiliations.Title = "Filliations";
+			this.xwLauchFrmFiliations.ButtonClick += new System.EventHandler(this.xwLauchFrmFiliations_ButtonClick);
 			// 
 			// xwLauchFrmPlanets
 			// 
@@ -290,7 +290,7 @@ namespace WingsOrdersSystem
         private XWUserControls.XWLauchForm xwLauchFrmOpeArea;
         private XWUserControls.XWLauchForm xwLauchFrmAI;
         private XWUserControls.XWLauchForm xwLauchFrmPlanets;
-        private XWUserControls.XWLauchForm xwLauchFrmFilliations;
+        private XWUserControls.XWLauchForm xwLauchFrmFiliations;
         private XWUserControls.XWLauchForm xwLauchFrmSpaceships;
         private XWUserControls.XWLauchForm xwLauchFrmPriority;
         private System.Windows.Forms.Panel pnlMain;

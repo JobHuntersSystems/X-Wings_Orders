@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Filliations
+namespace Filiations
 {
     using System;
     using System.Collections.Generic;
