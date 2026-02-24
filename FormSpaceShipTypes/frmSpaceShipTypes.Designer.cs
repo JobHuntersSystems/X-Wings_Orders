@@ -35,6 +35,10 @@ namespace FormSpaceShipTypes
             this.txtcodeSpaceShipType = new System.Windows.Forms.TextBox();
             this.txtDescSpaceShipType = new System.Windows.Forms.TextBox();
             this.logsTimer = new System.Windows.Forms.Timer(this.components);
+            this.lblPriority = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnUpdate
@@ -88,10 +92,50 @@ namespace FormSpaceShipTypes
             this.logsTimer.Interval = 2000;
             this.logsTimer.Tick += new System.EventHandler(this.logsTimer_Tick);
             // 
+            // lblPriority
+            // 
+            this.lblPriority.AutoSize = true;
+            this.lblPriority.Location = new System.Drawing.Point(138, 181);
+            this.lblPriority.Name = "lblPriority";
+            this.lblPriority.Size = new System.Drawing.Size(62, 23);
+            this.lblPriority.TabIndex = 10;
+            this.lblPriority.Text = "Code";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(119, 273);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 23);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Filiation";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(87, 221);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 23);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Description";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(102, 315);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 23);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Category";
+            // 
             // frmSpaceShipTypes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.ClientSize = new System.Drawing.Size(1513, 968);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPriority);
             this.Controls.Add(this.cbSpaceShipCategory);
             this.Controls.Add(this.cbFilliations);
             this.Controls.Add(this.txtcodeSpaceShipType);
@@ -107,6 +151,10 @@ namespace FormSpaceShipTypes
             this.Controls.SetChildIndex(this.txtcodeSpaceShipType, 0);
             this.Controls.SetChildIndex(this.cbFilliations, 0);
             this.Controls.SetChildIndex(this.cbSpaceShipCategory, 0);
+            this.Controls.SetChildIndex(this.lblPriority, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,5 +167,9 @@ namespace FormSpaceShipTypes
         private System.Windows.Forms.TextBox txtcodeSpaceShipType;
         private System.Windows.Forms.TextBox txtDescSpaceShipType;
         private System.Windows.Forms.Timer logsTimer;
+        private System.Windows.Forms.Label lblPriority;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
