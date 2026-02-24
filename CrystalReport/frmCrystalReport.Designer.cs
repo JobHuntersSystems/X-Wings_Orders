@@ -35,25 +35,21 @@ namespace CrystalReport
             // 
             // crvJobHunters
             // 
-            this.crvJobHunters.ActiveViewIndex = 0;
+            this.crvJobHunters.ActiveViewIndex = -1;
             this.crvJobHunters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crvJobHunters.Cursor = System.Windows.Forms.Cursors.Default;
             this.crvJobHunters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crvJobHunters.Location = new System.Drawing.Point(0, 0);
-            this.crvJobHunters.Margin = new System.Windows.Forms.Padding(2);
             this.crvJobHunters.Name = "crvJobHunters";
-            this.crvJobHunters.ReportSource = this.JobHuntersReport1;
-            this.crvJobHunters.Size = new System.Drawing.Size(711, 674);
+            this.crvJobHunters.Size = new System.Drawing.Size(1066, 1037);
             this.crvJobHunters.TabIndex = 0;
-            this.crvJobHunters.ToolPanelWidth = 133;
             // 
             // frmCrystalReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 674);
+            this.ClientSize = new System.Drawing.Size(1066, 1037);
             this.Controls.Add(this.crvJobHunters);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmCrystalReport";
             this.Text = "Crystal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
