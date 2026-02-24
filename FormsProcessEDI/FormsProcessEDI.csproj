@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ED8BC13F-42E7-4840-8F52-7E90B3BABC51}</ProjectGuid>
+    <ProjectGuid>{39A805D8-637E-496E-82EC-DB26D7EB7804}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>FormsEDI</RootNamespace>
-    <AssemblyName>FormsEDI</AssemblyName>
+    <RootNamespace>FormsProcessEDI</RootNamespace>
+    <AssemblyName>FormsProcessEDI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\App\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -49,13 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmEDI.cs" />
-    <Compile Include=".Designer.cs">
-      <DependentUpon>frmEDI.cs</DependentUpon>
+    <Compile Include="frmProcessEDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProcessEDI.Designer.cs">
+      <DependentUpon>frmProcessEDI.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmEDI.resx">
-      <DependentUpon>frmEDI.cs</DependentUpon>
+    <EmbeddedResource Include="frmProcessEDI.resx">
+      <DependentUpon>frmProcessEDI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -65,7 +67,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -89,9 +90,9 @@
       <Project>{e58fcd1e-53f6-4e85-b5a1-88755172bac0}</Project>
       <Name>EdiProcessor</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EF_CRUD\EFOrders.csproj">
-      <Project>{d498fda9-bbd0-403e-af4e-8142a65781ba}</Project>
-      <Name>EFOrders</Name>
+    <ProjectReference Include="..\XWInheritedControls\XWInheritedControls.csproj">
+      <Project>{c6936942-dc1a-4f2c-bbd4-b27778ee5e93}</Project>
+      <Name>XWInheritedControls</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

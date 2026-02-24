@@ -104,9 +104,9 @@
       <Project>{4bfa0e7f-3a22-47c8-ac5c-47a805ef2699}</Project>
       <Name>FormSpaceShipTypes</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Formularios prueba\FormsEDI.csproj">
-      <Project>{ed8bc13f-42e7-4840-8f52-7e90b3babc51}</Project>
-      <Name>FormsEDI</Name>
+    <ProjectReference Include="..\FormsProcessEDI\FormsProcessEDI.csproj">
+      <Project>{39a805d8-637e-496e-82ec-db26d7eb7804}</Project>
+      <Name>FormsProcessEDI</Name>
     </ProjectReference>
     <ProjectReference Include="..\FTPServerProgram\FTPServerProgram.csproj">
       <Project>{3c2bc488-9181-4a31-94de-944158f8540a}</Project>
