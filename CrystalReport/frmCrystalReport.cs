@@ -23,11 +23,12 @@ namespace CrystalReport
         {
             try
             {
-                cryRpt= new ReportDocument();
+                cryRpt = new ReportDocument();
                 string pathReport = System.IO.Path.Combine(Application.StartupPath, "JobHuntersReport.rpt");
                 cryRpt.Load(pathReport);
 
                 Credentials(cryRpt);
+
 
                 if (_idOrder != null && _idOrder.Count > 0)
                 {
@@ -36,7 +37,6 @@ namespace CrystalReport
                 }
 
                 crvJobHunters.ReportSource = cryRpt;
-                crvJobHunters.Refresh();
             }
             catch (Exception ex)
             {
@@ -63,7 +63,8 @@ namespace CrystalReport
                 ServerName = server,
                 DatabaseName = database,
                 UserID = user,
-                Password = passwd
+                Password = passwd,
+                IntegratedSecurity = false
             };
 
             ApplyConn(cryRpt, ci);
@@ -71,11 +72,14 @@ namespace CrystalReport
 
         private void ApplyConn(ReportDocument cryRpt, ConnectionInfo connectionInfo)
         {
-            foreach (Table table in cryRpt.Database.Tables)
+            TableLogOnInfo logOnInfo = new TableLogOnInfo();
+            Tables tables = cryRpt.Database.Tables;
+
+            foreach (Table table in tables)
             {
-                TableLogOnInfo tableLogOnInfo = table.LogOnInfo;
-                tableLogOnInfo.ConnectionInfo = connectionInfo;
-                table.ApplyLogOnInfo(tableLogOnInfo);
+                logOnInfo = table.LogOnInfo;
+                logOnInfo.ConnectionInfo = connectionInfo;
+                table.ApplyLogOnInfo(logOnInfo);
             }
         }
 
