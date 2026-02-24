@@ -8,21 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EdiProcessor;
-using EF_CRUD;
 using System.IO;
 using CrystalReport;
 
-
-namespace FormsEDI
+namespace FormsProcessEDI
 {
-    public partial class frmEDI : Form
+    public partial class frmProcessEDI : Form
     {
         EdiParser edi = new EdiParser();
         string path;
 
         List<int> ordersIDs = new List<int>();
 
-        public frmEDI()
+        public frmProcessEDI()
         {
             InitializeComponent();
             btnOpenCristal.Enabled = false;
@@ -51,7 +49,7 @@ namespace FormsEDI
                 txtPath.Clear();
             }
         }
-        
+
         private void btnProcess_Click(object sender, EventArgs e)
         {
             try

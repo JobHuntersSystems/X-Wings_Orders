@@ -12,7 +12,7 @@ using OperationalAreas;
 using Orders;
 using Routes;
 using FormSpaceShipCategory;
-using FormsEDI;
+using FormsProcessEDI;
 using FormSpaceShipTypes;
 using FTPServerProgram;
 using Filiations;
@@ -141,14 +141,14 @@ namespace WingsOrdersSystem
 
         private void xwLauchFrmEDI_ButtonClick(object sender, EventArgs e)
         {
-			frmEDI exist = Application.OpenForms.OfType<frmEDI>().FirstOrDefault();
+			frmProcessEDI exist = Application.OpenForms.OfType<frmProcessEDI>().FirstOrDefault();
 			if (exist != null)
 			{
 				exist.BringToFront();
 			}
 			else
 			{
-				frmEDI frm = new frmEDI();
+				frmProcessEDI frm = new frmProcessEDI();
 				frm.Show();
 				frm.WindowState = FormWindowState.Maximized;
 			}

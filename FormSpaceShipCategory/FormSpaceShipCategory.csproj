@@ -136,6 +136,10 @@
       <Project>{A720E2B0-7044-49E1-BC2E-11E8394BC8DC}</Project>
       <Name>FormsDesigner</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XWInheritedControls\XWInheritedControls.csproj">
+      <Project>{c6936942-dc1a-4f2c-bbd4-b27778ee5e93}</Project>
+      <Name>XWInheritedControls</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
