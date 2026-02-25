@@ -12,7 +12,6 @@ namespace FTPServerProgram
 		public string User { get; set; }
 		public string Pass { get; set; }
 		public string RemoteRoot { get; set; }
-		public string ProcessedFolder { get; set; }
 		public string LocalFolder { get; set; }
 	}
 }

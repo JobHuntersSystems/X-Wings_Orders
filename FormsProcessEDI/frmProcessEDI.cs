@@ -40,7 +40,6 @@ namespace FormsProcessEDI
                 txtPath.Text = rutaArchivo;
                 lbStatus.Items.Add($"Status: Path selected [{rutaArchivo}]");
                 path = rutaArchivo;
-                btnOpenCristal.Enabled = true;
             }
             else
             {
@@ -58,6 +57,7 @@ namespace FormsProcessEDI
                 ordersIDs.Add(orderid);
                 lbStatus.Items.Add("Status: File readed and database updated");
                 lbStatus.Items.Add($"Status: Order {orderid}");
+                btnOpenCristal.Enabled = true;
             }
             catch (Exception a)
             {
